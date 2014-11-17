@@ -1,0 +1,31 @@
+inherited FormMain_SmXhdpiPh: TFormMain_SmXhdpiPh
+  ClientHeight = 375
+  ClientWidth = 250
+  DesignerMasterStyle = 3
+  inherited VertScrollBox1: TVertScrollBox
+    Size.Width = 250.000000000000000000
+    Size.Height = 375.000000000000000000
+    inherited MainLayout1: TLayout
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      inherited EditInput: TEdit
+        Position.Y = 18.000000000000000000
+        Size.Width = 50.000000000000000000
+      end
+      inherited MemoOutput: TMemo
+        Size.Width = 50.000000000000000000
+        Size.Height = 0.000000000000000000
+      end
+      inherited PanelControl: TPanel
+        Position.Y = -22.000000000000000000
+        Size.Width = 50.000000000000000000
+        inherited ComboBoxMethod: TComboBox
+          Size.Width = 0.000000000000000000
+        end
+        inherited ButtonGo: TButton
+          Position.X = 10.000000000000000000
+        end
+      end
+    end
+  end
+end

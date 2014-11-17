@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{29BFDC9F-3DE7-42A9-958B-90813CBA1B4B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="BukvoezhkaDesktop\BukvoezhkaDesktop.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="BukvoezhkaMobile\BukvoezhkaMobile.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="BukvoezhkaDesktop">
+        <MSBuild Projects="BukvoezhkaDesktop\BukvoezhkaDesktop.dproj"/>
+    </Target>
+    <Target Name="BukvoezhkaDesktop:Clean">
+        <MSBuild Projects="BukvoezhkaDesktop\BukvoezhkaDesktop.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BukvoezhkaDesktop:Make">
+        <MSBuild Projects="BukvoezhkaDesktop\BukvoezhkaDesktop.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BukvoezhkaMobile">
+        <MSBuild Projects="BukvoezhkaMobile\BukvoezhkaMobile.dproj"/>
+    </Target>
+    <Target Name="BukvoezhkaMobile:Clean">
+        <MSBuild Projects="BukvoezhkaMobile\BukvoezhkaMobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BukvoezhkaMobile:Make">
+        <MSBuild Projects="BukvoezhkaMobile\BukvoezhkaMobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="BukvoezhkaDesktop;BukvoezhkaMobile"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="BukvoezhkaDesktop:Clean;BukvoezhkaMobile:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="BukvoezhkaDesktop:Make;BukvoezhkaMobile:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

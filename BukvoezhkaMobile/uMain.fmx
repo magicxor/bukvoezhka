@@ -1,0 +1,100 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnFocusChanged = FormFocusChanged
+  OnVirtualKeyboardShown = FormVirtualKeyboardShown
+  OnVirtualKeyboardHidden = FormVirtualKeyboardHidden
+  DesignerMasterStyle = 0
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object MainLayout1: TLayout
+      Align = Client
+      Size.Width = 640.000000000000000000
+      Size.Height = 480.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object EditInput: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Bottom
+        TabOrder = 0
+        Position.Y = 408.000000000000000000
+        Size.Width = 640.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        CheckSpelling = True
+      end
+      object MemoOutput: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        Align = Client
+        Margins.Bottom = 2.000000000000000000
+        Size.Width = 640.000000000000000000
+        Size.Height = 406.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        ReadOnly = True
+      end
+      object PanelControl: TPanel
+        Align = Bottom
+        Position.Y = 440.000000000000000000
+        Size.Width = 640.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object ComboBoxMethod: TComboBox
+          Align = Client
+          Items.Strings = (
+            'ASCII-'#1089#1086#1074#1084#1077#1089#1090#1080#1084#1099#1081
+            'ASCII + '#1082#1080#1088#1080#1083#1083#1080#1094#1072
+            'Win-1252'
+            'Unicode - PW-'#1089#1086#1074#1084#1077#1089#1090#1080#1084#1099#1081
+            'Unicode - '#1083#1091#1095#1096#1080#1081' (Win7+)'
+            'Unicode - '#1088#1072#1085#1076#1086#1084' (Win7+)'
+            'Unicode - '#1088#1072#1085#1076#1086#1084' (XP+)'
+            'Unicode - '#1087#1077#1088#1077#1074#1077#1088#1085#1091#1090#1100
+            'Unicode - '#1085#1077#1074#1080#1076'. '#1084#1091#1089#1086#1088' v1'
+            'Unicode - '#1085#1077#1074#1080#1076'. '#1084#1091#1089#1086#1088' v2'
+            'Unicode - '#1094#1077#1088#1082#1086#1074#1085#1086#1089#1083#1072#1074'.'
+            'Unicode - '#1085#1072#1076#1089#1090#1088#1086#1095#1085#1099#1081
+            #1041#1045#1047#1053#1054#1043'N'#1052
+            #1047#1072#1076#1086#1084' '#1085#1072#1087#1077#1088#1105#1076
+            #1054#1073#1099#1095#1085#1099#1081)
+          ItemIndex = 6
+          Size.Width = 560.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+        end
+        object ButtonClear: TButton
+          Align = Left
+          Size.Width = 40.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'X'
+          OnClick = ButtonClearClick
+        end
+        object ButtonGo: TButton
+          Align = Right
+          Position.X = 600.000000000000000000
+          Size.Width = 40.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          Text = #10003
+          OnClick = ButtonGoClick
+        end
+      end
+    end
+  end
+end
