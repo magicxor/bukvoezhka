@@ -6,6 +6,8 @@
 
 Программа распространяется бесплатно (по лицензии GNU GPL v3), с обязательным указанием авторства (mailparser@mail.ru) и ссылки на github (https://github.com/waarheid/bukvoezhka).
 
-==========
-Минимальная версия IDE для сборки: Embarcadero RAD Studio XE7
-Поддерживаемые платформы: Windows XP SP3 и выше, Android 4.2 и выше
+Минимальная версия IDE для сборки: Embarcadero RAD Studio XE7.
+
+Поддерживаемые платформы:
+- Windows XP SP3 и выше;
+- Android 4.2 и выше.
