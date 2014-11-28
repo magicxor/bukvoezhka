@@ -4,7 +4,7 @@
         <ProjectVersion>16.0</ProjectVersion>
         <MainSource>BukvoezhkaDesktop.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
         <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
@@ -85,8 +85,8 @@
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Build>53</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.1.0.53;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;LastCompiledTime=15.11.2014 23:32:00</VerInfo_Keys>
+        <VerInfo_Build>255</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.1.0.255;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;LastCompiledTime=28.11.2014 17:06:01</VerInfo_Keys>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
@@ -100,8 +100,8 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.40;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;LastCompiledTime=20.11.2014 23:07:03</VerInfo_Keys>
-        <VerInfo_Build>40</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.43;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;LastCompiledTime=27.11.2014 10:04:16</VerInfo_Keys>
+        <VerInfo_Build>43</VerInfo_Build>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
@@ -123,6 +123,8 @@
             <Form>FormAbout</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="uStringsConverter.pas"/>
+        <DCCReference Include="uASCIIdecorator.pas"/>
         <None Include="BukvoezhkaDesktop.todo"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -207,6 +209,12 @@
                 <DeployFile LocalName="Release\Win32\BukvoezhkaDesktop.exe" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>BukvoezhkaDesktop.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="BukvoezhkaDesktop.todo" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

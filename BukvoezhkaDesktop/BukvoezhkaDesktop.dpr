@@ -6,7 +6,9 @@ uses
   uTextConvertRoutines in 'uTextConvertRoutines.pas',
   uCharacterSets in 'uCharacterSets.pas',
   uTextConverter in 'uTextConverter.pas',
-  uAbout in 'uAbout.pas' {FormAbout};
+  uAbout in 'uAbout.pas' {FormAbout},
+  uStringsConverter in 'uStringsConverter.pas',
+  uASCIIdecorator in 'uASCIIdecorator.pas';
 
 {$R *.res}
 

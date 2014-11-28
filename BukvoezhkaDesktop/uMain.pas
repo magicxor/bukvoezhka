@@ -46,13 +46,21 @@ type
     ButtonOverlines2: TButton;
     ButtonOverlines1: TButton;
     ButtonAbout: TButton;
+    PanelASCIIart: TPanel;
+    ButtonASCIIart: TButton;
+    ComboBoxASZoom: TComboBox;
+    ComboBoxASFontName: TComboBox;
+    PanelDecorationBtns: TPanel;
+    CheckBoxASNegative: TCheckBox;
+    ComboBoxASCharacterSet: TComboBox;
+    ComboBoxASFontSize: TComboBox;
     procedure ButtonClearClick(Sender: TObject);
     procedure ButtonGoClick(Sender: TObject);
     procedure RadioGroupFontClick(Sender: TObject);
     procedure ComboBoxFontSizeChange(Sender: TObject);
-    procedure RadioGroupMethodClick(Sender: TObject);
     procedure Transform(Sender: TObject);
     procedure ButtonAboutClick(Sender: TObject);
+    procedure ButtonASCIIartClick(Sender: TObject);
   private
 
   public
@@ -62,11 +70,32 @@ type
 var
   FormMain: TFormMain;
 
+const
+  FontNames: array of string = ['Tahoma', 'Segoe UI', 'Lucida Console' { ,'Universalia' } ];
+
 implementation
 
-uses uTextConverter, uAbout;
+uses uTextConverter, uAbout, uStringsConverter, uASCIIdecorator;
 
 {$R *.dfm}
+
+procedure TFormMain.ButtonASCIIartClick(Sender: TObject);
+var
+  ASCIIdecorator: TASCIIdecorator;
+begin
+  ASCIIdecorator := TASCIIdecorator.Create(nil);
+  //
+  MemoOutput.WordWrap := False;
+  MemoOutput.ScrollBars := ssBoth;
+  //
+  MemoOutput.Text := ASCIIdecorator.MakeASCIIfromText(MemoInput.Text,
+    ComboBoxASFontName.Items[ComboBoxASFontName.ItemIndex], 255,
+    StrToInt(ComboBoxASZoom.Items[ComboBoxASZoom.ItemIndex]), CheckBoxASNegative.Checked,
+    ComboBoxASCharacterSet.ItemIndex,
+    StrToInt(ComboBoxASFontSize.Items[ComboBoxASFontSize.ItemIndex]));
+  //
+  FreeAndNil(ASCIIdecorator);
+end;
 
 procedure TFormMain.ButtonAboutClick(Sender: TObject);
 begin
@@ -80,7 +109,7 @@ begin
 end;
 
 procedure TFormMain.ButtonGoClick(Sender: TObject);
-  procedure Transform(TransformMethod: Integer);
+  procedure GoTransform(TransformMethod: Integer);
   begin
     case TransformMethod of
       0:
@@ -117,7 +146,10 @@ procedure TFormMain.ButtonGoClick(Sender: TObject);
   end;
 
 begin
-  Transform(RadioGroupMethod.ItemIndex);
+  MemoOutput.WordWrap := True;
+  MemoOutput.ScrollBars := ssVertical;
+  //
+  GoTransform(RadioGroupMethod.ItemIndex);
   MemoOutput.SelectAll;
   MemoOutput.CopyToClipboard;
 end;
@@ -129,20 +161,16 @@ begin
 end;
 
 procedure TFormMain.RadioGroupFontClick(Sender: TObject);
-const
-  FontNames: array of string = ['Tahoma', 'Segoe UI', 'Universalia'];
 begin
   MemoInput.Font.Name := FontNames[RadioGroupFont.ItemIndex];
   MemoOutput.Font.Name := FontNames[RadioGroupFont.ItemIndex];
 end;
 
-procedure TFormMain.RadioGroupMethodClick(Sender: TObject);
-begin
-  ButtonGoClick(Self);
-end;
-
 procedure TFormMain.Transform(Sender: TObject);
 begin
+  MemoOutput.WordWrap := True;
+  MemoOutput.ScrollBars := ssVertical;
+  //
   case (Sender as TButton).Tag of
     1:
       MemoOutput.Text := TTextConverter.AddStrikethrough1(MemoInput.Text);

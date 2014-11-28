@@ -52,7 +52,7 @@ object FormMain: TFormMain
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -11
-        Font.Name = 'Tahoma'
+        Font.Name = 'Lucida Console'
         Font.Style = []
         ParentFont = False
         ScrollBars = ssVertical
@@ -73,6 +73,12 @@ object FormMain: TFormMain
         Width = 699
         Height = 231
         Align = alClient
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Lucida Console'
+        Font.Style = []
+        ParentFont = False
         ScrollBars = ssVertical
         TabOrder = 0
       end
@@ -184,7 +190,7 @@ object FormMain: TFormMain
           #1054#1073#1099#1095#1085#1099#1081)
         ParentFont = False
         TabOrder = 0
-        OnClick = RadioGroupMethodClick
+        OnClick = ButtonGoClick
       end
     end
     object PanelFontSettings: TPanel
@@ -205,11 +211,11 @@ object FormMain: TFormMain
         Margins.Bottom = 1
         Align = alClient
         Caption = #1064#1088#1080#1092#1090
-        ItemIndex = 0
+        ItemIndex = 2
         Items.Strings = (
           'Tahoma'
           'Segoe UI'
-          'Universalia')
+          'Lucida Cons.')
         TabOrder = 0
         OnClick = RadioGroupFontClick
       end
@@ -267,203 +273,6 @@ object FormMain: TFormMain
     Caption = 'PanelControlButtons'
     ShowCaption = False
     TabOrder = 2
-    object ButtonDoubleU2: TButton
-      Tag = 7
-      AlignWithMargins = True
-      Left = 166
-      Top = 2
-      Width = 25
-      Height = 26
-      Margins.Left = 1
-      Margins.Top = 1
-      Margins.Right = 1
-      Margins.Bottom = 1
-      Align = alLeft
-      Caption = 'D'#839' 2'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 0
-      OnClick = Transform
-    end
-    object ButtonStrikethrough1: TButton
-      Tag = 1
-      AlignWithMargins = True
-      Left = 4
-      Top = 2
-      Width = 25
-      Height = 26
-      Margins.Top = 1
-      Margins.Right = 1
-      Margins.Bottom = 1
-      Align = alLeft
-      Caption = ' '#822'S'#822' 1'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 1
-      OnClick = Transform
-    end
-    object ButtonStrikethrough2: TButton
-      Tag = 2
-      AlignWithMargins = True
-      Left = 31
-      Top = 2
-      Width = 25
-      Height = 26
-      Margins.Left = 1
-      Margins.Top = 1
-      Margins.Right = 1
-      Margins.Bottom = 1
-      Align = alLeft
-      Caption = ' '#821'S'#821' 2'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 2
-      OnClick = Transform
-    end
-    object ButtonUnderlines1: TButton
-      Tag = 3
-      AlignWithMargins = True
-      Left = 58
-      Top = 2
-      Width = 25
-      Height = 26
-      Margins.Left = 1
-      Margins.Top = 1
-      Margins.Right = 1
-      Margins.Bottom = 1
-      Align = alLeft
-      Caption = 'U'#817' 1 '
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 3
-      OnClick = Transform
-    end
-    object ButtonUnderlines2: TButton
-      Tag = 4
-      AlignWithMargins = True
-      Left = 85
-      Top = 2
-      Width = 25
-      Height = 26
-      Margins.Left = 1
-      Margins.Top = 1
-      Margins.Right = 1
-      Margins.Bottom = 1
-      Align = alLeft
-      Caption = 'U'#818' 2'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 4
-      OnClick = Transform
-    end
-    object ButtonUnderlines3: TButton
-      Tag = 5
-      AlignWithMargins = True
-      Left = 112
-      Top = 2
-      Width = 25
-      Height = 26
-      Margins.Left = 1
-      Margins.Top = 1
-      Margins.Right = 1
-      Margins.Bottom = 1
-      Align = alLeft
-      Caption = 'U'#863' 3'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 5
-      OnClick = Transform
-    end
-    object ButtonDoubleU1: TButton
-      Tag = 6
-      AlignWithMargins = True
-      Left = 139
-      Top = 2
-      Width = 25
-      Height = 26
-      Margins.Left = 1
-      Margins.Top = 1
-      Margins.Right = 1
-      Margins.Bottom = 1
-      Align = alLeft
-      Caption = 'D'#819' 1'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 6
-      OnClick = Transform
-    end
-    object ButtonOverlines2: TButton
-      Tag = 9
-      AlignWithMargins = True
-      Left = 220
-      Top = 2
-      Width = 25
-      Height = 26
-      Margins.Left = 1
-      Margins.Top = 1
-      Margins.Right = 1
-      Margins.Bottom = 1
-      Align = alLeft
-      Caption = 'O'#862' 2'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 7
-      OnClick = Transform
-    end
-    object ButtonOverlines1: TButton
-      Tag = 8
-      AlignWithMargins = True
-      Left = 193
-      Top = 2
-      Width = 25
-      Height = 26
-      Margins.Left = 1
-      Margins.Top = 1
-      Margins.Right = 1
-      Margins.Bottom = 1
-      Align = alLeft
-      Caption = 'O'#773' 1'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 8
-      OnClick = Transform
-    end
     object ButtonAbout: TButton
       AlignWithMargins = True
       Left = 624
@@ -474,8 +283,335 @@ object FormMain: TFormMain
       Margins.Bottom = 1
       Align = alRight
       Caption = #1054' '#1087#1088#1086#1075#1088#1072#1084#1084#1077
-      TabOrder = 9
+      TabOrder = 0
       OnClick = ButtonAboutClick
+    end
+    object PanelASCIIart: TPanel
+      Left = 249
+      Top = 1
+      Width = 372
+      Height = 28
+      Align = alClient
+      ShowCaption = False
+      TabOrder = 1
+      ExplicitWidth = 312
+      object ButtonASCIIart: TButton
+        AlignWithMargins = True
+        Left = 11
+        Top = 2
+        Width = 60
+        Height = 24
+        Margins.Left = 10
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
+        Align = alLeft
+        Caption = 'ASCII-art'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        OnClick = ButtonASCIIartClick
+      end
+      object ComboBoxASZoom: TComboBox
+        AlignWithMargins = True
+        Left = 75
+        Top = 4
+        Width = 30
+        Height = 21
+        Align = alLeft
+        Style = csDropDownList
+        ItemIndex = 0
+        TabOrder = 1
+        Text = '1'
+        OnChange = ButtonASCIIartClick
+        Items.Strings = (
+          '1'
+          '2'
+          '3'
+          '4')
+      end
+      object ComboBoxASFontName: TComboBox
+        AlignWithMargins = True
+        Left = 162
+        Top = 4
+        Width = 80
+        Height = 21
+        Align = alLeft
+        Style = csDropDownList
+        ItemIndex = 1
+        TabOrder = 2
+        Text = 'Lucida Console'
+        OnChange = ButtonASCIIartClick
+        Items.Strings = (
+          'Courier New'
+          'Lucida Console'
+          'Consolas')
+        ExplicitLeft = 111
+      end
+      object CheckBoxASNegative: TCheckBox
+        AlignWithMargins = True
+        Left = 304
+        Top = 4
+        Width = 52
+        Height = 20
+        Align = alLeft
+        Caption = #1053#1077#1075#1072#1090'.'
+        TabOrder = 3
+        OnClick = ButtonASCIIartClick
+        ExplicitLeft = 249
+        ExplicitTop = 1
+        ExplicitHeight = 28
+      end
+      object ComboBoxASCharacterSet: TComboBox
+        AlignWithMargins = True
+        Left = 248
+        Top = 4
+        Width = 50
+        Height = 21
+        Align = alLeft
+        Style = csDropDownList
+        ItemIndex = 0
+        TabOrder = 4
+        Text = 'fF#'
+        OnChange = ButtonASCIIartClick
+        Items.Strings = (
+          'fF#'
+          #9617#9618#9619
+          #1078#1046'#'
+          #20128#19976#20096
+          #19969#19976#20007)
+        ExplicitLeft = 197
+      end
+      object ComboBoxASFontSize: TComboBox
+        AlignWithMargins = True
+        Left = 111
+        Top = 4
+        Width = 45
+        Height = 21
+        Align = alLeft
+        Style = csDropDownList
+        ItemIndex = 3
+        TabOrder = 5
+        Text = '120'
+        OnChange = ButtonASCIIartClick
+        Items.Strings = (
+          '60'
+          '80'
+          '100'
+          '120'
+          '140'
+          '160')
+      end
+    end
+    object PanelDecorationBtns: TPanel
+      Left = 1
+      Top = 1
+      Width = 248
+      Height = 28
+      Align = alLeft
+      ShowCaption = False
+      TabOrder = 2
+      object ButtonDoubleU1: TButton
+        Tag = 6
+        AlignWithMargins = True
+        Left = 139
+        Top = 2
+        Width = 25
+        Height = 24
+        Margins.Left = 1
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
+        Align = alLeft
+        Caption = 'D'#819' 1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        OnClick = Transform
+      end
+      object ButtonDoubleU2: TButton
+        Tag = 7
+        AlignWithMargins = True
+        Left = 166
+        Top = 2
+        Width = 25
+        Height = 24
+        Margins.Left = 1
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
+        Align = alLeft
+        Caption = 'D'#839' 2'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 1
+        OnClick = Transform
+      end
+      object ButtonOverlines1: TButton
+        Tag = 8
+        AlignWithMargins = True
+        Left = 193
+        Top = 2
+        Width = 25
+        Height = 24
+        Margins.Left = 1
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
+        Align = alLeft
+        Caption = 'O'#773' 1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 2
+        OnClick = Transform
+      end
+      object ButtonOverlines2: TButton
+        Tag = 9
+        AlignWithMargins = True
+        Left = 220
+        Top = 2
+        Width = 25
+        Height = 24
+        Margins.Left = 1
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
+        Align = alLeft
+        Caption = 'O'#862' 2'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 3
+        OnClick = Transform
+      end
+      object ButtonStrikethrough1: TButton
+        Tag = 1
+        AlignWithMargins = True
+        Left = 112
+        Top = 2
+        Width = 25
+        Height = 24
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
+        Align = alLeft
+        Caption = ' '#822'S'#822' 1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 4
+        OnClick = Transform
+      end
+      object ButtonStrikethrough2: TButton
+        Tag = 2
+        AlignWithMargins = True
+        Left = 83
+        Top = 2
+        Width = 25
+        Height = 24
+        Margins.Left = 1
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
+        Align = alLeft
+        Caption = ' '#821'S'#821' 2'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 5
+        OnClick = Transform
+      end
+      object ButtonUnderlines1: TButton
+        Tag = 3
+        AlignWithMargins = True
+        Left = 56
+        Top = 2
+        Width = 25
+        Height = 24
+        Margins.Left = 1
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
+        Align = alLeft
+        Caption = 'U'#817' 1 '
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 6
+        OnClick = Transform
+      end
+      object ButtonUnderlines2: TButton
+        Tag = 4
+        AlignWithMargins = True
+        Left = 29
+        Top = 2
+        Width = 25
+        Height = 24
+        Margins.Left = 1
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
+        Align = alLeft
+        Caption = 'U'#818' 2'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 7
+        OnClick = Transform
+      end
+      object ButtonUnderlines3: TButton
+        Tag = 5
+        AlignWithMargins = True
+        Left = 2
+        Top = 2
+        Width = 25
+        Height = 24
+        Margins.Left = 1
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
+        Align = alLeft
+        Caption = 'U'#863' 3'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 8
+        OnClick = Transform
+      end
     end
   end
 end
