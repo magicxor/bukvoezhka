@@ -89,30 +89,30 @@ function TASCIIdecorator.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
     // Подбираем набор символов, которыми будем рисовать
     case CharacterSet of
       1:
-      // Символы заполнения/Block Elements 2580—259F
+        // Символы заполнения/Block Elements 2580—259F
         begin
           charactersArr := ['W', '@', '#', '*', '+', ':', '.', ',', ' '];
           startChar := 9600;
         end;
       2:
-      // Кириллица 0400—04FF
+        // Кириллица 0400—04FF
         begin
           charactersArr := ['W', '@', '#', '*', '+', ':', '.', ',', ' '];
           startChar := 1040;
         end;
       3:
-      // Китайский/Унифицированные иероглифы ККЯ 4E00—9FCC V1
+        // Китайский/Унифицированные иероглифы ККЯ 4E00—9FCC V1
         begin
           charactersArr := ['W', '@', '#', '*', '+', ':', '.', ',', ' '];
           startChar := 20096;
         end;
       4:
-      // Китайский/Унифицированные иероглифы ККЯ 4E00—9FCC V2
+        // Китайский/Унифицированные иероглифы ККЯ 4E00—9FCC V2
         begin
           charactersArr := ['W', '@', '#', '*', '+', ':', '.', ',', ' '];
           startChar := 19968;
         end;
-      else
+    else
       // Каноничный ASCII арт 32-126
       begin
         charactersArr := [' '];
@@ -249,26 +249,47 @@ function TASCIIdecorator.MakeASCIIfromText(SrcText: string; DonorFont: string = 
 var
   TmpBitmap: TBitmap;
   wh: TSize;
+  TmpRect: TRect; // для DrawText
+  Strs: TStrings;
+  i, TmpWidth: integer;
 begin
   Result := '';
   if SrcText.Length > 0 then
   begin
     TmpBitmap := TBitmap.Create;
+    Strs := TStringList.Create;
     // Задаём параметры шрифта
     TmpBitmap.Canvas.Font.Style := [fsBold];
     TmpBitmap.Canvas.Font.Size := RenderFontSize;
     TmpBitmap.Canvas.Font.Name := DonorFont;
     TmpBitmap.Canvas.Brush.Style := bsSolid;
     // Задаём размер надписи
-    wh := TmpBitmap.Canvas.TextExtent(SrcText);
+    // wh := TmpBitmap.Canvas.TextExtent(SrcText); // рассчитываем ширину однострочного текста
+    ExtractStrings([], [], PChar(SrcText), Strs);
+    wh.Width := 0;
+    // ширина битмапа будет равна ширине самой широкой строки
+    for i := 0 to Strs.Count - 1 do
+    begin
+      TmpWidth := TmpBitmap.Canvas.TextWidth(Strs.Strings[i]);
+      if wh.Width < TmpWidth then
+        wh.Width := TmpWidth;
+    end;
+    //
     TmpBitmap.Width := wh.Width;
+    TmpRect := TmpBitmap.Canvas.ClipRect;
+    // теперь рассчитываем высоту выводимого текста
+    wh.Height := DrawText(TmpBitmap.Canvas.Handle, PChar(SrcText), -1, TmpRect,
+      DT_LEFT or DT_CALCRECT); // рассчитываем высоту текста (для многострочного вывода)
     TmpBitmap.Height := wh.Height;
     TmpBitmap.Canvas.FloodFill(0, 0, clwhite, fsSurface); // заливаем белым
-    // Выводим её
-    TmpBitmap.Canvas.TextRect(TmpBitmap.Canvas.ClipRect, 0, 0, SrcText);
+    // Выводим текст на битмап
+    // TmpBitmap.Canvas.TextRect(TmpBitmap.Canvas.ClipRect, 0, 0, SrcText); // всё в одну строку
+    TmpRect := TmpBitmap.Canvas.ClipRect;
+    DrawText(TmpBitmap.Canvas.Handle, PChar(SrcText), -1, TmpRect, DT_LEFT);
     // Делаем из неё ASCII art
     Result := MakeASCIIfromBitmap(TmpBitmap, DonorFont, contrast, zoom, negative, CharacterSet);
     //
+    FreeAndNil(Strs);
     FreeAndNil(TmpBitmap);
   end;
 end;
