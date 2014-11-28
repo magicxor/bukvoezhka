@@ -294,7 +294,6 @@ object FormMain: TFormMain
       Align = alClient
       ShowCaption = False
       TabOrder = 1
-      ExplicitWidth = 312
       object ButtonASCIIart: TButton
         AlignWithMargins = True
         Left = 11
@@ -349,8 +348,13 @@ object FormMain: TFormMain
         Items.Strings = (
           'Courier New'
           'Lucida Console'
-          'Consolas')
-        ExplicitLeft = 111
+          'Consolas'
+          'Calibri'
+          'Times New Roman'
+          'Segoe UI'
+          'Verdana'
+          'Arial Unicode MS'
+          'Tahoma')
       end
       object CheckBoxASNegative: TCheckBox
         AlignWithMargins = True
@@ -362,9 +366,6 @@ object FormMain: TFormMain
         Caption = #1053#1077#1075#1072#1090'.'
         TabOrder = 3
         OnClick = ButtonASCIIartClick
-        ExplicitLeft = 249
-        ExplicitTop = 1
-        ExplicitHeight = 28
       end
       object ComboBoxASCharacterSet: TComboBox
         AlignWithMargins = True
@@ -384,7 +385,6 @@ object FormMain: TFormMain
           #1078#1046'#'
           #20128#19976#20096
           #19969#19976#20007)
-        ExplicitLeft = 197
       end
       object ComboBoxASFontSize: TComboBox
         AlignWithMargins = True

@@ -1,6 +1,6 @@
-unit uASCIIdecorator;
+п»їunit uASCIIdecorator;
 
-// Автор алгоритма преобразования картинки в текст - fabiin
+// РђРІС‚РѕСЂ Р°Р»РіРѕСЂРёС‚РјР° РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ РєР°СЂС‚РёРЅРєРё РІ С‚РµРєСЃС‚ - fabiin
 // (2003, http://codes-sources.commentcamarche.net/source/12384-ascii-t-petit-soft-d-ascii-art)
 
 interface
@@ -8,16 +8,16 @@ interface
 uses Windows, SysUtils, Graphics, Classes;
 
 type
-  TDen = record // тип символа по цветовому тону
-    Car: Char; // символ
-    D: integer; // тон
+  TDen = record // С‚РёРї СЃРёРјРІРѕР»Р° РїРѕ С†РІРµС‚РѕРІРѕРјСѓ С‚РѕРЅСѓ
+    Car: Char; // СЃРёРјРІРѕР»
+    D: integer; // С‚РѕРЅ
   end;
 
 type
   TASCIIdecorator = class(TComponent)
   private
   var
-    Densite: array [0 .. 95] of TDen; // Массив символов со значениями их яркости
+    Densite: array [0 .. 95] of TDen; // РњР°СЃСЃРёРІ СЃРёРјРІРѕР»РѕРІ СЃРѕ Р·РЅР°С‡РµРЅРёСЏРјРё РёС… СЏСЂРєРѕСЃС‚Рё
     procedure QuickSort(iLo, iHi: integer);
   public
     // contrast 247-255
@@ -68,7 +68,7 @@ function TASCIIdecorator.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
   DonorFont: string = 'Lucida Console'; contrast: integer = 255; zoom: integer = 0;
   negative: boolean = false; CharacterSet: Byte = 0): string;
 
-  procedure FaireTblDensite; // Создаем таблицу Плотности
+  procedure FaireTblDensite; // РЎРѕР·РґР°РµРј С‚Р°Р±Р»РёС†Сѓ РџР»РѕС‚РЅРѕСЃС‚Рё
   var
     a, b, c: integer;
     TmpB: TBitmap;
@@ -76,61 +76,61 @@ function TASCIIdecorator.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
     charactersArr: array of Char;
     startChar: integer;
   begin
-    TmpB := TBitmap.Create; // Создать временный растр
+    TmpB := TBitmap.Create; // РЎРѕР·РґР°С‚СЊ РІСЂРµРјРµРЅРЅС‹Р№ СЂР°СЃС‚СЂ
     TmpB.Height := 50;
     TmpB.Width := 50;
     TmpB.Canvas.Brush.Color := clwhite;
     TmpB.Canvas.Pen.Color := clwhite;
     TmpB.Canvas.Font.Color := clblack;
     TmpB.Canvas.Font.Name := DonorFont;
-    // Инициализация
+    // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
     chaLow := 0;
     chaHi := chaLow + Length(Densite) - 1;
-    // Подбираем набор символов, которыми будем рисовать
+    // РџРѕРґР±РёСЂР°РµРј РЅР°Р±РѕСЂ СЃРёРјРІРѕР»РѕРІ, РєРѕС‚РѕСЂС‹РјРё Р±СѓРґРµРј СЂРёСЃРѕРІР°С‚СЊ
     case CharacterSet of
       1:
-      // Символы заполнения/Block Elements 2580—259F
+      // РЎРёРјРІРѕР»С‹ Р·Р°РїРѕР»РЅРµРЅРёСЏ/Block Elements 2580вЂ”259F
         begin
           charactersArr := ['W', '@', '#', '*', '+', ':', '.', ',', ' '];
           startChar := 9600;
         end;
       2:
-      // Кириллица 0400—04FF
+      // РљРёСЂРёР»Р»РёС†Р° 0400вЂ”04FF
         begin
           charactersArr := ['W', '@', '#', '*', '+', ':', '.', ',', ' '];
           startChar := 1040;
         end;
       3:
-      // Китайский/Унифицированные иероглифы ККЯ 4E00—9FCC V1
+      // РљРёС‚Р°Р№СЃРєРёР№/РЈРЅРёС„РёС†РёСЂРѕРІР°РЅРЅС‹Рµ РёРµСЂРѕРіР»РёС„С‹ РљРљРЇ 4E00вЂ”9FCC V1
         begin
           charactersArr := ['W', '@', '#', '*', '+', ':', '.', ',', ' '];
           startChar := 20096;
         end;
       4:
-      // Китайский/Унифицированные иероглифы ККЯ 4E00—9FCC V2
+      // РљРёС‚Р°Р№СЃРєРёР№/РЈРЅРёС„РёС†РёСЂРѕРІР°РЅРЅС‹Рµ РёРµСЂРѕРіР»РёС„С‹ РљРљРЇ 4E00вЂ”9FCC V2
         begin
           charactersArr := ['W', '@', '#', '*', '+', ':', '.', ',', ' '];
           startChar := 19968;
         end;
       else
-      // Каноничный ASCII арт 32-126
+      // РљР°РЅРѕРЅРёС‡РЅС‹Р№ ASCII Р°СЂС‚ 32-126
       begin
         charactersArr := [' '];
         startChar := 32;
       end;
     end;
-    // Дозаполняем charactersArr
+    // Р”РѕР·Р°РїРѕР»РЅСЏРµРј charactersArr
     for c := startChar to startChar + (Length(Densite) - Length(charactersArr)) do
       charactersArr := charactersArr + [chr(c)];
-    // Составляем массив символов
+    // РЎРѕСЃС‚Р°РІР»СЏРµРј РјР°СЃСЃРёРІ СЃРёРјРІРѕР»РѕРІ
     for c := chaLow to chaHi do
     begin
-      Densite[c - chaLow].Car := charactersArr[c]; // записываем символ в массив "шрифта"
+      Densite[c - chaLow].Car := charactersArr[c]; // Р·Р°РїРёСЃС‹РІР°РµРј СЃРёРјРІРѕР» РІ РјР°СЃСЃРёРІ "С€СЂРёС„С‚Р°"
       Densite[c - chaLow].D := 0;
-      // рисуем символ
+      // СЂРёСЃСѓРµРј СЃРёРјРІРѕР»
       TmpB.Canvas.Rectangle(0, 0, TmpB.Width, TmpB.Height);
       TmpB.Canvas.TextOut(0, 0, charactersArr[c]);
-      // баланс белого (?)
+      // Р±Р°Р»Р°РЅСЃ Р±РµР»РѕРіРѕ (?)
       for a := 1 to 20 do
       begin
         for b := 1 to 20 do
@@ -147,26 +147,26 @@ function TASCIIdecorator.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
 
 var
   a, b, c, D: integer;
-  MoyR, MoyG, MoyB, MoyCol: integer; // для средних тонов
+  MoyR, MoyG, MoyB, MoyCol: integer; // РґР»СЏ СЃСЂРµРґРЅРёС… С‚РѕРЅРѕРІ
   Couleur: LongInt;
-  TmpB: TBitmap; // рабочий битмап
+  TmpB: TBitmap; // СЂР°Р±РѕС‡РёР№ Р±РёС‚РјР°Рї
   TmpRec: TRect;
   TmpStr: string;
 
 begin
   Result := '';
   FaireTblDensite;
-  // копируем изображение
+  // РєРѕРїРёСЂСѓРµРј РёР·РѕР±СЂР°Р¶РµРЅРёРµ
   TmpB := TBitmap.Create;
   if zoom in [0, 1] then
-  begin // обычный размер
+  begin // РѕР±С‹С‡РЅС‹Р№ СЂР°Р·РјРµСЂ
     TmpB.Height := SrcBitmap.Height;
     TmpB.Width := SrcBitmap.Width;
     TmpB.pixelformat := pf24bit;
     TmpB.Canvas.Draw(0, 0, SrcBitmap);
   end
   else
-  begin // увеличение
+  begin // СѓРІРµР»РёС‡РµРЅРёРµ
     TmpRec.Left := 0;
     TmpRec.Top := 0;
     TmpRec.Right := SrcBitmap.Width * zoom;
@@ -180,7 +180,7 @@ begin
 
   TmpStr := '';
 
-  b := 0; // область изображения 8 * 16 точек
+  b := 0; // РѕР±Р»Р°СЃС‚СЊ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ 8 * 16 С‚РѕС‡РµРє
   while b < TmpB.Height - 16 - 1 do
   begin
     a := 0;
@@ -190,10 +190,10 @@ begin
       MoyR := 0;
       MoyG := 0;
       MoyB := 0;
-      // Найти средний цвет области
+      // РќР°Р№С‚Рё СЃСЂРµРґРЅРёР№ С†РІРµС‚ РѕР±Р»Р°СЃС‚Рё
       c := a;
       while (c <= a + 8) and (c < TmpB.Width) do
-      begin // покрыть площадь поверхности 8 * 16
+      begin // РїРѕРєСЂС‹С‚СЊ РїР»РѕС‰Р°РґСЊ РїРѕРІРµСЂС…РЅРѕСЃС‚Рё 8 * 16
         D := b;
         while (D <= b + 16) and (D < TmpB.Height) do
         begin
@@ -210,7 +210,7 @@ begin
       MoyG := MoyG div 152;
       MoyB := MoyB div 152;
 
-      // Применить контрастность / яркость
+      // РџСЂРёРјРµРЅРёС‚СЊ РєРѕРЅС‚СЂР°СЃС‚РЅРѕСЃС‚СЊ / СЏСЂРєРѕСЃС‚СЊ
       MoyR := round(MoyR * (1 + (128 - 128) / 100));
       MoyG := round(MoyG * (1 + (128 - 128) / 100));
       MoyB := round(MoyB * (1 + (128 - 128) / 100));
@@ -219,23 +219,23 @@ begin
       MoyG := round(MoyG + (contrast - 128) / 100 * (MoyG - 127));
       MoyB := round(MoyB + (contrast - 128) / 100 * (MoyB - 127));
 
-      MoyCol := (MoyR + MoyG + MoyB) div 3; // интенсивность цвета
+      MoyCol := (MoyR + MoyG + MoyB) div 3; // РёРЅС‚РµРЅСЃРёРІРЅРѕСЃС‚СЊ С†РІРµС‚Р°
       if MoyCol > 255 then
         MoyCol := 255;
       if MoyCol < 0 then
         MoyCol := 0;
-      // Негатив (инвертировать цвета):
+      // РќРµРіР°С‚РёРІ (РёРЅРІРµСЂС‚РёСЂРѕРІР°С‚СЊ С†РІРµС‚Р°):
       if negative then
         MoyCol := 255 - MoyCol;
 
-      // Вычислить конечную плотность (отношение 255 к 95)
+      // Р’С‹С‡РёСЃР»РёС‚СЊ РєРѕРЅРµС‡РЅСѓСЋ РїР»РѕС‚РЅРѕСЃС‚СЊ (РѕС‚РЅРѕС€РµРЅРёРµ 255 Рє 95)
       MoyCol := round(MoyCol * ((Length(Densite) - 1) / 255));
 
-      TmpStr := TmpStr + Densite[MoyCol].Car; // добавить следующий символ (?)
+      TmpStr := TmpStr + Densite[MoyCol].Car; // РґРѕР±Р°РІРёС‚СЊ СЃР»РµРґСѓСЋС‰РёР№ СЃРёРјРІРѕР» (?)
 
       Inc(a, 8);
     end;
-    TmpStr := TmpStr + sLineBreak; // перевод строки
+    TmpStr := TmpStr + sLineBreak; // РїРµСЂРµРІРѕРґ СЃС‚СЂРѕРєРё
     Inc(b, 16);
   end;
   // fin
@@ -254,19 +254,19 @@ begin
   if SrcText.Length > 0 then
   begin
     TmpBitmap := TBitmap.Create;
-    // Задаём параметры шрифта
+    // Р—Р°РґР°С‘Рј РїР°СЂР°РјРµС‚СЂС‹ С€СЂРёС„С‚Р°
     TmpBitmap.Canvas.Font.Style := [fsBold];
     TmpBitmap.Canvas.Font.Size := RenderFontSize;
     TmpBitmap.Canvas.Font.Name := DonorFont;
     TmpBitmap.Canvas.Brush.Style := bsSolid;
-    // Задаём размер надписи
+    // Р—Р°РґР°С‘Рј СЂР°Р·РјРµСЂ РЅР°РґРїРёСЃРё
     wh := TmpBitmap.Canvas.TextExtent(SrcText);
     TmpBitmap.Width := wh.Width;
     TmpBitmap.Height := wh.Height;
-    TmpBitmap.Canvas.FloodFill(0, 0, clwhite, fsSurface); // заливаем белым
-    // Выводим её
+    TmpBitmap.Canvas.FloodFill(0, 0, clwhite, fsSurface); // Р·Р°Р»РёРІР°РµРј Р±РµР»С‹Рј
+    // Р’С‹РІРѕРґРёРј РµС‘
     TmpBitmap.Canvas.TextRect(TmpBitmap.Canvas.ClipRect, 0, 0, SrcText);
-    // Делаем из неё ASCII art
+    // Р”РµР»Р°РµРј РёР· РЅРµС‘ ASCII art
     Result := MakeASCIIfromBitmap(TmpBitmap, DonorFont, contrast, zoom, negative, CharacterSet);
     //
     FreeAndNil(TmpBitmap);

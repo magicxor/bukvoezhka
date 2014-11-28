@@ -1,4 +1,4 @@
-unit uTextConverter;
+﻿unit uTextConverter;
 
 interface
 

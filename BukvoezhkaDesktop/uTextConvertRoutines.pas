@@ -1,4 +1,4 @@
-unit uTextConvertRoutines;
+п»їunit uTextConvertRoutines;
 
 interface
 
@@ -15,7 +15,7 @@ function MakeTextNoise(InputTxt: string; Noise: ArrStr): string;
 implementation
 
 function UCharInSet(UChar: char; UCharArr: array of char): Boolean;
-// Аналог CharInSet для юникода
+// РђРЅР°Р»РѕРі CharInSet РґР»СЏ СЋРЅРёРєРѕРґР°
 var
   i: Integer;
 begin
@@ -26,18 +26,18 @@ begin
 end;
 
 function TextConvert(InputTxt: string; SrcSet, DestSet: ArrArrStr; ConvertMode: Byte = 0): string;
-// 2 уровня, например: (строчные+заглавные+пунктуация)->(варианты буквы а)
+// 2 СѓСЂРѕРІРЅСЏ, РЅР°РїСЂРёРјРµСЂ: (СЃС‚СЂРѕС‡РЅС‹Рµ+Р·Р°РіР»Р°РІРЅС‹Рµ+РїСѓРЅРєС‚СѓР°С†РёСЏ)->(РІР°СЂРёР°РЅС‚С‹ Р±СѓРєРІС‹ Р°)
 var
   i: Integer;
   BlacklistedCharsCount: Integer;
 
   function CanConvert(SrcSet, DestSet: ArrArrStr): Boolean;
-  // проверки на корректность
+  // РїСЂРѕРІРµСЂРєРё РЅР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚СЊ
   var
     i: Integer;
   begin
     Result := true;
-    // Длина исходного и целевого наборов должна совпадать
+    // Р”Р»РёРЅР° РёСЃС…РѕРґРЅРѕРіРѕ Рё С†РµР»РµРІРѕРіРѕ РЅР°Р±РѕСЂРѕРІ РґРѕР»Р¶РЅР° СЃРѕРІРїР°РґР°С‚СЊ
     if (Length(SrcSet) = Length(DestSet)) and not(Length(SrcSet) = 0) then
     begin
       i := low(SrcSet);
@@ -53,7 +53,7 @@ var
   end;
 
   function CharConvert(SrcChar: char; SrcSet, DestSet: ArrArrStr; ConvertMode: Byte): string;
-  // преобразовать один символ в другой (или в несколько других)
+  // РїСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РѕРґРёРЅ СЃРёРјРІРѕР» РІ РґСЂСѓРіРѕР№ (РёР»Рё РІ РЅРµСЃРєРѕР»СЊРєРѕ РґСЂСѓРіРёС…)
   var
     i, j: Integer;
     SuccessConvert: Boolean;
@@ -110,13 +110,13 @@ begin
       end;
     end
     else
-      Result := 'Ошибка: наборы не совпадают по размеру или содержат пустые массивы'
+      Result := 'РћС€РёР±РєР°: РЅР°Р±РѕСЂС‹ РЅРµ СЃРѕРІРїР°РґР°СЋС‚ РїРѕ СЂР°Р·РјРµСЂСѓ РёР»Рё СЃРѕРґРµСЂР¶Р°С‚ РїСѓСЃС‚С‹Рµ РјР°СЃСЃРёРІС‹'
   else
     Result := '';
 end;
 
 function MakeTextNoise(InputTxt: string; Noise: ArrStr): string;
-// Добавить "шум" (мусор, подчёркивания) в текст
+// Р”РѕР±Р°РІРёС‚СЊ "С€СѓРј" (РјСѓСЃРѕСЂ, РїРѕРґС‡С‘СЂРєРёРІР°РЅРёСЏ) РІ С‚РµРєСЃС‚
 var
   i: Integer;
 begin
