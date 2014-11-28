@@ -506,7 +506,7 @@ object FormMain: TFormMain
       object ButtonStrikethrough1: TButton
         Tag = 1
         AlignWithMargins = True
-        Left = 112
+        Left = 85
         Top = 2
         Width = 25
         Height = 24
@@ -527,7 +527,7 @@ object FormMain: TFormMain
       object ButtonStrikethrough2: TButton
         Tag = 2
         AlignWithMargins = True
-        Left = 83
+        Left = 112
         Top = 2
         Width = 25
         Height = 24
@@ -545,11 +545,12 @@ object FormMain: TFormMain
         ParentFont = False
         TabOrder = 5
         OnClick = Transform
+        ExplicitLeft = 83
       end
       object ButtonUnderlines1: TButton
         Tag = 3
         AlignWithMargins = True
-        Left = 56
+        Left = 2
         Top = 2
         Width = 25
         Height = 24
@@ -567,6 +568,7 @@ object FormMain: TFormMain
         ParentFont = False
         TabOrder = 6
         OnClick = Transform
+        ExplicitTop = -1
       end
       object ButtonUnderlines2: TButton
         Tag = 4
@@ -593,7 +595,7 @@ object FormMain: TFormMain
       object ButtonUnderlines3: TButton
         Tag = 5
         AlignWithMargins = True
-        Left = 2
+        Left = 56
         Top = 2
         Width = 25
         Height = 24
@@ -611,6 +613,7 @@ object FormMain: TFormMain
         ParentFont = False
         TabOrder = 8
         OnClick = Transform
+        ExplicitLeft = 2
       end
     end
   end
