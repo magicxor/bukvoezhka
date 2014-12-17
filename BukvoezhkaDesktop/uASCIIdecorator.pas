@@ -17,7 +17,7 @@ type
   TASCIIdecorator = class(TComponent)
   private
   var
-    Densite: array [0 .. 95] of TDen; // Массив символов со значениями их яркости
+    Densite: array of TDen; // Массив символов со значениями их яркости
     procedure QuickSort(iLo, iHi: integer);
   public
     // contrast 247-255
@@ -72,7 +72,6 @@ function TASCIIdecorator.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
   var
     a, b, c: integer;
     TmpB: TBitmap;
-    chaLow, chaHi: integer;
     charactersArr: array of Char;
     startChar: integer;
   begin
@@ -83,50 +82,61 @@ function TASCIIdecorator.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
     TmpB.Canvas.Pen.Color := clwhite;
     TmpB.Canvas.Font.Color := clblack;
     TmpB.Canvas.Font.Name := DonorFont;
-    // Инициализация
-    chaLow := 0;
-    chaHi := chaLow + Length(Densite) - 1;
+    charactersArr := [];
     // Подбираем набор символов, которыми будем рисовать
     case CharacterSet of
       1:
-        // Символы заполнения/Block Elements 2580—259F
-        begin
-          charactersArr := ['W', '@', '#', '*', '+', ':', '.', ',', ' '];
-          startChar := 9600;
-        end;
-      2:
         // Кириллица 0400—04FF
         begin
-          charactersArr := ['W', '@', '#', '*', '+', ':', '.', ',', ' '];
+          charactersArr := ['@', '#', '*', '+', ':', '.', ',', ' '];
           startChar := 1040;
+          SetLength(Densite, 63 + Length(charactersArr));
+        end;
+      2:
+        // Китайский/Унифицированные иероглифы ККЯ 4E00—9FCC
+        begin
+          charactersArr := ['@', '#', '*', '+', ':', '.', ',', ' ']; // EM пробел
+          startChar := 19968;
+          SetLength(Densite, 1039 + Length(charactersArr));
         end;
       3:
-        // Китайский/Унифицированные иероглифы ККЯ 4E00—9FCC V1
+        // Символы заполнения/Block Elements 2580—259F
         begin
-          charactersArr := ['W', '@', '#', '*', '+', ':', '.', ',', ' '];
-          startChar := 20096;
+          charactersArr := ['░', '▒', '▓', '█'];
+          startChar := -1;
+          SetLength(Densite, Length(charactersArr));
         end;
       4:
-        // Китайский/Унифицированные иероглифы ККЯ 4E00—9FCC V2
+        // Символы заполнения/Block Elements 2580—259F
         begin
-          charactersArr := ['W', '@', '#', '*', '+', ':', '.', ',', ' '];
-          startChar := 19968;
+          charactersArr := ['░', '█'];
+          startChar := -1;
+          SetLength(Densite, Length(charactersArr));
+        end;
+      5:
+        // Символы заполнения/Block Elements 2580—259F
+        begin
+          charactersArr := [' ', '█'];   // EM пробел
+          startChar := -1;
+          SetLength(Densite, Length(charactersArr));
         end;
     else
       // Каноничный ASCII арт 32-126
       begin
-        charactersArr := [' '];
+        charactersArr := [];
         startChar := 32;
+        SetLength(Densite, 94);
       end;
     end;
     // Дозаполняем charactersArr
-    for c := startChar to startChar + (Length(Densite) - Length(charactersArr)) do
-      charactersArr := charactersArr + [chr(c)];
+    if (startChar > 0) and (Length(Densite) > Length(charactersArr)) then
+      for c := startChar to startChar + (Length(Densite) - Length(charactersArr)) do
+        charactersArr := charactersArr + [chr(c)];
     // Составляем массив символов
-    for c := chaLow to chaHi do
+    for c := low(Densite) to high(Densite) do
     begin
-      Densite[c - chaLow].Car := charactersArr[c]; // записываем символ в массив "шрифта"
-      Densite[c - chaLow].D := 0;
+      Densite[c - low(Densite)].Car := charactersArr[c]; // записываем символ в массив "шрифта"
+      Densite[c - low(Densite)].D := 0;
       // рисуем символ
       TmpB.Canvas.Rectangle(0, 0, TmpB.Width, TmpB.Height);
       TmpB.Canvas.TextOut(0, 0, charactersArr[c]);
@@ -136,7 +146,7 @@ function TASCIIdecorator.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
         for b := 1 to 20 do
         begin
           if TmpB.Canvas.Pixels[a, b] = clwhite then
-            Densite[c - chaLow].D := Densite[c - chaLow].D + 1;
+            Densite[c - low(Densite)].D := Densite[c - low(Densite)].D + 1;
         end;
       end;
     end;

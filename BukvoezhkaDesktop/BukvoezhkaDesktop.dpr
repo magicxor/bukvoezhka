@@ -7,7 +7,7 @@ uses
   uCharacterSets in 'uCharacterSets.pas',
   uTextConverter in 'uTextConverter.pas',
   uAbout in 'uAbout.pas' {FormAbout},
-  uStringsConverter in 'uStringsConverter.pas',
+  uStringsHelper in 'uStringsHelper.pas',
   uASCIIdecorator in 'uASCIIdecorator.pas';
 
 {$R *.res}

@@ -75,7 +75,7 @@ const
 
 implementation
 
-uses uTextConverter, uAbout, uStringsConverter, uASCIIdecorator;
+uses uTextConverter, uAbout, uStringsHelper, uASCIIdecorator;
 
 {$R *.dfm}
 

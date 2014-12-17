@@ -1,4 +1,4 @@
-﻿unit uStringsConverter;
+﻿unit uStringsHelper;
 
 interface
 

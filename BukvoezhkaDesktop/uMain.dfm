@@ -113,10 +113,15 @@ object FormMain: TFormMain
       ShowCaption = False
       TabOrder = 0
       object ButtonClear: TButton
-        Left = 1
-        Top = 1
-        Width = 71
+        AlignWithMargins = True
+        Left = 2
+        Top = 2
+        Width = 69
         Height = 32
+        Margins.Left = 1
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
         Align = alTop
         Caption = #1054#1095#1080#1089#1090#1080#1090#1100
         Font.Charset = DEFAULT_CHARSET
@@ -130,10 +135,15 @@ object FormMain: TFormMain
         OnClick = ButtonClearClick
       end
       object ButtonGo: TButton
-        Left = 1
-        Top = 33
-        Width = 71
-        Height = 74
+        AlignWithMargins = True
+        Left = 2
+        Top = 36
+        Width = 69
+        Height = 70
+        Margins.Left = 1
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
         Align = alClient
         Caption = #1047#1072#1084#1077#1085#1072
         Font.Charset = DEFAULT_CHARSET
@@ -265,17 +275,22 @@ object FormMain: TFormMain
     end
   end
   object PanelControlButtons: TPanel
-    Left = 0
+    AlignWithMargins = True
+    Left = 1
     Top = 110
-    Width = 703
+    Width = 701
     Height = 30
+    Margins.Left = 1
+    Margins.Top = 0
+    Margins.Right = 1
+    Margins.Bottom = 0
     Align = alTop
     Caption = 'PanelControlButtons'
     ShowCaption = False
     TabOrder = 2
     object ButtonAbout: TButton
       AlignWithMargins = True
-      Left = 624
+      Left = 622
       Top = 2
       Width = 75
       Height = 26
@@ -287,20 +302,25 @@ object FormMain: TFormMain
       OnClick = ButtonAboutClick
     end
     object PanelASCIIart: TPanel
-      Left = 249
+      AlignWithMargins = True
+      Left = 254
       Top = 1
-      Width = 372
+      Width = 361
       Height = 28
+      Margins.Left = 4
+      Margins.Top = 0
+      Margins.Right = 4
+      Margins.Bottom = 0
       Align = alClient
       ShowCaption = False
       TabOrder = 1
       object ButtonASCIIart: TButton
         AlignWithMargins = True
-        Left = 11
+        Left = 3
         Top = 2
         Width = 60
         Height = 24
-        Margins.Left = 10
+        Margins.Left = 2
         Margins.Top = 1
         Margins.Right = 1
         Margins.Bottom = 1
@@ -317,7 +337,7 @@ object FormMain: TFormMain
       end
       object ComboBoxASZoom: TComboBox
         AlignWithMargins = True
-        Left = 75
+        Left = 67
         Top = 4
         Width = 30
         Height = 21
@@ -335,7 +355,7 @@ object FormMain: TFormMain
       end
       object ComboBoxASFontName: TComboBox
         AlignWithMargins = True
-        Left = 162
+        Left = 154
         Top = 4
         Width = 80
         Height = 21
@@ -358,7 +378,7 @@ object FormMain: TFormMain
       end
       object CheckBoxASNegative: TCheckBox
         AlignWithMargins = True
-        Left = 304
+        Left = 296
         Top = 4
         Width = 52
         Height = 20
@@ -369,7 +389,7 @@ object FormMain: TFormMain
       end
       object ComboBoxASCharacterSet: TComboBox
         AlignWithMargins = True
-        Left = 248
+        Left = 240
         Top = 4
         Width = 50
         Height = 21
@@ -381,14 +401,15 @@ object FormMain: TFormMain
         OnChange = ButtonASCIIartClick
         Items.Strings = (
           'fF#'
-          #9617#9618#9619
           #1078#1046'#'
-          #20128#19976#20096
-          #19969#19976#20007)
+          #19969#19976#20007
+          #9617#9618#9619
+          #9617#9608
+          #8195#9608)
       end
       object ComboBoxASFontSize: TComboBox
         AlignWithMargins = True
-        Left = 111
+        Left = 103
         Top = 4
         Width = 45
         Height = 21
@@ -408,10 +429,15 @@ object FormMain: TFormMain
       end
     end
     object PanelDecorationBtns: TPanel
-      Left = 1
+      AlignWithMargins = True
+      Left = 2
       Top = 1
       Width = 248
       Height = 28
+      Margins.Left = 1
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
       Align = alLeft
       ShowCaption = False
       TabOrder = 2
@@ -545,7 +571,6 @@ object FormMain: TFormMain
         ParentFont = False
         TabOrder = 5
         OnClick = Transform
-        ExplicitLeft = 83
       end
       object ButtonUnderlines1: TButton
         Tag = 3
@@ -568,7 +593,6 @@ object FormMain: TFormMain
         ParentFont = False
         TabOrder = 6
         OnClick = Transform
-        ExplicitTop = -1
       end
       object ButtonUnderlines2: TButton
         Tag = 4
@@ -613,7 +637,6 @@ object FormMain: TFormMain
         ParentFont = False
         TabOrder = 8
         OnClick = Transform
-        ExplicitLeft = 2
       end
     end
   end
