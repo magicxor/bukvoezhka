@@ -100,20 +100,27 @@ function TASCIIdecorator.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
           SetLength(Densite, 1039 + Length(charactersArr));
         end;
       3:
+        // Китайский/Унифицированные иероглифы ККЯ 4E00—9FCC
+        begin
+          charactersArr := ['@', '#', '*', '+', ':', '.', ','];
+          startChar := 19968;
+          SetLength(Densite, 1039 + Length(charactersArr));
+        end;
+      4:
         // Символы заполнения/Block Elements 2580—259F
         begin
           charactersArr := ['░', '▒', '▓', '█'];
           startChar := -1;
           SetLength(Densite, Length(charactersArr));
         end;
-      4:
+      5:
         // Символы заполнения/Block Elements 2580—259F
         begin
           charactersArr := ['░', '█'];
           startChar := -1;
           SetLength(Densite, Length(charactersArr));
         end;
-      5:
+      6:
         // Символы заполнения/Block Elements 2580—259F
         begin
           charactersArr := [' ', '█'];   // EM пробел
