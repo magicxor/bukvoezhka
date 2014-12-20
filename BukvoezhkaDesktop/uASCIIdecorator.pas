@@ -1,11 +1,11 @@
 ﻿unit uASCIIdecorator;
 
-// Автор алгоритма преобразования картинки в текст - fabiin
+// Автор оригинального алгоритма преобразования картинки в текст - fabiin
 // (2003, http://codes-sources.commentcamarche.net/source/12384-ascii-t-petit-soft-d-ascii-art)
 
 interface
 
-uses Windows, SysUtils, Graphics, Classes;
+uses Windows, Graphics, Classes;
 
 type
   TDen = record // тип символа по цветовому тону
@@ -30,6 +30,8 @@ type
   end;
 
 implementation
+
+uses SysUtils;
 
 procedure TASCIIdecorator.QuickSort(iLo, iHi: integer);
 var

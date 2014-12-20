@@ -54,6 +54,9 @@ type
     CheckBoxASNegative: TCheckBox;
     ComboBoxASCharacterSet: TComboBox;
     ComboBoxASFontSize: TComboBox;
+    PanelFixedGraphicFont: TPanel;
+    ButtonFixedGraphicFont: TButton;
+    ComboBoxFixedGraphicFont: TComboBox;
     procedure ButtonClearClick(Sender: TObject);
     procedure ButtonGoClick(Sender: TObject);
     procedure RadioGroupFontClick(Sender: TObject);
@@ -61,6 +64,7 @@ type
     procedure Transform(Sender: TObject);
     procedure ButtonAboutClick(Sender: TObject);
     procedure ButtonASCIIartClick(Sender: TObject);
+    procedure ButtonFixedGraphicFontClick(Sender: TObject);
   private
 
   public
@@ -75,7 +79,7 @@ const
 
 implementation
 
-uses uTextConverter, uAbout, uStringsHelper, uASCIIdecorator;
+uses uTextConverter, uASCIIdecorator, uFixedASCIIdecorator, uAbout;
 
 {$R *.dfm}
 
@@ -106,6 +110,13 @@ procedure TFormMain.ButtonClearClick(Sender: TObject);
 begin
   FormMain.MemoInput.Text := '';
   FormMain.MemoOutput.Text := '';
+end;
+
+procedure TFormMain.ButtonFixedGraphicFontClick(Sender: TObject);
+begin
+  MemoOutput.WordWrap := False;
+  MemoOutput.ScrollBars := ssBoth;
+  MemoOutput.Text := TFixedASCIIdecorator.MakeFixedASCIIFirstFont(MemoInput.Text);
 end;
 
 procedure TFormMain.ButtonGoClick(Sender: TObject);

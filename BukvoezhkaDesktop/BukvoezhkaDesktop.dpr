@@ -8,7 +8,9 @@ uses
   uTextConverter in 'uTextConverter.pas',
   uAbout in 'uAbout.pas' {FormAbout},
   uStringsHelper in 'uStringsHelper.pas',
-  uASCIIdecorator in 'uASCIIdecorator.pas';
+  uASCIIdecorator in 'uASCIIdecorator.pas',
+  uFixedASCIIartFonts in 'uFixedASCIIartFonts.pas',
+  uFixedASCIIdecorator in 'uFixedASCIIdecorator.pas';
 
 {$R *.res}
 

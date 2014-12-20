@@ -5,8 +5,8 @@ interface
 uses SysUtils;
 
 type
-  ArrArrStr = array of array of string;
   ArrStr = array of string;
+  ArrArrStr = array of ArrStr;
 
 var
   // ========================================= СТАНДАРТ ============================================

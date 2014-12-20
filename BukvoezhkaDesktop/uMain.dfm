@@ -3,7 +3,7 @@ object FormMain: TFormMain
   Top = 0
   Caption = #1041#1091#1082#1074#1086#1077#1078#1082#1072
   ClientHeight = 625
-  ClientWidth = 703
+  ClientWidth = 889
   Color = clBtnFace
   Constraints.MinWidth = 719
   DoubleBuffered = True
@@ -20,7 +20,7 @@ object FormMain: TFormMain
   object PanelInOut: TPanel
     Left = 0
     Top = 140
-    Width = 703
+    Width = 889
     Height = 485
     Align = alClient
     Caption = 'PanelInOut'
@@ -28,17 +28,18 @@ object FormMain: TFormMain
     object SplitterInOut: TSplitter
       Left = 1
       Top = 248
-      Width = 701
+      Width = 887
       Height = 3
       Cursor = crVSplit
       Align = alTop
       ExplicitLeft = -9
       ExplicitTop = 251
+      ExplicitWidth = 701
     end
     object PanelInput: TPanel
       Left = 1
       Top = 1
-      Width = 701
+      Width = 887
       Height = 247
       Align = alTop
       Caption = 'PanelOutput'
@@ -46,7 +47,7 @@ object FormMain: TFormMain
       object MemoInput: TMemo
         Left = 1
         Top = 1
-        Width = 699
+        Width = 885
         Height = 245
         Align = alClient
         Font.Charset = DEFAULT_CHARSET
@@ -62,7 +63,7 @@ object FormMain: TFormMain
     object PanelOutput: TPanel
       Left = 1
       Top = 251
-      Width = 701
+      Width = 887
       Height = 233
       Align = alClient
       Caption = 'PanelOutput'
@@ -70,7 +71,7 @@ object FormMain: TFormMain
       object MemoOutput: TMemo
         Left = 1
         Top = 1
-        Width = 699
+        Width = 885
         Height = 231
         Align = alClient
         Font.Charset = DEFAULT_CHARSET
@@ -87,7 +88,7 @@ object FormMain: TFormMain
   object PanelControl: TPanel
     Left = 0
     Top = 0
-    Width = 703
+    Width = 889
     Height = 110
     Align = alTop
     Caption = 'PanelControl'
@@ -96,7 +97,7 @@ object FormMain: TFormMain
     ShowCaption = False
     TabOrder = 1
     object PanelButons: TPanel
-      Left = 629
+      Left = 815
       Top = 1
       Width = 73
       Height = 108
@@ -150,7 +151,7 @@ object FormMain: TFormMain
         Font.Color = clWindowText
         Font.Height = -13
         Font.Name = 'Tahoma'
-        Font.Style = []
+        Font.Style = [fsBold]
         Font.Quality = fqClearTypeNatural
         ParentFont = False
         TabOrder = 1
@@ -160,7 +161,7 @@ object FormMain: TFormMain
     object ScrollBoxGroupMethod: TScrollBox
       Left = 1
       Top = 1
-      Width = 533
+      Width = 719
       Height = 108
       Align = alClient
       BorderStyle = bsNone
@@ -171,7 +172,7 @@ object FormMain: TFormMain
         AlignWithMargins = True
         Left = 3
         Top = 3
-        Width = 527
+        Width = 713
         Height = 102
         Align = alClient
         Caption = #1052#1077#1090#1086#1076' '#1079#1072#1084#1077#1085#1099
@@ -204,7 +205,7 @@ object FormMain: TFormMain
       end
     end
     object PanelFontSettings: TPanel
-      Left = 534
+      Left = 720
       Top = 1
       Width = 95
       Height = 108
@@ -278,7 +279,7 @@ object FormMain: TFormMain
     AlignWithMargins = True
     Left = 1
     Top = 110
-    Width = 701
+    Width = 887
     Height = 30
     Margins.Left = 1
     Margins.Top = 0
@@ -290,12 +291,14 @@ object FormMain: TFormMain
     TabOrder = 2
     object ButtonAbout: TButton
       AlignWithMargins = True
-      Left = 622
-      Top = 2
+      Left = 809
+      Top = 1
       Width = 75
-      Height = 26
-      Margins.Top = 1
-      Margins.Bottom = 1
+      Height = 28
+      Margins.Left = 2
+      Margins.Top = 0
+      Margins.Right = 2
+      Margins.Bottom = 0
       Align = alRight
       Caption = #1054' '#1087#1088#1086#1075#1088#1072#1084#1084#1077
       TabOrder = 0
@@ -303,13 +306,13 @@ object FormMain: TFormMain
     end
     object PanelASCIIart: TPanel
       AlignWithMargins = True
-      Left = 254
+      Left = 255
       Top = 1
-      Width = 361
+      Width = 360
       Height = 28
-      Margins.Left = 4
+      Margins.Left = 2
       Margins.Top = 0
-      Margins.Right = 4
+      Margins.Right = 2
       Margins.Bottom = 0
       Align = alClient
       ShowCaption = False
@@ -380,10 +383,10 @@ object FormMain: TFormMain
         AlignWithMargins = True
         Left = 296
         Top = 4
-        Width = 52
+        Width = 57
         Height = 20
         Align = alLeft
-        Caption = #1053#1077#1075#1072#1090'.'
+        Caption = #1048#1085#1074#1077#1088#1090'.'
         TabOrder = 3
         OnClick = ButtonASCIIartClick
       end
@@ -431,13 +434,13 @@ object FormMain: TFormMain
     end
     object PanelDecorationBtns: TPanel
       AlignWithMargins = True
-      Left = 2
+      Left = 3
       Top = 1
       Width = 248
       Height = 28
-      Margins.Left = 1
+      Margins.Left = 2
       Margins.Top = 0
-      Margins.Right = 0
+      Margins.Right = 2
       Margins.Bottom = 0
       Align = alLeft
       ShowCaption = False
@@ -638,6 +641,54 @@ object FormMain: TFormMain
         ParentFont = False
         TabOrder = 8
         OnClick = Transform
+      end
+    end
+    object PanelFixedGraphicFont: TPanel
+      AlignWithMargins = True
+      Left = 619
+      Top = 1
+      Width = 186
+      Height = 28
+      Margins.Left = 2
+      Margins.Top = 0
+      Margins.Right = 2
+      Margins.Bottom = 0
+      Align = alRight
+      TabOrder = 3
+      object ButtonFixedGraphicFont: TButton
+        Left = 1
+        Top = 1
+        Width = 100
+        Height = 26
+        Margins.Left = 1
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
+        Align = alLeft
+        Caption = #1060#1080#1082#1089'. ASCII-art'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        OnClick = ButtonFixedGraphicFontClick
+      end
+      object ComboBoxFixedGraphicFont: TComboBox
+        AlignWithMargins = True
+        Left = 104
+        Top = 4
+        Width = 78
+        Height = 21
+        Align = alClient
+        Style = csDropDownList
+        ItemIndex = 0
+        TabOrder = 1
+        Text = '1st font'
+        Items.Strings = (
+          '1st font'
+          '2ch tools font')
       end
     end
   end
