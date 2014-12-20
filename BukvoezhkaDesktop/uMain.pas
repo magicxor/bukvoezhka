@@ -3,19 +3,8 @@
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls;
-
-{$IFDEF DEBUG}
-// При дебаге ничего не выкидываем.
-{$ELSE}
-// Директивы для уменьшения размера *.exe:
-{$SETPEFLAGS IMAGE_FILE_RELOCS_STRIPPED or IMAGE_FILE_DEBUG_STRIPPED or
-  IMAGE_FILE_LINE_NUMS_STRIPPED or IMAGE_FILE_LOCAL_SYMS_STRIPPED or
-  IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP or IMAGE_FILE_NET_RUN_FROM_SWAP}
-{$WEAKLINKRTTI ON}
-{$RTTI EXPLICIT METHODS([]) PROPERTIES([]) FIELDS([])}
-{$ENDIF}
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls,
+  ExtCtrls;
 
 type
   TFormMain = class(TForm)
@@ -74,9 +63,6 @@ type
 var
   FormMain: TFormMain;
 
-const
-  FontNames: array of string = ['Tahoma', 'Segoe UI', 'Lucida Console' { ,'Universalia' } ];
-
 implementation
 
 uses uTextConverter, uASCIIdecorator, uFixedASCIIdecorator, uAbout;
@@ -99,6 +85,9 @@ begin
     StrToInt(ComboBoxASFontSize.Items[ComboBoxASFontSize.ItemIndex]));
   //
   FreeAndNil(ASCIIdecorator);
+  //
+  MemoOutput.SelectAll;
+  MemoOutput.CopyToClipboard;
 end;
 
 procedure TFormMain.ButtonAboutClick(Sender: TObject);
@@ -117,6 +106,8 @@ begin
   MemoOutput.WordWrap := False;
   MemoOutput.ScrollBars := ssBoth;
   MemoOutput.Text := TFixedASCIIdecorator.MakeFixedASCIIFirstFont(MemoInput.Text);
+  MemoOutput.SelectAll;
+  MemoOutput.CopyToClipboard;
 end;
 
 procedure TFormMain.ButtonGoClick(Sender: TObject);
@@ -173,8 +164,8 @@ end;
 
 procedure TFormMain.RadioGroupFontClick(Sender: TObject);
 begin
-  MemoInput.Font.Name := FontNames[RadioGroupFont.ItemIndex];
-  MemoOutput.Font.Name := FontNames[RadioGroupFont.ItemIndex];
+  MemoInput.Font.Name := RadioGroupFont.Items[RadioGroupFont.ItemIndex];
+  MemoOutput.Font.Name := RadioGroupFont.Items[RadioGroupFont.ItemIndex];
 end;
 
 procedure TFormMain.Transform(Sender: TObject);

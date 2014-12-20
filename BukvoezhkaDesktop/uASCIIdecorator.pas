@@ -19,13 +19,13 @@ type
   var
     Densite: array of TDen; // Массив символов со значениями их яркости
     procedure QuickSort(iLo, iHi: integer);
+    function MakeASCIIfromBitmap(SrcBitmap: TBitmap; DonorFont: string = 'Lucida Console';
+      contrast: integer = 255; zoom: integer = 0; IsNegative: boolean = false;
+      CharacterSet: Byte = 0): string;
   public
     // contrast 247-255
-    function MakeASCIIfromBitmap(SrcBitmap: TBitmap; DonorFont: string = 'Lucida Console';
-      contrast: integer = 255; zoom: integer = 0; negative: boolean = false;
-      CharacterSet: Byte = 0): string;
     function MakeASCIIfromText(SrcText: string; DonorFont: string = 'Lucida Console';
-      contrast: integer = 255; zoom: integer = 0; negative: boolean = false; CharacterSet: Byte = 0;
+      contrast: integer = 255; zoom: integer = 0; IsNegative: boolean = false; CharacterSet: Byte = 0;
       RenderFontSize: integer = 100): string;
   end;
 
@@ -68,7 +68,7 @@ end;
 
 function TASCIIdecorator.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
   DonorFont: string = 'Lucida Console'; contrast: integer = 255; zoom: integer = 0;
-  negative: boolean = false; CharacterSet: Byte = 0): string;
+  IsNegative: boolean = false; CharacterSet: Byte = 0): string;
 
   procedure FaireTblDensite; // Создаем таблицу Плотности
   var
@@ -244,7 +244,7 @@ begin
       if MoyCol < 0 then
         MoyCol := 0;
       // Негатив (инвертировать цвета):
-      if negative then
+      if IsNegative then
         MoyCol := 255 - MoyCol;
 
       // Вычислить конечную плотность (отношение 255 к 95)
@@ -263,7 +263,7 @@ begin
 end;
 
 function TASCIIdecorator.MakeASCIIfromText(SrcText: string; DonorFont: string = 'Lucida Console';
-  contrast: integer = 255; zoom: integer = 0; negative: boolean = false; CharacterSet: Byte = 0;
+  contrast: integer = 255; zoom: integer = 0; IsNegative: boolean = false; CharacterSet: Byte = 0;
   RenderFontSize: integer = 100): string;
 var
   TmpBitmap: TBitmap;
@@ -306,7 +306,7 @@ begin
     TmpRect := TmpBitmap.Canvas.ClipRect;
     DrawText(TmpBitmap.Canvas.Handle, PChar(SrcText), -1, TmpRect, DT_LEFT);
     // Делаем из неё ASCII art
-    Result := MakeASCIIfromBitmap(TmpBitmap, DonorFont, contrast, zoom, negative, CharacterSet);
+    Result := MakeASCIIfromBitmap(TmpBitmap, DonorFont, contrast, zoom, IsNegative, CharacterSet);
     //
     FreeAndNil(Strs);
     FreeAndNil(TmpBitmap);
