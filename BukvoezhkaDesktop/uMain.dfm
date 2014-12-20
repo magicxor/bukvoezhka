@@ -252,9 +252,9 @@ object FormMain: TFormMain
           Align = alClient
           AutoDropDown = True
           Style = csDropDownList
-          ItemIndex = 0
+          ItemIndex = 2
           TabOrder = 0
-          Text = '8'
+          Text = '12'
           OnChange = ComboBoxFontSizeChange
           Items.Strings = (
             '8'
@@ -419,9 +419,9 @@ object FormMain: TFormMain
         Height = 21
         Align = alLeft
         Style = csDropDownList
-        ItemIndex = 3
+        ItemIndex = 4
         TabOrder = 5
-        Text = '120'
+        Text = '140'
         OnChange = ButtonASCIIartClick
         Items.Strings = (
           '60'
