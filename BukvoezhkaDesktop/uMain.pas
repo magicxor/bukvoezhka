@@ -105,7 +105,13 @@ procedure TFormMain.ButtonFixedGraphicFontClick(Sender: TObject);
 begin
   MemoOutput.WordWrap := False;
   MemoOutput.ScrollBars := ssBoth;
-  MemoOutput.Text := TFixedASCIIdecorator.MakeFixedASCIIFirstFont(MemoInput.Text);
+  case ComboBoxFixedGraphicFont.ItemIndex of
+    0:
+      MemoOutput.Text := TFixedASCIIdecorator.MakeFixedASCIIFirstFont(MemoInput.Text);
+    1:
+      begin
+      end;
+  end;
   MemoOutput.SelectAll;
   MemoOutput.CopyToClipboard;
 end;
