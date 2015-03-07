@@ -12,5 +12,8 @@
 - Windows XP SP3 и выше;
 - Android 4.2 и выше.
 
-Donate / Пожертвования:
-410011882837351 - Яндекс.Деньги
+### Пожертвования / Donate:
+
+[Яндекс.Деньги / Yandex.Money](https://money.yandex.ru/direct-payment.xml?_openstat=template%3Bmenu%3Bp2p): 410011882837351
+
+[КИВИ / QIWI](https://qiwi.ru/transfer/email.action): npravdin@gmail.com
