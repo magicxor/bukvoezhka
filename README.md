@@ -11,12 +11,12 @@
 - Android 4.2 и выше.
 
 ### Скриншоты
-![Screenshot1](http://habrastorage.org/files/f57/911/5b7/f579115b7c6c44b4a68d60b8becae635.png)
-![Screenshot2](http://habrastorage.org/files/a20/ce3/476/a20ce34763b84877b451efd710b1aba5.png)
-![Screenshot3](http://habrastorage.org/files/f07/4bd/808/f074bd8083d344cabb1e3ccf9d1629bc.png)
-![Screenshot4](http://habrastorage.org/files/59c/f23/5aa/59cf235aaf154e808a2517c85ff0daae.png)
-![Screenshot5](http://habrastorage.org/files/337/dfd/2ee/337dfd2ee687419e8fd33b5caed725e5.png)
-![Screenshot6](http://habrastorage.org/files/671/f8a/8f1/671f8a8f14704b958c8314f06cb59f08.png)
+![Screenshot1](http://habrastorage.org/files/f07/4bd/808/f074bd8083d344cabb1e3ccf9d1629bc.png)
+![Screenshot2](http://habrastorage.org/files/59c/f23/5aa/59cf235aaf154e808a2517c85ff0daae.png)
+![Screenshot3](http://habrastorage.org/files/337/dfd/2ee/337dfd2ee687419e8fd33b5caed725e5.png)
+![Screenshot4](http://habrastorage.org/files/671/f8a/8f1/671f8a8f14704b958c8314f06cb59f08.png)
+![Screenshot5](http://habrastorage.org/files/f57/911/5b7/f579115b7c6c44b4a68d60b8becae635.png)
+![Screenshot6](http://habrastorage.org/files/a20/ce3/476/a20ce34763b84877b451efd710b1aba5.png)
 
 ### Пожертвования / Donate:
 
