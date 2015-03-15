@@ -109,8 +109,7 @@ begin
     0:
       MemoOutput.Text := TFixedASCIIdecorator.MakeFixedASCIIFirstFont(MemoInput.Text);
     1:
-      begin
-      end;
+      MemoOutput.Text := TFixedASCIIdecorator.MakeFixedASCII2chToolsFont(MemoInput.Text);
   end;
   MemoOutput.SelectAll;
   MemoOutput.CopyToClipboard;

@@ -11,7 +11,7 @@ type
       SrcSet, DestASCIIFontSet: ArrArrStr): string;
   public
     class function MakeFixedASCIIFirstFont(Src: string): string;
-    // class function MakeFixedASCII2chToolsFont(Src: string): string;
+    class function MakeFixedASCII2chToolsFont(Src: string): string;
   end;
 
 implementation
@@ -122,6 +122,14 @@ begin
     EN_Standard_Small + Standard_Numbers + Standard_Punctuation + [[' ']],
     C_First_Font_RU + C_First_Font_RU + C_First_Font_EN + C_First_Font_EN + C_First_Font_Numbers +
     C_First_Font_Punctuation + C_First_Font_WhiteSpace);
+end;
+
+class function TFixedASCIIdecorator.MakeFixedASCII2chToolsFont(Src: string): string;
+begin
+  Result := MakeFixedASCIIfromText(Src, RU_Standard_Big + RU_Standard_Small + EN_Standard_Big +
+    EN_Standard_Small + Standard_Numbers + Standard_Punctuation + [[' ']],
+    C_2chtools_font_RU + C_2chtools_font_RU + C_2chtools_font_EN + C_2chtools_font_EN +
+    C_2chtools_font_Numbers + C_2chtools_font_Punctuation + C_2chtools_font_WhiteSpace);
 end;
 
 end.

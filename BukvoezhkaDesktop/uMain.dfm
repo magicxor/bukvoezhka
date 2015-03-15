@@ -319,7 +319,7 @@ object FormMain: TFormMain
       TabOrder = 1
       object ButtonASCIIart: TButton
         AlignWithMargins = True
-        Left = 3
+        Left = 298
         Top = 2
         Width = 60
         Height = 24
@@ -327,7 +327,7 @@ object FormMain: TFormMain
         Margins.Top = 1
         Margins.Right = 1
         Margins.Bottom = 1
-        Align = alLeft
+        Align = alRight
         Caption = 'ASCII-art'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -337,10 +337,11 @@ object FormMain: TFormMain
         ParentFont = False
         TabOrder = 0
         OnClick = ButtonASCIIartClick
+        ExplicitLeft = 3
       end
       object ComboBoxASZoom: TComboBox
         AlignWithMargins = True
-        Left = 67
+        Left = 4
         Top = 4
         Width = 30
         Height = 21
@@ -355,10 +356,11 @@ object FormMain: TFormMain
           '2'
           '3'
           '4')
+        ExplicitLeft = 67
       end
       object ComboBoxASFontName: TComboBox
         AlignWithMargins = True
-        Left = 154
+        Left = 91
         Top = 4
         Width = 80
         Height = 21
@@ -378,10 +380,11 @@ object FormMain: TFormMain
           'Verdana'
           'Arial Unicode MS'
           'Tahoma')
+        ExplicitLeft = 154
       end
       object CheckBoxASNegative: TCheckBox
         AlignWithMargins = True
-        Left = 296
+        Left = 233
         Top = 4
         Width = 57
         Height = 20
@@ -389,10 +392,11 @@ object FormMain: TFormMain
         Caption = #1048#1085#1074#1077#1088#1090'.'
         TabOrder = 3
         OnClick = ButtonASCIIartClick
+        ExplicitLeft = 296
       end
       object ComboBoxASCharacterSet: TComboBox
         AlignWithMargins = True
-        Left = 240
+        Left = 177
         Top = 4
         Width = 50
         Height = 21
@@ -410,10 +414,11 @@ object FormMain: TFormMain
           #9617#9618#9619
           #9617#9608
           #8195#9608)
+        ExplicitLeft = 240
       end
       object ComboBoxASFontSize: TComboBox
         AlignWithMargins = True
-        Left = 103
+        Left = 40
         Top = 4
         Width = 45
         Height = 21
@@ -430,6 +435,7 @@ object FormMain: TFormMain
           '120'
           '140'
           '160')
+        ExplicitLeft = 103
       end
     end
     object PanelDecorationBtns: TPanel
@@ -656,7 +662,7 @@ object FormMain: TFormMain
       Align = alRight
       TabOrder = 3
       object ButtonFixedGraphicFont: TButton
-        Left = 1
+        Left = 85
         Top = 1
         Width = 100
         Height = 26
@@ -664,7 +670,7 @@ object FormMain: TFormMain
         Margins.Top = 1
         Margins.Right = 1
         Margins.Bottom = 1
-        Align = alLeft
+        Align = alRight
         Caption = #1060#1080#1082#1089'. ASCII-art'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -674,10 +680,11 @@ object FormMain: TFormMain
         ParentFont = False
         TabOrder = 0
         OnClick = ButtonFixedGraphicFontClick
+        ExplicitLeft = 1
       end
       object ComboBoxFixedGraphicFont: TComboBox
         AlignWithMargins = True
-        Left = 104
+        Left = 4
         Top = 4
         Width = 78
         Height = 21
@@ -689,6 +696,7 @@ object FormMain: TFormMain
         Items.Strings = (
           '1st font'
           '2ch tools font')
+        ExplicitLeft = 104
       end
     end
   end
