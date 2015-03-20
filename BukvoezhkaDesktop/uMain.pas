@@ -4,22 +4,16 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls,
-  ExtCtrls;
+  ExtCtrls, Vcl.ComCtrls, Vcl.ImgList, Vcl.Buttons;
 
 type
   TFormMain = class(TForm)
     MemoInput: TMemo;
-    RadioGroupMethod: TRadioGroup;
-    ButtonGo: TButton;
-    ButtonClear: TButton;
     PanelOutput: TPanel;
     MemoOutput: TMemo;
     PanelInput: TPanel;
     PanelInOut: TPanel;
-    PanelControl: TPanel;
     SplitterInOut: TSplitter;
-    PanelButons: TPanel;
-    ScrollBoxGroupMethod: TScrollBox;
     RadioGroupFont: TRadioGroup;
     PanelFontSettings: TPanel;
     ComboBoxFontSize: TComboBox;
@@ -34,28 +28,47 @@ type
     ButtonDoubleU1: TButton;
     ButtonOverlines2: TButton;
     ButtonOverlines1: TButton;
-    ButtonAbout: TButton;
-    PanelASCIIart: TPanel;
-    ButtonASCIIart: TButton;
     ComboBoxASZoom: TComboBox;
     ComboBoxASFontName: TComboBox;
-    PanelDecorationBtns: TPanel;
     CheckBoxASNegative: TCheckBox;
     ComboBoxASCharacterSet: TComboBox;
     ComboBoxASFontSize: TComboBox;
-    PanelFixedGraphicFont: TPanel;
-    ButtonFixedGraphicFont: TButton;
     ComboBoxFixedGraphicFont: TComboBox;
+    PageControlMain: TPageControl;
+    TabSheetSymbolsReplace: TTabSheet;
+    TabSheetTextDecorate: TTabSheet;
+    TabSheetGenericASCIIart: TTabSheet;
+    TabSheetFixedASCIIart: TTabSheet;
+    RadioGroupMethod: TRadioGroup;
+    PanelHeadControls: TPanel;
+    PanelViewFont: TPanel;
+    GroupBoxUnderline: TGroupBox;
+    GroupBoxStrikethrough: TGroupBox;
+    GroupBoxDoubleU: TGroupBox;
+    GroupBoxOverline: TGroupBox;
+    LabelASZoom: TLabel;
+    LabelSourceFontName: TLabel;
+    LabelSourceFontSize: TLabel;
+    GroupBoxSourceFont: TGroupBox;
+    GroupBoxRendering: TGroupBox;
+    LabelASCharacterSet: TLabel;
+    GroupBoxFixedFont: TGroupBox;
+    LabelFixedFontName: TLabel;
+    CheckBoxFFInvertColors: TCheckBox;
+    BitBtnGo: TBitBtn;
+    BitBtnClear: TBitBtn;
+    BitBtnAbout: TBitBtn;
     procedure ButtonClearClick(Sender: TObject);
-    procedure ButtonGoClick(Sender: TObject);
+    procedure ButtonSymbolsReplaceClick(Sender: TObject);
+    procedure AnyButtonGoClick(Sender: TObject);
     procedure RadioGroupFontClick(Sender: TObject);
     procedure ComboBoxFontSizeChange(Sender: TObject);
     procedure Transform(Sender: TObject);
     procedure ButtonAboutClick(Sender: TObject);
     procedure ButtonASCIIartClick(Sender: TObject);
     procedure ButtonFixedGraphicFontClick(Sender: TObject);
-  private
-
+  private const
+    version = '1.1';
   public
     { Public declarations }
   end;
@@ -107,15 +120,17 @@ begin
   MemoOutput.ScrollBars := ssBoth;
   case ComboBoxFixedGraphicFont.ItemIndex of
     0:
-      MemoOutput.Text := TFixedASCIIdecorator.MakeFixedASCIIFirstFont(MemoInput.Text);
+      MemoOutput.Text := TFixedASCIIdecorator.MakeFixedASCIIFirstFont(MemoInput.Text,
+        CheckBoxFFInvertColors.Checked);
     1:
-      MemoOutput.Text := TFixedASCIIdecorator.MakeFixedASCII2chToolsFont(MemoInput.Text);
+      MemoOutput.Text := TFixedASCIIdecorator.MakeFixedASCII2chToolsFont(MemoInput.Text,
+        CheckBoxFFInvertColors.Checked);
   end;
   MemoOutput.SelectAll;
   MemoOutput.CopyToClipboard;
 end;
 
-procedure TFormMain.ButtonGoClick(Sender: TObject);
+procedure TFormMain.ButtonSymbolsReplaceClick(Sender: TObject);
   procedure GoTransform(TransformMethod: Integer);
   begin
     case TransformMethod of
@@ -159,6 +174,18 @@ begin
   GoTransform(RadioGroupMethod.ItemIndex);
   MemoOutput.SelectAll;
   MemoOutput.CopyToClipboard;
+end;
+
+procedure TFormMain.AnyButtonGoClick(Sender: TObject);
+begin
+  case PageControlMain.ActivePageIndex of
+    0:
+      ButtonSymbolsReplaceClick(Sender);
+    2:
+      ButtonASCIIartClick(Sender);
+    3:
+      ButtonFixedGraphicFontClick(Sender);
+  end;
 end;
 
 procedure TFormMain.ComboBoxFontSizeChange(Sender: TObject);

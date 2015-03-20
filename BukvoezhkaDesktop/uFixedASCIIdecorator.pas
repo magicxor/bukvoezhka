@@ -10,8 +10,8 @@ type
     class function MakeFixedASCIIfromText(InputTxt: string;
       SrcSet, DestASCIIFontSet: ArrArrStr): string;
   public
-    class function MakeFixedASCIIFirstFont(Src: string): string;
-    class function MakeFixedASCII2chToolsFont(Src: string): string;
+    class function MakeFixedASCIIFirstFont(Src: string; IsNegative: boolean = false): string;
+    class function MakeFixedASCII2chToolsFont(Src: string; IsNegative: boolean = false): string;
   end;
 
 implementation
@@ -116,20 +116,53 @@ begin
     Result := '';
 end;
 
-class function TFixedASCIIdecorator.MakeFixedASCIIFirstFont(Src: string): string;
+function InvertSet(ASet: ArrArrStr): ArrArrStr;
+var
+  i, j, k: Integer;
 begin
-  Result := MakeFixedASCIIfromText(Src, RU_Standard_Big + RU_Standard_Small + EN_Standard_Big +
-    EN_Standard_Small + Standard_Numbers + Standard_Punctuation + [[' ']],
-    C_First_Font_RU + C_First_Font_RU + C_First_Font_EN + C_First_Font_EN + C_First_Font_Numbers +
-    C_First_Font_Punctuation + C_First_Font_WhiteSpace);
+  Result := ASet;
+  for i := low(Result) to high(Result) do
+    for j := low(Result[i]) to high(Result[i]) do
+      for k := low(Result[i][j]) to high(Result[i][j]) do
+        if Result[i][j][k] = '░' then
+          Result[i][j][k] := '█'
+        else
+          if Result[i][j][k] = '█' then
+            Result[i][j][k] := '░';
 end;
 
-class function TFixedASCIIdecorator.MakeFixedASCII2chToolsFont(Src: string): string;
+class function TFixedASCIIdecorator.MakeFixedASCIIFirstFont(Src: string;
+  IsNegative: boolean = false): string;
 begin
-  Result := MakeFixedASCIIfromText(Src, RU_Standard_Big + RU_Standard_Small + EN_Standard_Big +
-    EN_Standard_Small + Standard_Numbers + Standard_Punctuation + [[' ']],
-    C_2chtools_font_RU + C_2chtools_font_RU + C_2chtools_font_EN + C_2chtools_font_EN +
-    C_2chtools_font_Numbers + C_2chtools_font_Punctuation + C_2chtools_font_WhiteSpace);
+  if IsNegative then
+  begin
+    Result := MakeFixedASCIIfromText(Src, RU_Standard_Big + RU_Standard_Small + EN_Standard_Big +
+      EN_Standard_Small + Standard_Numbers + Standard_Punctuation + [[' ']],
+      InvertSet(C_First_Font_RU + C_First_Font_RU + C_First_Font_EN + C_First_Font_EN +
+      C_First_Font_Numbers + C_First_Font_Punctuation + C_First_Font_WhiteSpace));
+  end
+  else
+    Result := MakeFixedASCIIfromText(Src, RU_Standard_Big + RU_Standard_Small + EN_Standard_Big +
+      EN_Standard_Small + Standard_Numbers + Standard_Punctuation + [[' ']],
+      C_First_Font_RU + C_First_Font_RU + C_First_Font_EN + C_First_Font_EN + C_First_Font_Numbers +
+      C_First_Font_Punctuation + C_First_Font_WhiteSpace);
+end;
+
+class function TFixedASCIIdecorator.MakeFixedASCII2chToolsFont(Src: string;
+  IsNegative: boolean = false): string;
+begin
+  if IsNegative then
+  begin
+    Result := MakeFixedASCIIfromText(Src, RU_Standard_Big + RU_Standard_Small + EN_Standard_Big +
+      EN_Standard_Small + Standard_Numbers + Standard_Punctuation + [[' ']],
+      InvertSet(C_2chtools_font_RU + C_2chtools_font_RU + C_2chtools_font_EN + C_2chtools_font_EN +
+      C_2chtools_font_Numbers + C_2chtools_font_Punctuation + C_2chtools_font_WhiteSpace));
+  end
+  else
+    Result := MakeFixedASCIIfromText(Src, RU_Standard_Big + RU_Standard_Small + EN_Standard_Big +
+      EN_Standard_Small + Standard_Numbers + Standard_Punctuation + [[' ']],
+      C_2chtools_font_RU + C_2chtools_font_RU + C_2chtools_font_EN + C_2chtools_font_EN +
+      C_2chtools_font_Numbers + C_2chtools_font_Punctuation + C_2chtools_font_WhiteSpace);
 end;
 
 end.

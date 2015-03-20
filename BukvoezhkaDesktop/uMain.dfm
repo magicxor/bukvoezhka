@@ -4,7 +4,7 @@ object FormMain: TFormMain
   Caption = #1041#1091#1082#1074#1086#1077#1078#1082#1072
   ClientHeight = 625
   ClientWidth = 889
-  Color = clBtnFace
+  Color = clWindow
   Constraints.MinWidth = 719
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -19,9 +19,9 @@ object FormMain: TFormMain
   TextHeight = 13
   object PanelInOut: TPanel
     Left = 0
-    Top = 140
+    Top = 177
     Width = 889
-    Height = 485
+    Height = 448
     Align = alClient
     Caption = 'PanelInOut'
     TabOrder = 0
@@ -64,7 +64,7 @@ object FormMain: TFormMain
       Left = 1
       Top = 251
       Width = 887
-      Height = 233
+      Height = 196
       Align = alClient
       Caption = 'PanelOutput'
       TabOrder = 1
@@ -72,7 +72,7 @@ object FormMain: TFormMain
         Left = 1
         Top = 1
         Width = 885
-        Height = 231
+        Height = 194
         Align = alClient
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -85,618 +85,989 @@ object FormMain: TFormMain
       end
     end
   end
-  object PanelControl: TPanel
+  object PanelHeadControls: TPanel
     Left = 0
     Top = 0
     Width = 889
-    Height = 110
+    Height = 177
     Align = alTop
-    Caption = 'PanelControl'
-    Ctl3D = False
-    ParentCtl3D = False
+    Color = clWindow
+    ParentBackground = False
     ShowCaption = False
     TabOrder = 1
-    object PanelButons: TPanel
-      Left = 815
-      Top = 1
-      Width = 73
-      Height = 108
-      Align = alRight
-      Caption = 'PanelButons'
-      Ctl3D = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentCtl3D = False
-      ParentFont = False
-      ShowCaption = False
-      TabOrder = 0
-      object ButtonClear: TButton
-        AlignWithMargins = True
-        Left = 2
-        Top = 2
-        Width = 69
-        Height = 32
-        Margins.Left = 1
-        Margins.Top = 1
-        Margins.Right = 1
-        Margins.Bottom = 1
-        Align = alTop
-        Caption = #1054#1095#1080#1089#1090#1080#1090#1100
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        Font.Quality = fqClearTypeNatural
-        ParentFont = False
-        TabOrder = 0
-        OnClick = ButtonClearClick
-      end
-      object ButtonGo: TButton
-        AlignWithMargins = True
-        Left = 2
-        Top = 36
-        Width = 69
-        Height = 70
-        Margins.Left = 1
-        Margins.Top = 1
-        Margins.Right = 1
-        Margins.Bottom = 1
-        Align = alClient
-        Caption = #1047#1072#1084#1077#1085#1072
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        Font.Quality = fqClearTypeNatural
-        ParentFont = False
-        TabOrder = 1
-        OnClick = ButtonGoClick
-      end
-    end
-    object ScrollBoxGroupMethod: TScrollBox
+    object PageControlMain: TPageControl
       Left = 1
       Top = 1
-      Width = 719
-      Height = 108
+      Width = 671
+      Height = 175
+      ActivePage = TabSheetSymbolsReplace
       Align = alClient
-      BorderStyle = bsNone
-      Ctl3D = True
-      ParentCtl3D = False
-      TabOrder = 1
-      object RadioGroupMethod: TRadioGroup
-        AlignWithMargins = True
-        Left = 3
-        Top = 3
-        Width = 713
-        Height = 102
-        Align = alClient
-        Caption = #1052#1077#1090#1086#1076' '#1079#1072#1084#1077#1085#1099
-        Columns = 3
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ItemIndex = 6
-        Items.Strings = (
-          'ASCII-'#1089#1086#1074#1084#1077#1089#1090#1080#1084#1099#1081
-          'ASCII + '#1082#1080#1088#1080#1083#1083#1080#1094#1072
-          'Win-1252'
-          'Unicode - PW-'#1089#1086#1074#1084#1077#1089#1090#1080#1084#1099#1081
-          'Unicode - '#1083#1091#1095#1096#1080#1081' (Win7+)'
-          'Unicode - '#1088#1072#1085#1076#1086#1084' (Win7+)'
-          'Unicode - '#1088#1072#1085#1076#1086#1084' (XP+)'
-          'Unicode - '#1087#1077#1088#1077#1074#1077#1088#1085#1091#1090#1100
-          'Unicode - '#1085#1077#1074#1080#1076'. '#1084#1091#1089#1086#1088' v1'
-          'Unicode - '#1085#1077#1074#1080#1076'. '#1084#1091#1089#1086#1088' v2'
-          'Unicode - '#1094#1077#1088#1082#1086#1074#1085#1086#1089#1083#1072#1074'.'
-          'Unicode - '#1085#1072#1076#1089#1090#1088#1086#1095#1085#1099#1081
-          #1041#1045#1047#1053#1054#1043'N'#1052
-          #1047#1072#1076#1086#1084' '#1085#1072#1087#1077#1088#1105#1076
-          #1054#1073#1099#1095#1085#1099#1081)
-        ParentFont = False
-        TabOrder = 0
-        OnClick = ButtonGoClick
-      end
-    end
-    object PanelFontSettings: TPanel
-      Left = 720
-      Top = 1
-      Width = 95
-      Height = 108
-      Align = alRight
-      ShowCaption = False
-      TabOrder = 2
-      object RadioGroupFont: TRadioGroup
-        AlignWithMargins = True
-        Left = 4
-        Top = 2
-        Width = 87
-        Height = 64
-        Margins.Top = 1
-        Margins.Bottom = 1
-        Align = alClient
-        Caption = #1064#1088#1080#1092#1090
-        ItemIndex = 2
-        Items.Strings = (
-          'Tahoma'
-          'Segoe UI'
-          'Lucida Cons.')
-        TabOrder = 0
-        OnClick = RadioGroupFontClick
-      end
-      object GroupBoxFontSize: TGroupBox
-        AlignWithMargins = True
-        Left = 4
-        Top = 68
-        Width = 87
-        Height = 38
-        Margins.Top = 1
-        Margins.Bottom = 1
-        Align = alBottom
-        Caption = #1056#1072#1079#1084#1077#1088
-        TabOrder = 1
-        object ComboBoxFontSize: TComboBox
+      TabOrder = 0
+      object TabSheetSymbolsReplace: TTabSheet
+        Caption = #1047#1072#1084#1077#1085#1072' '#1089#1080#1084#1074#1086#1083#1086#1074
+        object RadioGroupMethod: TRadioGroup
           AlignWithMargins = True
-          Left = 4
-          Top = 14
-          Width = 79
-          Height = 21
-          Margins.Top = 0
-          Margins.Bottom = 0
+          Left = 3
+          Top = 3
+          Width = 657
+          Height = 141
           Align = alClient
-          AutoDropDown = True
-          Style = csDropDownList
-          ItemIndex = 2
-          TabOrder = 0
-          Text = '12'
-          OnChange = ComboBoxFontSizeChange
+          Caption = #1052#1077#1090#1086#1076' '#1079#1072#1084#1077#1085#1099
+          Columns = 3
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ItemIndex = 6
           Items.Strings = (
-            '8'
-            '10'
-            '12'
-            '14'
-            '16'
-            '18'
-            '20'
-            '22'
-            '24'
-            '26'
-            '30'
-            '40'
-            '70'
-            '120')
+            'ASCII-'#1089#1086#1074#1084#1077#1089#1090#1080#1084#1099#1081
+            'ASCII + '#1082#1080#1088#1080#1083#1083#1080#1094#1072
+            'Win-1252'
+            'Unicode - PW-'#1089#1086#1074#1084#1077#1089#1090#1080#1084#1099#1081
+            'Unicode - '#1083#1091#1095#1096#1080#1081' (Win7+)'
+            'Unicode - '#1088#1072#1085#1076#1086#1084' (Win7+)'
+            'Unicode - '#1088#1072#1085#1076#1086#1084' (XP+)'
+            'Unicode - '#1087#1077#1088#1077#1074#1077#1088#1085#1091#1090#1100
+            'Unicode - '#1085#1077#1074#1080#1076'. '#1084#1091#1089#1086#1088' v1'
+            'Unicode - '#1085#1077#1074#1080#1076'. '#1084#1091#1089#1086#1088' v2'
+            'Unicode - '#1094#1077#1088#1082#1086#1074#1085#1086#1089#1083#1072#1074'.'
+            'Unicode - '#1085#1072#1076#1089#1090#1088#1086#1095#1085#1099#1081
+            #1041#1045#1047#1053#1054#1043'N'#1052
+            #1047#1072#1076#1086#1084' '#1085#1072#1087#1077#1088#1105#1076
+            #1054#1073#1099#1095#1085#1099#1081)
+          ParentFont = False
+          TabOrder = 0
+          OnClick = ButtonSymbolsReplaceClick
+        end
+      end
+      object TabSheetTextDecorate: TTabSheet
+        Caption = #1054#1092#1086#1088#1084#1083#1077#1085#1080#1077' '#1090#1077#1082#1089#1090#1072
+        ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 694
+        ExplicitHeight = 0
+        object GroupBoxUnderline: TGroupBox
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 150
+          Height = 141
+          Align = alLeft
+          Caption = #1055#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077
+          TabOrder = 0
+          object ButtonUnderlines2: TButton
+            Tag = 4
+            AlignWithMargins = True
+            Left = 3
+            Top = 48
+            Width = 144
+            Height = 30
+            Margins.Left = 1
+            Margins.Top = 1
+            Margins.Right = 1
+            Margins.Bottom = 1
+            Align = alTop
+            Caption = #1055#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 2'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            WordWrap = True
+            OnClick = Transform
+            ExplicitWidth = 161
+          end
+          object ButtonUnderlines3: TButton
+            Tag = 5
+            AlignWithMargins = True
+            Left = 3
+            Top = 80
+            Width = 144
+            Height = 30
+            Margins.Left = 1
+            Margins.Top = 1
+            Margins.Right = 1
+            Margins.Bottom = 1
+            Align = alTop
+            Caption = #1055#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 3'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            WordWrap = True
+            OnClick = Transform
+            ExplicitWidth = 161
+          end
+          object ButtonUnderlines1: TButton
+            Tag = 3
+            AlignWithMargins = True
+            Left = 3
+            Top = 16
+            Width = 144
+            Height = 30
+            Margins.Left = 1
+            Margins.Top = 1
+            Margins.Right = 1
+            Margins.Bottom = 1
+            Align = alTop
+            Caption = #1055#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 1'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            WordWrap = True
+            OnClick = Transform
+            ExplicitWidth = 161
+          end
+        end
+        object GroupBoxStrikethrough: TGroupBox
+          AlignWithMargins = True
+          Left = 159
+          Top = 3
+          Width = 138
+          Height = 141
+          Align = alLeft
+          Caption = #1047#1072#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077
+          TabOrder = 1
+          ExplicitLeft = 143
+          object ButtonStrikethrough1: TButton
+            Tag = 1
+            AlignWithMargins = True
+            Left = 3
+            Top = 16
+            Width = 132
+            Height = 30
+            Margins.Left = 1
+            Margins.Top = 1
+            Margins.Right = 1
+            Margins.Bottom = 1
+            Align = alTop
+            Caption = #1047#1072#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 1'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            WordWrap = True
+            OnClick = Transform
+            ExplicitWidth = 147
+          end
+          object ButtonStrikethrough2: TButton
+            Tag = 2
+            AlignWithMargins = True
+            Left = 3
+            Top = 48
+            Width = 132
+            Height = 30
+            Margins.Left = 1
+            Margins.Top = 1
+            Margins.Right = 1
+            Margins.Bottom = 1
+            Align = alTop
+            Caption = #1047#1072#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 2'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            WordWrap = True
+            OnClick = Transform
+            ExplicitWidth = 147
+          end
+        end
+        object GroupBoxDoubleU: TGroupBox
+          AlignWithMargins = True
+          Left = 303
+          Top = 3
+          Width = 194
+          Height = 141
+          Align = alLeft
+          Caption = #1044#1074#1086#1081#1085#1086#1077' '#1087#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077
+          TabOrder = 2
+          object ButtonDoubleU1: TButton
+            Tag = 6
+            AlignWithMargins = True
+            Left = 3
+            Top = 16
+            Width = 188
+            Height = 30
+            Margins.Left = 1
+            Margins.Top = 1
+            Margins.Right = 1
+            Margins.Bottom = 1
+            Align = alTop
+            Caption = #1044#1074#1086#1081#1085#1086#1077' '#1087#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 1'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            WordWrap = True
+            OnClick = Transform
+            ExplicitWidth = 172
+          end
+          object ButtonDoubleU2: TButton
+            Tag = 7
+            AlignWithMargins = True
+            Left = 3
+            Top = 48
+            Width = 188
+            Height = 30
+            Margins.Left = 1
+            Margins.Top = 1
+            Margins.Right = 1
+            Margins.Bottom = 1
+            Align = alTop
+            Caption = #1044#1074#1086#1081#1085#1086#1077' '#1087#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 2'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            WordWrap = True
+            OnClick = Transform
+            ExplicitWidth = 172
+          end
+        end
+        object GroupBoxOverline: TGroupBox
+          AlignWithMargins = True
+          Left = 503
+          Top = 3
+          Width = 147
+          Height = 141
+          Align = alLeft
+          Caption = #1053#1072#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077
+          TabOrder = 3
+          ExplicitLeft = 486
+          object ButtonOverlines1: TButton
+            Tag = 8
+            AlignWithMargins = True
+            Left = 3
+            Top = 16
+            Width = 141
+            Height = 30
+            Margins.Left = 1
+            Margins.Top = 1
+            Margins.Right = 1
+            Margins.Bottom = 1
+            Align = alTop
+            Caption = #1053#1072#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 1'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            WordWrap = True
+            OnClick = Transform
+            ExplicitWidth = 161
+          end
+          object ButtonOverlines2: TButton
+            Tag = 9
+            AlignWithMargins = True
+            Left = 3
+            Top = 48
+            Width = 141
+            Height = 30
+            Margins.Left = 1
+            Margins.Top = 1
+            Margins.Right = 1
+            Margins.Bottom = 1
+            Align = alTop
+            Caption = #1053#1072#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 2'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            WordWrap = True
+            OnClick = Transform
+            ExplicitWidth = 161
+          end
+        end
+      end
+      object TabSheetGenericASCIIart: TTabSheet
+        Caption = #1043#1077#1085#1077#1088#1072#1094#1080#1103' ASCII art-'#1096#1088#1080#1092#1090#1072
+        ImageIndex = 2
+        object GroupBoxSourceFont: TGroupBox
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 225
+          Height = 141
+          Align = alLeft
+          Caption = #1048#1089#1093#1086#1076#1085#1099#1081' '#1096#1088#1080#1092#1090
+          TabOrder = 0
+          object LabelSourceFontName: TLabel
+            Left = 11
+            Top = 17
+            Width = 85
+            Height = 21
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = #1064#1088#1080#1092#1090':'
+          end
+          object LabelSourceFontSize: TLabel
+            Left = 11
+            Top = 44
+            Width = 85
+            Height = 21
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = #1056#1072#1079#1084#1077#1088' '#1096#1088#1080#1092#1090#1072':'
+            Transparent = False
+          end
+          object ComboBoxASFontName: TComboBox
+            AlignWithMargins = True
+            Left = 102
+            Top = 17
+            Width = 110
+            Height = 21
+            Style = csDropDownList
+            ItemIndex = 1
+            TabOrder = 0
+            Text = 'Lucida Console'
+            OnChange = ButtonASCIIartClick
+            Items.Strings = (
+              'Courier New'
+              'Lucida Console'
+              'Consolas'
+              'Calibri'
+              'Times New Roman'
+              'Segoe UI'
+              'Verdana'
+              'Arial Unicode MS'
+              'Tahoma')
+          end
+          object ComboBoxASFontSize: TComboBox
+            AlignWithMargins = True
+            Left = 102
+            Top = 44
+            Width = 110
+            Height = 21
+            Style = csDropDownList
+            ItemIndex = 4
+            TabOrder = 1
+            Text = '140'
+            OnChange = ButtonASCIIartClick
+            Items.Strings = (
+              '60'
+              '80'
+              '100'
+              '120'
+              '140'
+              '160')
+          end
+        end
+        object GroupBoxRendering: TGroupBox
+          AlignWithMargins = True
+          Left = 234
+          Top = 3
+          Width = 161
+          Height = 141
+          Align = alLeft
+          Caption = #1056#1077#1085#1076#1077#1088#1080#1085#1075
+          TabOrder = 1
+          object LabelASZoom: TLabel
+            Left = 11
+            Top = 17
+            Width = 78
+            Height = 21
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = #1059#1074#1077#1083#1080#1095#1077#1085#1080#1077':'
+          end
+          object LabelASCharacterSet: TLabel
+            Left = 11
+            Top = 44
+            Width = 78
+            Height = 21
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = #1053#1072#1073#1086#1088' '#1079#1085#1072#1082#1086#1074':'
+          end
+          object CheckBoxASNegative: TCheckBox
+            AlignWithMargins = True
+            Left = 11
+            Top = 71
+            Width = 134
+            Height = 16
+            Caption = #1048#1085#1074#1077#1088#1090#1080#1088#1086#1074#1072#1090#1100' '#1094#1074#1077#1090#1072
+            TabOrder = 0
+            OnClick = ButtonASCIIartClick
+          end
+          object ComboBoxASCharacterSet: TComboBox
+            AlignWithMargins = True
+            Left = 95
+            Top = 44
+            Width = 50
+            Height = 21
+            Style = csDropDownList
+            ItemIndex = 0
+            TabOrder = 1
+            Text = 'fF#'
+            OnChange = ButtonASCIIartClick
+            Items.Strings = (
+              'fF#'
+              #1078#1046'#'
+              #19969#19976#20007
+              #19969#19976#20007#20022
+              #9617#9618#9619
+              #9617#9608
+              #8195#9608)
+          end
+          object ComboBoxASZoom: TComboBox
+            AlignWithMargins = True
+            Left = 95
+            Top = 17
+            Width = 50
+            Height = 21
+            Style = csDropDownList
+            ItemIndex = 0
+            TabOrder = 2
+            Text = '1'
+            OnChange = ButtonASCIIartClick
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4')
+          end
+        end
+      end
+      object TabSheetFixedASCIIart: TTabSheet
+        Caption = #1060#1080#1082#1089#1080#1088#1086#1074#1072#1085#1085#1099#1081' ASCII art-'#1096#1088#1080#1092#1090
+        ImageIndex = 3
+        object GroupBoxFixedFont: TGroupBox
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 246
+          Height = 141
+          Align = alLeft
+          Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080' '#1096#1088#1080#1092#1090#1072
+          TabOrder = 0
+          object LabelFixedFontName: TLabel
+            Left = 11
+            Top = 17
+            Width = 54
+            Height = 21
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = #1064#1088#1080#1092#1090':'
+          end
+          object ComboBoxFixedGraphicFont: TComboBox
+            AlignWithMargins = True
+            Left = 82
+            Top = 17
+            Width = 151
+            Height = 21
+            Style = csDropDownList
+            ItemIndex = 0
+            TabOrder = 0
+            Text = '1st font'
+            OnChange = ButtonFixedGraphicFontClick
+            Items.Strings = (
+              '1st font'
+              '2ch tools font')
+          end
+          object CheckBoxFFInvertColors: TCheckBox
+            Left = 11
+            Top = 44
+            Width = 222
+            Height = 17
+            Caption = #1048#1085#1074#1077#1088#1090#1080#1088#1086#1074#1072#1090#1100' '#1094#1074#1077#1090#1072
+            TabOrder = 1
+            OnClick = ButtonFixedGraphicFontClick
+          end
         end
       end
     end
-  end
-  object PanelControlButtons: TPanel
-    AlignWithMargins = True
-    Left = 1
-    Top = 110
-    Width = 887
-    Height = 30
-    Margins.Left = 1
-    Margins.Top = 0
-    Margins.Right = 1
-    Margins.Bottom = 0
-    Align = alTop
-    Caption = 'PanelControlButtons'
-    ShowCaption = False
-    TabOrder = 2
-    object ButtonAbout: TButton
-      AlignWithMargins = True
-      Left = 809
+    object PanelViewFont: TPanel
+      Left = 672
       Top = 1
-      Width = 75
-      Height = 28
-      Margins.Left = 2
-      Margins.Top = 0
-      Margins.Right = 2
-      Margins.Bottom = 0
+      Width = 216
+      Height = 175
       Align = alRight
-      Caption = #1054' '#1087#1088#1086#1075#1088#1072#1084#1084#1077
-      TabOrder = 0
-      OnClick = ButtonAboutClick
-    end
-    object PanelASCIIart: TPanel
-      AlignWithMargins = True
-      Left = 255
-      Top = 1
-      Width = 360
-      Height = 28
-      Margins.Left = 2
-      Margins.Top = 0
-      Margins.Right = 2
-      Margins.Bottom = 0
-      Align = alClient
+      Color = clWindow
+      ParentBackground = False
       ShowCaption = False
       TabOrder = 1
-      object ButtonASCIIart: TButton
+      object PanelControlButtons: TPanel
         AlignWithMargins = True
-        Left = 298
-        Top = 2
-        Width = 60
-        Height = 24
-        Margins.Left = 2
-        Margins.Top = 1
-        Margins.Right = 1
-        Margins.Bottom = 1
-        Align = alRight
-        Caption = 'ASCII-art'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 0
-        OnClick = ButtonASCIIartClick
-        ExplicitLeft = 3
-      end
-      object ComboBoxASZoom: TComboBox
-        AlignWithMargins = True
-        Left = 4
-        Top = 4
-        Width = 30
-        Height = 21
-        Align = alLeft
-        Style = csDropDownList
-        ItemIndex = 0
-        TabOrder = 1
-        Text = '1'
-        OnChange = ButtonASCIIartClick
-        Items.Strings = (
-          '1'
-          '2'
-          '3'
-          '4')
-        ExplicitLeft = 67
-      end
-      object ComboBoxASFontName: TComboBox
-        AlignWithMargins = True
-        Left = 91
-        Top = 4
-        Width = 80
-        Height = 21
-        Align = alLeft
-        Style = csDropDownList
-        ItemIndex = 1
-        TabOrder = 2
-        Text = 'Lucida Console'
-        OnChange = ButtonASCIIartClick
-        Items.Strings = (
-          'Courier New'
-          'Lucida Console'
-          'Consolas'
-          'Calibri'
-          'Times New Roman'
-          'Segoe UI'
-          'Verdana'
-          'Arial Unicode MS'
-          'Tahoma')
-        ExplicitLeft = 154
-      end
-      object CheckBoxASNegative: TCheckBox
-        AlignWithMargins = True
-        Left = 233
-        Top = 4
-        Width = 57
-        Height = 20
-        Align = alLeft
-        Caption = #1048#1085#1074#1077#1088#1090'.'
-        TabOrder = 3
-        OnClick = ButtonASCIIartClick
-        ExplicitLeft = 296
-      end
-      object ComboBoxASCharacterSet: TComboBox
-        AlignWithMargins = True
-        Left = 177
-        Top = 4
-        Width = 50
-        Height = 21
-        Align = alLeft
-        Style = csDropDownList
-        ItemIndex = 0
-        TabOrder = 4
-        Text = 'fF#'
-        OnChange = ButtonASCIIartClick
-        Items.Strings = (
-          'fF#'
-          #1078#1046'#'
-          #19969#19976#20007
-          #19969#19976#20007#20022
-          #9617#9618#9619
-          #9617#9608
-          #8195#9608)
-        ExplicitLeft = 240
-      end
-      object ComboBoxASFontSize: TComboBox
-        AlignWithMargins = True
-        Left = 40
-        Top = 4
-        Width = 45
-        Height = 21
-        Align = alLeft
-        Style = csDropDownList
-        ItemIndex = 4
-        TabOrder = 5
-        Text = '140'
-        OnChange = ButtonASCIIartClick
-        Items.Strings = (
-          '60'
-          '80'
-          '100'
-          '120'
-          '140'
-          '160')
-        ExplicitLeft = 103
-      end
-    end
-    object PanelDecorationBtns: TPanel
-      AlignWithMargins = True
-      Left = 3
-      Top = 1
-      Width = 248
-      Height = 28
-      Margins.Left = 2
-      Margins.Top = 0
-      Margins.Right = 2
-      Margins.Bottom = 0
-      Align = alLeft
-      ShowCaption = False
-      TabOrder = 2
-      object ButtonDoubleU1: TButton
-        Tag = 6
-        AlignWithMargins = True
-        Left = 139
-        Top = 2
-        Width = 25
-        Height = 24
-        Margins.Left = 1
-        Margins.Top = 1
-        Margins.Right = 1
-        Margins.Bottom = 1
-        Align = alLeft
-        Caption = 'D'#819' 1'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 0
-        OnClick = Transform
-      end
-      object ButtonDoubleU2: TButton
-        Tag = 7
-        AlignWithMargins = True
-        Left = 166
-        Top = 2
-        Width = 25
-        Height = 24
-        Margins.Left = 1
-        Margins.Top = 1
-        Margins.Right = 1
-        Margins.Bottom = 1
-        Align = alLeft
-        Caption = 'D'#839' 2'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 1
-        OnClick = Transform
-      end
-      object ButtonOverlines1: TButton
-        Tag = 8
-        AlignWithMargins = True
-        Left = 193
-        Top = 2
-        Width = 25
-        Height = 24
-        Margins.Left = 1
-        Margins.Top = 1
-        Margins.Right = 1
-        Margins.Bottom = 1
-        Align = alLeft
-        Caption = 'O'#773' 1'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 2
-        OnClick = Transform
-      end
-      object ButtonOverlines2: TButton
-        Tag = 9
-        AlignWithMargins = True
-        Left = 220
-        Top = 2
-        Width = 25
-        Height = 24
-        Margins.Left = 1
-        Margins.Top = 1
-        Margins.Right = 1
-        Margins.Bottom = 1
-        Align = alLeft
-        Caption = 'O'#862' 2'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 3
-        OnClick = Transform
-      end
-      object ButtonStrikethrough1: TButton
-        Tag = 1
-        AlignWithMargins = True
-        Left = 85
-        Top = 2
-        Width = 25
-        Height = 24
-        Margins.Top = 1
-        Margins.Right = 1
-        Margins.Bottom = 1
-        Align = alLeft
-        Caption = ' '#822'S'#822' 1'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 4
-        OnClick = Transform
-      end
-      object ButtonStrikethrough2: TButton
-        Tag = 2
-        AlignWithMargins = True
-        Left = 112
-        Top = 2
-        Width = 25
-        Height = 24
-        Margins.Left = 1
-        Margins.Top = 1
-        Margins.Right = 1
-        Margins.Bottom = 1
-        Align = alLeft
-        Caption = ' '#821'S'#821' 2'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 5
-        OnClick = Transform
-      end
-      object ButtonUnderlines1: TButton
-        Tag = 3
-        AlignWithMargins = True
-        Left = 2
-        Top = 2
-        Width = 25
-        Height = 24
-        Margins.Left = 1
-        Margins.Top = 1
-        Margins.Right = 1
-        Margins.Bottom = 1
-        Align = alLeft
-        Caption = 'U'#817' 1 '
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 6
-        OnClick = Transform
-      end
-      object ButtonUnderlines2: TButton
-        Tag = 4
-        AlignWithMargins = True
-        Left = 29
-        Top = 2
-        Width = 25
-        Height = 24
-        Margins.Left = 1
-        Margins.Top = 1
-        Margins.Right = 1
-        Margins.Bottom = 1
-        Align = alLeft
-        Caption = 'U'#818' 2'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 7
-        OnClick = Transform
-      end
-      object ButtonUnderlines3: TButton
-        Tag = 5
-        AlignWithMargins = True
-        Left = 56
-        Top = 2
-        Width = 25
-        Height = 24
-        Margins.Left = 1
-        Margins.Top = 1
-        Margins.Right = 1
-        Margins.Bottom = 1
-        Align = alLeft
-        Caption = 'U'#863' 3'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 8
-        OnClick = Transform
-      end
-    end
-    object PanelFixedGraphicFont: TPanel
-      AlignWithMargins = True
-      Left = 619
-      Top = 1
-      Width = 186
-      Height = 28
-      Margins.Left = 2
-      Margins.Top = 0
-      Margins.Right = 2
-      Margins.Bottom = 0
-      Align = alRight
-      TabOrder = 3
-      object ButtonFixedGraphicFont: TButton
-        Left = 85
+        Left = 111
         Top = 1
-        Width = 100
-        Height = 26
+        Width = 103
+        Height = 173
         Margins.Left = 1
-        Margins.Top = 1
+        Margins.Top = 0
         Margins.Right = 1
-        Margins.Bottom = 1
+        Margins.Bottom = 0
         Align = alRight
-        Caption = #1060#1080#1082#1089'. ASCII-art'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
+        Color = clWindow
+        ParentBackground = False
+        ShowCaption = False
         TabOrder = 0
-        OnClick = ButtonFixedGraphicFontClick
-        ExplicitLeft = 1
+        object BitBtnGo: TBitBtn
+          AlignWithMargins = True
+          Left = 2
+          Top = 113
+          Width = 99
+          Height = 59
+          Margins.Left = 1
+          Margins.Top = 0
+          Margins.Right = 1
+          Margins.Bottom = 0
+          Align = alClient
+          Caption = #1047#1072#1084#1077#1085#1080#1090#1100
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          Glyph.Data = {
+            360C0000424D360C000000000000360000002800000020000000200000000100
+            180000000000000C000082060000820600000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8DBDBDBFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEF080808878787FBFBFBFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFDFDFDC4C4C4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F2F2BEBEBE000000000000303030CCCC
+            CCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFAEAEAE939393FFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFF777777060606D9D9D9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFEEEEEE9292923030300000000000000000000000000000000303
+            03737373F5F5F5FFFFFFFFFFFFFFFFFF7777776B6B6BFFFFFFFFFFFFFFFFFFFF
+            FFFFCBCBCB787878585858A1A1A1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            D2D2D25A5A5A0808080000000000000000000000000000000000000000000000
+            00000000212121BABABAFFFFFFFFFFFF949494676767FFFFFFFFFFFF676767E4
+            E4E4FFFFFFFFFFFF878787888888FFFFFFFFFFFFFCFCFCBBBBBBFFFFFFBDBDBD
+            0D0D0D0000000000000000000000000000000000000000000000000000000000
+            000000000000003C3C3CEFEFEFFFFFFF9F9F9F676767FFFFFFFFFFFF8080805D
+            5D5DFFFFFFFFFFFF878787878787FFFFFFF9F9F9545454383838DDDDDD060606
+            0000000000000000000000000000000000000000000000000000000000000000
+            000D0D0D959595FEFEFEFFFFFFFFFFFF9F9F9F676767FFFFFFFFFFFFFEFEFE5B
+            5B5BFFFFFFFFFFFF878787878787F5F5F5484848323232D0D0D07A7A7A000000
+            0000000000000000000000001F1F1F4F4F4F4D4D4D0000000000000000004B4B
+            4BE2E2E2FFFFFFFFFFFFFFFFFFFFFFFF9F9F9F676767FFFFFFFFFFFFFCFCFCDB
+            DBDBFFFFFFFFFFFF878787939393DFDFDFE8E8E8FFFFFFFFFFFF222222000000
+            0000001414149C9C9CE8E8E8FFFFFFFFFFFFEFEFEF000000151515A6A6A6FFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F9F9F676767F4F4F4666666AFAFAFFF
+            FFFFFFFFFFFFFFFF868686AFAFAFFFFFFFFFFFFFFFFFFFFFFFFF252525000000
+            131313E5E5E5FFFFFFFFFFFFFFFFFFFFFFFFF0F0F05C5C5CECECECFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F9F9F646464B0B0B0919191F0F0F079
+            79797272729292923B3B3BCACACAFFFFFFFFFFFFFFFFFFFFFFFF3D3D3D000000
+            A1A1A1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F9F9F676767FFFFFFDEDEDEE3E3E3AA
+            AAAA8F8F8F7373734F4F4F2121212323233D3D3D5B5B5BBCBCBC5A5A5A000000
+            EAEAEAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F9F9F676767FFFFFFB0B0B0FFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFE5E5E5BFBFBFB1B1B1F6F6F6C1C1C1181818
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F9F9F676767FFFFFF7E7E7EE7E7E7FF
+            FFFFFAFAFAE0E0E0F4F4F4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF494949
+            FEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8F6161619A9A9AB8B8B83E3E3EFB
+            FBFBA9A9A95959592F2F2F1212124D4D4DD6D6D6FFFFFFFFFFFFFFFFFFBBBBBB
+            E0E0E0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F7F7888888939393FD
+            FDFDFFFFFFFFFFFFFFFFFFE8E8E8C3C3C3FDFDFDFFFFFFFFFFFFFFFFFFFFFFFF
+            ECECECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFECECECFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0E0E0BBBBBBFFFFFF434343272727
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2424242B2B2BFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFE494949FFFFFF999999000000
+            D7D7D7FFFFFFFFFFFFFFFFFFFFFFFFCDCDCD000000818181FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF181818C1C1C1EBEBEB030303
+            878787FFFFFFFFFFFFFFFFFFFFFFFF777777000000D6D6D6FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEAEAEA0000005A5A5AFFFFFF454545
+            2E2E2EAFAFAFAFAFAFAFAFAFAFAFAF1F1F1F2D2D2DFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA1A1A10000003D3D3DFFFFFF9B9B9B
+            0000002020202727272727271B1B1B000000838383FFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFECECEC5C5C5CF0
+            F0F0FFFFFFFFFFFFFFFFFFFFFFFFE5E5E5131313000000252525FFFFFFECECEC
+            040404A0A0A0FFFFFFFFFFFF7E7E7E000000D8D8D8FFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA6A6A6151515000000EF
+            EFEFFFFFFFFFFFFFE8E8E89C9C9C141414000000000000222222FFFFFFFFFFFF
+            4747474A4A4AFFFFFFFFFFFF2626262F2F2FFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE2E2E24B4B4B0000000000000000004D
+            4D4D4F4F4F1F1F1F0000000000000000000000000000007A7A7AFFFFFFFFFFFF
+            9D9D9D050505EFEFEFCFCFCF000000858585FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFEFEFE9595950D0D0D00000000000000000000000000
+            0000000000000000000000000000000000000000060606DDDDDDFFFFFFFFFFFF
+            EDEDED050505A2A2A27C7C7C000000DADADAFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFEFEFEF3C3C3C00000000000000000000000000000000000000
+            00000000000000000000000000000000000D0D0DBDBDBDFFFFFFFFFFFFFFFFFF
+            FFFFFF494949565656333333313131FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFBABABA21212100000000000000000000000000000000
+            00000000000000000000000808085A5A5AD2D2D2FFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFF9F9F9F0C0C0C010101878787FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFF5F5F573737303030300000000000000000000
+            0000000000303030929292EEEEEEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFEFEFEF1B1B1B171717DCDCDCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCCCCCC303030000000000000BE
+            BEBEF2F2F2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFBFB878787080808EF
+            EFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDBDBDBF8
+            F8F8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+          Layout = blGlyphTop
+          ParentFont = False
+          TabOrder = 0
+          OnClick = AnyButtonGoClick
+        end
+        object BitBtnClear: TBitBtn
+          AlignWithMargins = True
+          Left = 2
+          Top = 57
+          Width = 99
+          Height = 56
+          Margins.Left = 1
+          Margins.Top = 0
+          Margins.Right = 1
+          Margins.Bottom = 0
+          Align = alTop
+          Caption = #1054#1095#1080#1089#1090#1080#1090#1100
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          Glyph.Data = {
+            360C0000424D360C000000000000360000002800000020000000200000000100
+            180000000000000C000014010000140100000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000
+            313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000FFFFFFFFFFFF313131
+            000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000313131FFFFFFFFFFFFEDEDED
+            313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFEDEDED313131000000313131EDEDEDFFFFFFFFFFFFFFFFFF
+            EDEDED313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFEDEDED313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFEDEDED313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFEDEDED313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFEDEDED313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFED
+            EDED313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFEDEDED313131000000313131EDEDEDFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED31
+            3131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000313131EDEDEDFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED31313100
+            0000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000313131EDEDEDFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED31313100000031
+            3131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000313131EDED
+            EDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000313131ED
+            EDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED3131310000003131
+            31EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000313131EDEDEDFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED3131310000
+            00313131EDEDEDFFFFFFFFFFFFEDEDED313131000000313131EDEDEDFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED3131
+            31000000313131EDEDEDEDEDED313131000000313131EDEDEDFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDED
+            ED313131000000313131313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFEDEDED313131000000000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFEDEDED313131000000000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDED
+            ED313131000000313131313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED3131
+            31000000313131EDEDEDEDEDED313131000000313131EDEDEDFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED3131310000
+            00313131EDEDEDFFFFFFFFFFFFEDEDED313131000000313131EDEDEDFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED3131310000003131
+            31EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000313131EDEDEDFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000313131EDED
+            EDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000313131ED
+            EDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000313131EDEDEDFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED31313100000031
+            3131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000313131EDEDEDFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED31313100
+            0000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFEDEDED313131000000313131EDEDEDFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED31
+            3131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFEDEDED313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFED
+            EDED313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFEDEDED313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFEDEDED313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            EDEDED313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFEDEDED313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFEDEDED
+            313131000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFEDEDED313131000000313131EDEDEDFFFFFFFFFFFF313131
+            000000313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000313131FFFFFFFFFFFF000000
+            313131EDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED313131000000FFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+          Layout = blGlyphTop
+          ParentFont = False
+          TabOrder = 1
+          OnClick = ButtonClearClick
+        end
+        object BitBtnAbout: TBitBtn
+          AlignWithMargins = True
+          Left = 2
+          Top = 1
+          Width = 99
+          Height = 56
+          Margins.Left = 1
+          Margins.Top = 0
+          Margins.Right = 1
+          Margins.Bottom = 0
+          Align = alTop
+          Caption = #1054' '#1087#1088#1086#1075#1088#1072#1084#1084#1077
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          Glyph.Data = {
+            360C0000424D360C000000000000360000002800000020000000200000000100
+            180000000000000C0000E4000000E40000000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8B6B6B66767
+            673E3E3E2525250C0C0C0C0C0C2525253E3E3E676767B6B6B6F8F8F8FFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE8E8E86969690D0D0D0000000606
+            063131314A4A4A6363636363634A4A4A3131310606060000000D0D0D696969E8
+            E8E8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFF9F9F98282820C0C0C020202555555A9A9A9F2F2
+            F2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F2F2A9A9A95555550202020C
+            0C0C828282F9F9F9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFE8E8E83B3B3B000000474747D1D1D1FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD1D1D147
+            47470000003B3B3BE8E8E8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFD2D2D21D1D1D0606069C9C9CFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFF9C9C9C0606061D1D1DD2D2D2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFE8E8E81D1D1D161616C6C6C6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8383
+            830000000000000000000000000000000000000000006B6B6BFFFFFFFFFFFFFF
+            FFFFFFFFFFC6C6C61616161D1D1DE8E8E8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            F9F9F93B3B3B060606C6C6C6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F7F
+            7F000000000000000000000000000000000000000000676767FFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFC6C6C60606063B3B3BF9F9F9FFFFFFFFFFFFFFFFFFFFFFFF
+            8282820000009C9C9CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCBCB
+            CB8F8F8F8282820000000000000000007D7D7D8F8F8FC0C0C0FFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFF9C9C9C000000828282FFFFFFFFFFFFFFFFFFE8E8E8
+            0C0C0C474747FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFE7E7E7000000000000000000DFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFF4747470C0C0CE8E8E8FFFFFFFFFFFF696969
+            020202D1D1D1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFE7E7E7000000000000000000DFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFD1D1D1020202696969FFFFFFF8F8F80D0D0D
+            555555FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFE7E7E7000000000000000000DFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5555550D0D0DF8F8F8B6B6B6000000
+            A9A9A9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFE7E7E7000000000000000000DFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA9A9A9000000B6B6B6676767060606
+            F2F2F2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFE7E7E7000000000000000000DFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F2F20606066767673E3E3E313131
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFE7E7E7000000000000000000DFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3131313E3E3E2525254A4A4A
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFE7E7E7000000000000000000DFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4A4A4A2525250C0C0C636363
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFE7E7E7000000000000000000DFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6363630C0C0C0C0C0C636363
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFE7E7E7000000000000000000DFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6363630C0C0C2525254A4A4A
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFE7E7E7000000000000000000DFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4A4A4A2525253E3E3E313131
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDDDD
+            DDB7B7B7A6A6A6000000000000000000DFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3131313E3E3E676767060606
+            F2F2F2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7777
+            77000000000000000000000000000000DFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F2F2060606676767B6B6B6000000
+            A9A9A9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7777
+            77000000000000000000000000000000DFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA9A9A9000000B6B6B6F8F8F80D0D0D
+            555555FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE5E5
+            E5C7C7C7C7C7C7C7C7C7C7C7C7C8C8C8FCFCFCFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5555550D0D0DF8F8F8FFFFFF696969
+            020202D1D1D1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFE5E5E5E9E9E9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFD1D1D1020202696969FFFFFFFFFFFFE8E8E8
+            0C0C0C474747FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFF646464040404060606727272FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFF4747470C0C0CE8E8E8FFFFFFFFFFFFFFFFFF
+            8282820000009C9C9CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFCECECE000000000000000000010101DCDCDCFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFF9C9C9C000000828282FFFFFFFFFFFFFFFFFFFFFFFF
+            F9F9F93B3B3B060606C6C6C6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFAEAEAE000000000000000000000000BEBEBEFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFC6C6C60606063B3B3BF9F9F9FFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFE8E8E81D1D1D161616C6C6C6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFBFBFB1C1C1C000000000000282828FEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFC6C6C61616161D1D1DE8E8E8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFD2D2D21D1D1D0606069C9C9CFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFF2F2F29898989E9E9EF5F5F5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFF9C9C9C0606061D1D1DD2D2D2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFE8E8E83B3B3B000000474747D1D1D1FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD1D1D147
+            47470000003B3B3BE8E8E8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFF9F9F98282820C0C0C020202555555A9A9A9F2F2
+            F2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F2F2A9A9A95555550202020C
+            0C0C828282F9F9F9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE8E8E86969690D0D0D0000000606
+            063131314A4A4A6363636363634A4A4A3131310606060000000D0D0D696969E8
+            E8E8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8B6B6B66767
+            673E3E3E2525250C0C0C0C0C0C2525253E3E3E676767B6B6B6F8F8F8FFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+          Layout = blGlyphTop
+          ParentFont = False
+          TabOrder = 2
+          OnClick = ButtonAboutClick
+        end
       end
-      object ComboBoxFixedGraphicFont: TComboBox
-        AlignWithMargins = True
-        Left = 4
-        Top = 4
-        Width = 78
-        Height = 21
+      object PanelFontSettings: TPanel
+        Left = 1
+        Top = 1
+        Width = 109
+        Height = 173
         Align = alClient
-        Style = csDropDownList
-        ItemIndex = 0
+        Color = clWindow
+        ParentBackground = False
+        ShowCaption = False
         TabOrder = 1
-        Text = '1st font'
-        Items.Strings = (
-          '1st font'
-          '2ch tools font')
-        ExplicitLeft = 104
+        object RadioGroupFont: TRadioGroup
+          AlignWithMargins = True
+          Left = 4
+          Top = 2
+          Width = 101
+          Height = 127
+          Margins.Top = 1
+          Margins.Bottom = 1
+          Align = alClient
+          Caption = #1064#1088#1080#1092#1090
+          ItemIndex = 2
+          Items.Strings = (
+            'Tahoma'
+            'Segoe UI'
+            'Lucida Cons.')
+          ParentBackground = False
+          ParentColor = False
+          TabOrder = 0
+          OnClick = RadioGroupFontClick
+        end
+        object GroupBoxFontSize: TGroupBox
+          AlignWithMargins = True
+          Left = 4
+          Top = 131
+          Width = 101
+          Height = 40
+          Margins.Top = 1
+          Margins.Bottom = 1
+          Align = alBottom
+          Caption = #1056#1072#1079#1084#1077#1088
+          ParentBackground = False
+          ParentColor = False
+          TabOrder = 1
+          object ComboBoxFontSize: TComboBox
+            AlignWithMargins = True
+            Left = 5
+            Top = 15
+            Width = 91
+            Height = 21
+            Margins.Top = 0
+            Margins.Bottom = 0
+            Align = alClient
+            AutoDropDown = True
+            Style = csDropDownList
+            ItemIndex = 2
+            TabOrder = 0
+            Text = '12'
+            OnChange = ComboBoxFontSizeChange
+            Items.Strings = (
+              '8'
+              '10'
+              '12'
+              '14'
+              '16'
+              '18'
+              '20'
+              '22'
+              '24'
+              '26'
+              '30'
+              '40'
+              '70'
+              '120')
+          end
+        end
       end
     end
   end
