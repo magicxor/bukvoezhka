@@ -9,6 +9,9 @@
         <Projects Include="BukvoezhkaMobile\BukvoezhkaMobile.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="BukvoezhkaCrossplatform\BukvoezhkaCrossplatform.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +38,23 @@
     <Target Name="BukvoezhkaMobile:Make">
         <MSBuild Projects="BukvoezhkaMobile\BukvoezhkaMobile.dproj" Targets="Make"/>
     </Target>
+    <Target Name="BukvoezhkaCrossplatform">
+        <MSBuild Projects="BukvoezhkaCrossplatform\BukvoezhkaCrossplatform.dproj"/>
+    </Target>
+    <Target Name="BukvoezhkaCrossplatform:Clean">
+        <MSBuild Projects="BukvoezhkaCrossplatform\BukvoezhkaCrossplatform.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BukvoezhkaCrossplatform:Make">
+        <MSBuild Projects="BukvoezhkaCrossplatform\BukvoezhkaCrossplatform.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="BukvoezhkaDesktop;BukvoezhkaMobile"/>
+        <CallTarget Targets="BukvoezhkaDesktop;BukvoezhkaMobile;BukvoezhkaCrossplatform"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="BukvoezhkaDesktop:Clean;BukvoezhkaMobile:Clean"/>
+        <CallTarget Targets="BukvoezhkaDesktop:Clean;BukvoezhkaMobile:Clean;BukvoezhkaCrossplatform:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="BukvoezhkaDesktop:Make;BukvoezhkaMobile:Make"/>
+        <CallTarget Targets="BukvoezhkaDesktop:Make;BukvoezhkaMobile:Make;BukvoezhkaCrossplatform:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

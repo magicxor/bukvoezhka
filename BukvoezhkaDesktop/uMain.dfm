@@ -5,7 +5,7 @@ object FormMain: TFormMain
   ClientHeight = 625
   ClientWidth = 889
   Color = clWindow
-  Constraints.MinWidth = 719
+  Constraints.MinWidth = 889
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -52,7 +52,7 @@ object FormMain: TFormMain
         Align = alClient
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -11
+        Font.Height = -16
         Font.Name = 'Lucida Console'
         Font.Style = []
         ParentFont = False
@@ -76,12 +76,13 @@ object FormMain: TFormMain
         Align = alClient
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -11
+        Font.Height = -16
         Font.Name = 'Lucida Console'
         Font.Style = []
         ParentFont = False
         ScrollBars = ssVertical
         TabOrder = 0
+        ExplicitTop = 2
       end
     end
   end
@@ -129,9 +130,9 @@ object FormMain: TFormMain
             'Unicode - '#1088#1072#1085#1076#1086#1084' (Win7+)'
             'Unicode - '#1088#1072#1085#1076#1086#1084' (XP+)'
             'Unicode - '#1087#1077#1088#1077#1074#1077#1088#1085#1091#1090#1100
-            'Unicode - '#1085#1077#1074#1080#1076'. '#1084#1091#1089#1086#1088' v1'
-            'Unicode - '#1085#1077#1074#1080#1076'. '#1084#1091#1089#1086#1088' v2'
-            'Unicode - '#1094#1077#1088#1082#1086#1074#1085#1086#1089#1083#1072#1074'.'
+            'Unicode - '#1085#1077#1074#1080#1076#1080#1084#1099#1081' '#1084#1091#1089#1086#1088' v1'
+            'Unicode - '#1085#1077#1074#1080#1076#1080#1084#1099#1081' '#1084#1091#1089#1086#1088' v2'
+            'Unicode - '#1089#1090#1072#1088#1080#1085#1085#1099#1081
             'Unicode - '#1085#1072#1076#1089#1090#1088#1086#1095#1085#1099#1081
             #1041#1045#1047#1053#1054#1043'N'#1052
             #1047#1072#1076#1086#1084' '#1085#1072#1087#1077#1088#1105#1076
@@ -144,10 +145,6 @@ object FormMain: TFormMain
       object TabSheetTextDecorate: TTabSheet
         Caption = #1054#1092#1086#1088#1084#1083#1077#1085#1080#1077' '#1090#1077#1082#1089#1090#1072
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 694
-        ExplicitHeight = 0
         object GroupBoxUnderline: TGroupBox
           AlignWithMargins = True
           Left = 3
@@ -157,7 +154,7 @@ object FormMain: TFormMain
           Align = alLeft
           Caption = #1055#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077
           TabOrder = 0
-          object ButtonUnderlines2: TButton
+          object ButtonUnderline2: TButton
             Tag = 4
             AlignWithMargins = True
             Left = 3
@@ -169,7 +166,7 @@ object FormMain: TFormMain
             Margins.Right = 1
             Margins.Bottom = 1
             Align = alTop
-            Caption = #1055#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 2'
+            Caption = #818#1055#818#1086#818#1076#818#1095#818#1105#818#1088#818#1082#818#1080#818#1074#818#1072#818#1085#818#1080#818#1077#818' '#818'2'#818
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -11
@@ -179,9 +176,8 @@ object FormMain: TFormMain
             TabOrder = 0
             WordWrap = True
             OnClick = Transform
-            ExplicitWidth = 161
           end
-          object ButtonUnderlines3: TButton
+          object ButtonUnderline3: TButton
             Tag = 5
             AlignWithMargins = True
             Left = 3
@@ -193,7 +189,7 @@ object FormMain: TFormMain
             Margins.Right = 1
             Margins.Bottom = 1
             Align = alTop
-            Caption = #1055#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 3'
+            Caption = #863#1055#863#1086#863#1076#863#1095#863#1105#863#1088#863#1082#863#1080#863#1074#863#1072#863#1085#863#1080#863#1077#863' '#863'3'#863
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -11
@@ -203,9 +199,8 @@ object FormMain: TFormMain
             TabOrder = 1
             WordWrap = True
             OnClick = Transform
-            ExplicitWidth = 161
           end
-          object ButtonUnderlines1: TButton
+          object ButtonUnderline1: TButton
             Tag = 3
             AlignWithMargins = True
             Left = 3
@@ -217,7 +212,7 @@ object FormMain: TFormMain
             Margins.Right = 1
             Margins.Bottom = 1
             Align = alTop
-            Caption = #1055#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 1'
+            Caption = #817#1055#817#1086#817#1076#817#1095#817#1105#817#1088#817#1082#817#1080#817#1074#817#1072#817#1085#817#1080#817#1077#817' '#817'1'#817
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -11
@@ -227,7 +222,6 @@ object FormMain: TFormMain
             TabOrder = 2
             WordWrap = True
             OnClick = Transform
-            ExplicitWidth = 161
           end
         end
         object GroupBoxStrikethrough: TGroupBox
@@ -239,7 +233,6 @@ object FormMain: TFormMain
           Align = alLeft
           Caption = #1047#1072#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077
           TabOrder = 1
-          ExplicitLeft = 143
           object ButtonStrikethrough1: TButton
             Tag = 1
             AlignWithMargins = True
@@ -252,7 +245,7 @@ object FormMain: TFormMain
             Margins.Right = 1
             Margins.Bottom = 1
             Align = alTop
-            Caption = #1047#1072#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 1'
+            Caption = #822#1047#822#1072#822#1095#822#1105#822#1088#822#1082#822#1080#822#1074#822#1072#822#1085#822#1080#822#1077#822' '#822'1'#822
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -11
@@ -262,7 +255,6 @@ object FormMain: TFormMain
             TabOrder = 0
             WordWrap = True
             OnClick = Transform
-            ExplicitWidth = 147
           end
           object ButtonStrikethrough2: TButton
             Tag = 2
@@ -276,7 +268,7 @@ object FormMain: TFormMain
             Margins.Right = 1
             Margins.Bottom = 1
             Align = alTop
-            Caption = #1047#1072#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 2'
+            Caption = #821#1047#821#1072#821#1095#821#1105#821#1088#821#1082#821#1080#821#1074#821#1072#821#1085#821#1080#821#1077#821' '#821'2'#821
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -11
@@ -286,7 +278,6 @@ object FormMain: TFormMain
             TabOrder = 1
             WordWrap = True
             OnClick = Transform
-            ExplicitWidth = 147
           end
         end
         object GroupBoxDoubleU: TGroupBox
@@ -310,7 +301,7 @@ object FormMain: TFormMain
             Margins.Right = 1
             Margins.Bottom = 1
             Align = alTop
-            Caption = #1044#1074#1086#1081#1085#1086#1077' '#1087#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 1'
+            Caption = #819#1044#819#1074#819#1086#819#1081#819#1085#819#1086#819#1077#819' '#819#1087#819#1086#819#1076#819#1095#819#1105#819#1088#819#1082#819#1080#819#1074#819#1072#819#1085#819#1080#819#1077#819' '#819'1'#819
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -11
@@ -320,7 +311,6 @@ object FormMain: TFormMain
             TabOrder = 0
             WordWrap = True
             OnClick = Transform
-            ExplicitWidth = 172
           end
           object ButtonDoubleU2: TButton
             Tag = 7
@@ -334,7 +324,7 @@ object FormMain: TFormMain
             Margins.Right = 1
             Margins.Bottom = 1
             Align = alTop
-            Caption = #1044#1074#1086#1081#1085#1086#1077' '#1087#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 2'
+            Caption = #839#1044#839#1074#839#1086#839#1081#839#1085#839#1086#839#1077#839' '#839#1087#839#1086#839#1076#839#1095#839#1105#839#1088#839#1082#839#1080#839#1074#839#1072#839#1085#839#1080#839#1077#839' '#839'2'#839
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -11
@@ -344,7 +334,6 @@ object FormMain: TFormMain
             TabOrder = 1
             WordWrap = True
             OnClick = Transform
-            ExplicitWidth = 172
           end
         end
         object GroupBoxOverline: TGroupBox
@@ -356,8 +345,7 @@ object FormMain: TFormMain
           Align = alLeft
           Caption = #1053#1072#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077
           TabOrder = 3
-          ExplicitLeft = 486
-          object ButtonOverlines1: TButton
+          object ButtonOverline1: TButton
             Tag = 8
             AlignWithMargins = True
             Left = 3
@@ -369,7 +357,7 @@ object FormMain: TFormMain
             Margins.Right = 1
             Margins.Bottom = 1
             Align = alTop
-            Caption = #1053#1072#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 1'
+            Caption = #773#1053#773#1072#773#1076#773#1095#773#1105#773#1088#773#1082#773#1080#773#1074#773#1072#773#1085#773#1080#773#1077#773' '#773'1'#773
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -11
@@ -379,9 +367,8 @@ object FormMain: TFormMain
             TabOrder = 0
             WordWrap = True
             OnClick = Transform
-            ExplicitWidth = 161
           end
-          object ButtonOverlines2: TButton
+          object ButtonOverline2: TButton
             Tag = 9
             AlignWithMargins = True
             Left = 3
@@ -393,7 +380,7 @@ object FormMain: TFormMain
             Margins.Right = 1
             Margins.Bottom = 1
             Align = alTop
-            Caption = #1053#1072#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077' 2'
+            Caption = #862#1053#862#1072#862#1076#862#1095#862#1105#862#1088#862#1082#862#1080#862#1074#862#1072#862#1085#862#1080#862#1077#862' '#862'2'#862
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -11
@@ -403,7 +390,6 @@ object FormMain: TFormMain
             TabOrder = 1
             WordWrap = True
             OnClick = Transform
-            ExplicitWidth = 161
           end
         end
       end
@@ -436,7 +422,7 @@ object FormMain: TFormMain
             Alignment = taRightJustify
             AutoSize = False
             Caption = #1056#1072#1079#1084#1077#1088' '#1096#1088#1080#1092#1090#1072':'
-            Transparent = False
+            Transparent = True
           end
           object ComboBoxASFontName: TComboBox
             AlignWithMargins = True
@@ -559,11 +545,11 @@ object FormMain: TFormMain
       object TabSheetFixedASCIIart: TTabSheet
         Caption = #1060#1080#1082#1089#1080#1088#1086#1074#1072#1085#1085#1099#1081' ASCII art-'#1096#1088#1080#1092#1090
         ImageIndex = 3
-        object GroupBoxFixedFont: TGroupBox
+        object GroupBoxFixedFontSettings: TGroupBox
           AlignWithMargins = True
           Left = 3
           Top = 3
-          Width = 246
+          Width = 238
           Height = 141
           Align = alLeft
           Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080' '#1096#1088#1080#1092#1090#1072
@@ -579,7 +565,7 @@ object FormMain: TFormMain
           end
           object ComboBoxFixedGraphicFont: TComboBox
             AlignWithMargins = True
-            Left = 82
+            Left = 71
             Top = 17
             Width = 151
             Height = 21
@@ -595,7 +581,7 @@ object FormMain: TFormMain
           object CheckBoxFFInvertColors: TCheckBox
             Left = 11
             Top = 44
-            Width = 222
+            Width = 211
             Height = 17
             Caption = #1048#1085#1074#1077#1088#1090#1080#1088#1086#1074#1072#1090#1100' '#1094#1074#1077#1090#1072
             TabOrder = 1
@@ -604,7 +590,7 @@ object FormMain: TFormMain
         end
       end
     end
-    object PanelViewFont: TPanel
+    object PanelActions: TPanel
       Left = 672
       Top = 1
       Width = 216
@@ -645,7 +631,7 @@ object FormMain: TFormMain
           Font.Color = clWindowText
           Font.Height = -13
           Font.Name = 'Tahoma'
-          Font.Style = [fsBold]
+          Font.Style = []
           Glyph.Data = {
             360C0000424D360C000000000000360000002800000020000000200000000100
             180000000000000C000082060000820600000000000000000000FFFFFFFFFFFF
@@ -766,7 +752,7 @@ object FormMain: TFormMain
           Font.Color = clWindowText
           Font.Height = -13
           Font.Name = 'Tahoma'
-          Font.Style = [fsBold]
+          Font.Style = []
           Glyph.Data = {
             360C0000424D360C000000000000360000002800000020000000200000000100
             180000000000000C000014010000140100000000000000000000FFFFFFFFFFFF
@@ -887,7 +873,7 @@ object FormMain: TFormMain
           Font.Color = clWindowText
           Font.Height = -13
           Font.Name = 'Tahoma'
-          Font.Style = [fsBold]
+          Font.Style = []
           Glyph.Data = {
             360C0000424D360C000000000000360000002800000020000000200000000100
             180000000000000C0000E4000000E40000000000000000000000FFFFFFFFFFFF
@@ -993,7 +979,7 @@ object FormMain: TFormMain
           OnClick = ButtonAboutClick
         end
       end
-      object PanelFontSettings: TPanel
+      object PanelViewFontSettings: TPanel
         Left = 1
         Top = 1
         Width = 109
@@ -1017,13 +1003,13 @@ object FormMain: TFormMain
           Items.Strings = (
             'Tahoma'
             'Segoe UI'
-            'Lucida Cons.')
+            'Lucida Console')
           ParentBackground = False
           ParentColor = False
           TabOrder = 0
           OnClick = RadioGroupFontClick
         end
-        object GroupBoxFontSize: TGroupBox
+        object GroupBoxViewFontSize: TGroupBox
           AlignWithMargins = True
           Left = 4
           Top = 131

@@ -15,19 +15,19 @@ type
     PanelInOut: TPanel;
     SplitterInOut: TSplitter;
     RadioGroupFont: TRadioGroup;
-    PanelFontSettings: TPanel;
+    PanelViewFontSettings: TPanel;
     ComboBoxFontSize: TComboBox;
-    GroupBoxFontSize: TGroupBox;
+    GroupBoxViewFontSize: TGroupBox;
     ButtonStrikethrough1: TButton;
     ButtonStrikethrough2: TButton;
-    ButtonUnderlines1: TButton;
-    ButtonUnderlines2: TButton;
-    ButtonUnderlines3: TButton;
+    ButtonUnderline1: TButton;
+    ButtonUnderline2: TButton;
+    ButtonUnderline3: TButton;
     ButtonDoubleU2: TButton;
     PanelControlButtons: TPanel;
     ButtonDoubleU1: TButton;
-    ButtonOverlines2: TButton;
-    ButtonOverlines1: TButton;
+    ButtonOverline2: TButton;
+    ButtonOverline1: TButton;
     ComboBoxASZoom: TComboBox;
     ComboBoxASFontName: TComboBox;
     CheckBoxASNegative: TCheckBox;
@@ -41,7 +41,7 @@ type
     TabSheetFixedASCIIart: TTabSheet;
     RadioGroupMethod: TRadioGroup;
     PanelHeadControls: TPanel;
-    PanelViewFont: TPanel;
+    PanelActions: TPanel;
     GroupBoxUnderline: TGroupBox;
     GroupBoxStrikethrough: TGroupBox;
     GroupBoxDoubleU: TGroupBox;
@@ -52,7 +52,7 @@ type
     GroupBoxSourceFont: TGroupBox;
     GroupBoxRendering: TGroupBox;
     LabelASCharacterSet: TLabel;
-    GroupBoxFixedFont: TGroupBox;
+    GroupBoxFixedFontSettings: TGroupBox;
     LabelFixedFontName: TLabel;
     CheckBoxFFInvertColors: TCheckBox;
     BitBtnGo: TBitBtn;
@@ -67,8 +67,8 @@ type
     procedure ButtonAboutClick(Sender: TObject);
     procedure ButtonASCIIartClick(Sender: TObject);
     procedure ButtonFixedGraphicFontClick(Sender: TObject);
-  private const
-    version = '1.1';
+  private
+  //
   public
     { Public declarations }
   end;
@@ -90,6 +90,8 @@ begin
   //
   MemoOutput.WordWrap := False;
   MemoOutput.ScrollBars := ssBoth;
+  RadioGroupFont.ItemIndex := 2;
+  RadioGroupFontClick(RadioGroupFont);
   //
   MemoOutput.Text := ASCIIdecorator.MakeASCIIfromText(MemoInput.Text,
     ComboBoxASFontName.Items[ComboBoxASFontName.ItemIndex], 255,
@@ -118,6 +120,8 @@ procedure TFormMain.ButtonFixedGraphicFontClick(Sender: TObject);
 begin
   MemoOutput.WordWrap := False;
   MemoOutput.ScrollBars := ssBoth;
+  RadioGroupFont.ItemIndex := 2;
+  RadioGroupFontClick(RadioGroupFont);
   case ComboBoxFixedGraphicFont.ItemIndex of
     0:
       MemoOutput.Text := TFixedASCIIdecorator.MakeFixedASCIIFirstFont(MemoInput.Text,

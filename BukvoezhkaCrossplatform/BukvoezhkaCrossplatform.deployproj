@@ -1,0 +1,124 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Condition="Exists('$(BDS)\bin\CodeGear.Deployment.targets')" Project="$(BDS)\bin\CodeGear.Deployment.targets"/>
+    <ProjectExtensions>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <ItemGroup Condition="'$(Platform)'=='Android'"/>
+    <ItemGroup Condition="'$(Platform)'=='iOSDevice'"/>
+    <ItemGroup Condition="'$(Platform)'=='Win32'">
+        <DeployFile Include="Win32\Debug\BukvoezhkaCrossplatform.exe" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>BukvoezhkaCrossplatform\</RemoteDir>
+            <RemoteName>BukvoezhkaCrossplatform.exe</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='OSX32'">
+        <DeployFile Include="OSX32\Debug\BukvoezhkaCrossplatform" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>BukvoezhkaCrossplatform.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>BukvoezhkaCrossplatform</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib">
+            <RemoteDir>BukvoezhkaCrossplatform.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>libcgunwind.1.0.dylib</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\delphi_PROJECTICNS.icns" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>BukvoezhkaCrossplatform.app\Contents\Resources\</RemoteDir>
+            <RemoteName>BukvoezhkaCrossplatform.icns</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\delphi_PROJECTICNS.icns" Condition="'$(Config)'=='Release'">
+            <RemoteDir>BukvoezhkaCrossplatform.app\Contents\Resources\</RemoteDir>
+            <RemoteName>BukvoezhkaCrossplatform.icns</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="OSX32\Release\BukvoezhkaCrossplatform.entitlements" Condition="'$(Config)'=='Release'">
+            <RemoteDir>BukvoezhkaCrossplatform.app\../\</RemoteDir>
+            <RemoteName>BukvoezhkaCrossplatform.entitlements</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="BukvoezhkaCrossplatform_Icns1.icns" Condition="'$(Config)'=='Release'">
+            <RemoteDir>BukvoezhkaCrossplatform.app\Contents\Resources\</RemoteDir>
+            <RemoteName>BukvoezhkaCrossplatform.icns</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="OSX32\Debug\BukvoezhkaCrossplatform.info.plist" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>BukvoezhkaCrossplatform.app\Contents\</RemoteDir>
+            <RemoteName>Info.plist</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="OSX32\Debug\BukvoezhkaCrossplatform.entitlements" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>BukvoezhkaCrossplatform.app\../\</RemoteDir>
+            <RemoteName>BukvoezhkaCrossplatform.entitlements</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="OSX32\Release\BukvoezhkaCrossplatform.info.plist" Condition="'$(Config)'=='Release'">
+            <RemoteDir>BukvoezhkaCrossplatform.app\Contents\</RemoteDir>
+            <RemoteName>Info.plist</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="OSX32\Release\BukvoezhkaCrossplatform" Condition="'$(Config)'=='Release'">
+            <RemoteDir>BukvoezhkaCrossplatform.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>BukvoezhkaCrossplatform</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='iOSSimulator'">
+        <DeployFile Include="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib">
+            <RemoteDir>BukvoezhkaCrossplatform.app\</RemoteDir>
+            <RemoteName>libcgunwind.1.0.dylib</RemoteName>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='Win64'">
+        <DeployFile Include="Win64\Debug\BukvoezhkaCrossplatform.exe" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>BukvoezhkaCrossplatform\</RemoteDir>
+            <RemoteName>BukvoezhkaCrossplatform.exe</RemoteName>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+    </ItemGroup>
+</Project>

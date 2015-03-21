@@ -1,0 +1,29 @@
+inherited FormMain_Macintosh: TFormMain_Macintosh
+  DesignerMasterStyle = 1
+  inherited PanelHeadControls: TPanel
+    inherited Panel1: TPanel
+      inherited Panel3: TPanel
+        inherited Button1: TButton
+          Padding.Top = 10.000000000000000000
+          inherited Image1: TImage
+            MultiResBitmap.Height = 32
+            MultiResBitmap.Width = 32
+            Position.Y = 10.000000000000000000
+          end
+        end
+        inherited Button2: TButton
+          inherited Image2: TImage
+            MultiResBitmap.Height = 32
+            MultiResBitmap.Width = 32
+          end
+        end
+        inherited Button3: TButton
+          inherited Image3: TImage
+            MultiResBitmap.Height = 32
+            MultiResBitmap.Width = 32
+          end
+        end
+      end
+    end
+  end
+end
