@@ -1,4 +1,4 @@
-﻿unit uAbout;
+﻿unit uFormAbout;
 
 interface
 

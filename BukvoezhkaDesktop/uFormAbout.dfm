@@ -77,6 +77,5 @@ object FormAbout: TFormAbout
     ParentFont = False
     ReadOnly = True
     TabOrder = 1
-    ExplicitTop = 71
   end
 end

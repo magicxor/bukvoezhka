@@ -1,8 +1,8 @@
-﻿unit uFixedASCIIdecorator;
+﻿unit uFixedASCIIartMaker;
 
 interface
 
-uses uCharacterSets;
+uses uConstCharArrays;
 
 type
   TFixedASCIIdecorator = class
@@ -16,7 +16,7 @@ type
 
 implementation
 
-uses System.RegularExpressions, uFixedASCIIartFonts;
+uses System.RegularExpressions, uConstASCIIartFonts;
 
 class function TFixedASCIIdecorator.MakeFixedASCIIfromText(InputTxt: string;
   SrcSet, DestASCIIFontSet: ArrArrStr): string;

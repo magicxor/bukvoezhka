@@ -2,7 +2,7 @@
 
 interface
 
-uses uCharacterSets;
+uses uConstCharArrays;
 
 const
   ModeRandom: Byte   = 0;

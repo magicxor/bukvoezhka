@@ -79,8 +79,8 @@ type
     procedure ViewFontNameChange(Sender: TObject);
     procedure ViewFontSizeChange(Sender: TObject);
   private
-    ReplaceMethodItemIndex: integer;
-    ViewFontItemIndex: integer;
+    FReplaceMethodItemIndex: integer;
+    FViewFontItemIndex: integer;
   public
     { Public declarations }
   end;
@@ -92,19 +92,19 @@ implementation
 
 {$R *.fmx}
 
-uses uTextConverter, uFixedASCIIdecorator, uAbout;
+uses uTextConverter, uFixedASCIIartMaker, uAbout;
 
 procedure TFormMain.ReplaceMethodItemIndexChange(Sender: TObject);
 begin
-  ReplaceMethodItemIndex := (Sender as TRadioButton).Tag;
+  FReplaceMethodItemIndex := (Sender as TRadioButton).Tag;
   ButtonGoClick(Sender);
 end;
 
 procedure TFormMain.ViewFontNameChange(Sender: TObject);
 // переделать на динамический поиск по тегу ViewFontItemIndex у дочерних ком-в GroupBoxViewFontName
 begin
-  ViewFontItemIndex := (Sender as TRadioButton).Tag;
-  case ViewFontItemIndex of
+  FViewFontItemIndex := (Sender as TRadioButton).Tag;
+  case FViewFontItemIndex of
     0:
       begin
         MemoInput.TextSettings.Font.Family := RadioButtonVFTahoma.Text;
@@ -176,9 +176,9 @@ begin
 end;
 
 procedure TFormMain.ButtonSymbolsReplaceClick(Sender: TObject);
-  procedure GoTransform(TransformMethod: integer);
+  procedure TextConvert(ConvertMethod: integer);
   begin
-    case TransformMethod of
+    case ConvertMethod of
       0:
         MemoOutput.Text := TTextConverter.MakeASCII(MemoInput.Text);
       1:
@@ -216,15 +216,15 @@ begin
   MemoOutput.WordWrap := True;
   // MemoOutput.ScrollBars := ssVertical;
   //
-  GoTransform(ReplaceMethodItemIndex);
+  TextConvert(FReplaceMethodItemIndex);
   MemoOutput.SelectAll;
   MemoOutput.CopyToClipboard;
 end;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
-  ReplaceMethodItemIndex := 6;
-  ViewFontItemIndex := 2;
+  FReplaceMethodItemIndex := 6;
+  FViewFontItemIndex := 2;
 end;
 
 procedure TFormMain.ButtonAboutClick(Sender: TObject);

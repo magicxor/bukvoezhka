@@ -1,4 +1,4 @@
-﻿unit uCharacterSets;
+﻿unit uConstCharArrays;
 
 interface
 

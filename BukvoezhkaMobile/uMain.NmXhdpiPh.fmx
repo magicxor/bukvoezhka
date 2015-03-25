@@ -6,25 +6,11 @@ inherited FormMain_NmXhdpiPh: TFormMain_NmXhdpiPh
     Size.Width = 400.000000000000000000
     Size.Height = 615.000000000000000000
     inherited MainLayout1: TLayout
-      Size.Width = 50.000000000000000000
-      Size.Height = 50.000000000000000000
       inherited EditInput: TEdit
-        Position.Y = 18.000000000000000000
-        Size.Width = 50.000000000000000000
-      end
-      inherited MemoOutput: TMemo
-        Size.Width = 50.000000000000000000
-        Size.Height = 0.000000000000000000
+        Position.Y = 448.000000000000000000
       end
       inherited PanelControl: TPanel
-        Position.Y = -22.000000000000000000
-        Size.Width = 50.000000000000000000
-        inherited ComboBoxMethod: TComboBox
-          Size.Width = 0.000000000000000000
-        end
-        inherited ButtonGo: TButton
-          Position.X = 10.000000000000000000
-        end
+        Position.Y = 408.000000000000000000
       end
     end
   end

@@ -6,7 +6,7 @@
         <MainSource>BukvoezhkaCrossplatform.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">OSX32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>95</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -291,10 +291,10 @@
         </DCCReference>
         <DCCReference Include="..\BukvoezhkaDesktop\uTextConvertRoutines.pas"/>
         <DCCReference Include="..\BukvoezhkaDesktop\uTextConverter.pas"/>
-        <DCCReference Include="..\BukvoezhkaDesktop\uStringsHelper.pas"/>
-        <DCCReference Include="..\BukvoezhkaDesktop\uFixedASCIIdecorator.pas"/>
-        <DCCReference Include="..\BukvoezhkaDesktop\uFixedASCIIartFonts.pas"/>
-        <DCCReference Include="..\BukvoezhkaDesktop\uCharacterSets.pas"/>
+        <DCCReference Include="..\BukvoezhkaDesktop\uStringListTypesConverter.pas"/>
+        <DCCReference Include="..\BukvoezhkaDesktop\uFixedASCIIartMaker.pas"/>
+        <DCCReference Include="..\BukvoezhkaDesktop\uConstASCIIartFonts.pas"/>
+        <DCCReference Include="..\BukvoezhkaDesktop\uConstCharArrays.pas"/>
         <DCCReference Include="uAbout.pas">
             <Form>FormAbout</Form>
             <FormType>fmx</FormType>
@@ -325,15 +325,15 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment>
-                <DeployFile LocalName="Win32\Debug\BukvoezhkaCrossplatform.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>BukvoezhkaCrossplatform.exe</RemoteName>
+                <DeployFile LocalName="BukvoezhkaCrossplatform_Icns1.icns" Configuration="Release" Class="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteName>BukvoezhkaCrossplatform.icns</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="OSX32\Debug\BukvoezhkaCrossplatform" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="OSX32\Release\BukvoezhkaCrossplatform.info.plist" Configuration="Release" Class="ProjectOSXInfoPList">
                     <Platform Name="OSX32">
-                        <RemoteName>BukvoezhkaCrossplatform</RemoteName>
+                        <RemoteName>Info.plist</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -368,9 +368,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="BukvoezhkaCrossplatform_Icns1.icns" Configuration="Release" Class="ProjectOSXResource">
+                <DeployFile LocalName="OSX32\Release\BukvoezhkaCrossplatform" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="OSX32">
-                        <RemoteName>BukvoezhkaCrossplatform.icns</RemoteName>
+                        <RemoteName>BukvoezhkaCrossplatform</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -385,13 +385,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="OSX32\Release\BukvoezhkaCrossplatform.info.plist" Configuration="Release" Class="ProjectOSXInfoPList">
-                    <Platform Name="OSX32">
-                        <RemoteName>Info.plist</RemoteName>
+                <DeployFile LocalName="Win32\Debug\BukvoezhkaCrossplatform.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>BukvoezhkaCrossplatform.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="OSX32\Release\BukvoezhkaCrossplatform" Configuration="Release" Class="ProjectOutput">
+                <DeployFile LocalName="OSX32\Debug\BukvoezhkaCrossplatform" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="OSX32">
                         <RemoteName>BukvoezhkaCrossplatform</RemoteName>
                         <Overwrite>true</Overwrite>

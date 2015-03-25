@@ -1,4 +1,4 @@
-﻿unit uMain;
+﻿unit uFormMain;
 
 interface
 
@@ -60,13 +60,13 @@ type
     BitBtnAbout: TBitBtn;
     procedure ButtonClearClick(Sender: TObject);
     procedure ButtonSymbolsReplaceClick(Sender: TObject);
-    procedure AnyButtonGoClick(Sender: TObject);
+    procedure ButtonGoClick(Sender: TObject);
     procedure RadioGroupFontClick(Sender: TObject);
     procedure ComboBoxFontSizeChange(Sender: TObject);
-    procedure Transform(Sender: TObject);
+    procedure MemoAddNoise(Sender: TObject);
     procedure ButtonAboutClick(Sender: TObject);
     procedure ButtonASCIIartClick(Sender: TObject);
-    procedure ButtonFixedGraphicFontClick(Sender: TObject);
+    procedure ButtonFixedASCIIartClick(Sender: TObject);
   private
   //
   public
@@ -78,28 +78,28 @@ var
 
 implementation
 
-uses uTextConverter, uASCIIdecorator, uFixedASCIIdecorator, uAbout;
+uses uTextConverter, uASCIIartMaker, uFixedASCIIartMaker, uFormAbout;
 
 {$R *.dfm}
 
 procedure TFormMain.ButtonASCIIartClick(Sender: TObject);
 var
-  ASCIIdecorator: TASCIIdecorator;
+  ASCIIartMaker: TASCIIartMaker;
 begin
-  ASCIIdecorator := TASCIIdecorator.Create(nil);
+  ASCIIartMaker := TASCIIartMaker.Create(nil);
   //
   MemoOutput.WordWrap := False;
   MemoOutput.ScrollBars := ssBoth;
   RadioGroupFont.ItemIndex := 2;
   RadioGroupFontClick(RadioGroupFont);
   //
-  MemoOutput.Text := ASCIIdecorator.MakeASCIIfromText(MemoInput.Text,
+  MemoOutput.Text := ASCIIartMaker.MakeASCIIfromText(MemoInput.Text,
     ComboBoxASFontName.Items[ComboBoxASFontName.ItemIndex], 255,
     StrToInt(ComboBoxASZoom.Items[ComboBoxASZoom.ItemIndex]), CheckBoxASNegative.Checked,
     ComboBoxASCharacterSet.ItemIndex,
     StrToInt(ComboBoxASFontSize.Items[ComboBoxASFontSize.ItemIndex]));
   //
-  FreeAndNil(ASCIIdecorator);
+  FreeAndNil(ASCIIartMaker);
   //
   MemoOutput.SelectAll;
   MemoOutput.CopyToClipboard;
@@ -116,7 +116,7 @@ begin
   FormMain.MemoOutput.Text := '';
 end;
 
-procedure TFormMain.ButtonFixedGraphicFontClick(Sender: TObject);
+procedure TFormMain.ButtonFixedASCIIartClick(Sender: TObject);
 begin
   MemoOutput.WordWrap := False;
   MemoOutput.ScrollBars := ssBoth;
@@ -135,9 +135,9 @@ begin
 end;
 
 procedure TFormMain.ButtonSymbolsReplaceClick(Sender: TObject);
-  procedure GoTransform(TransformMethod: Integer);
+  procedure TextConvert(ConvertMethod: Integer);
   begin
-    case TransformMethod of
+    case ConvertMethod of
       0:
         MemoOutput.Text := TTextConverter.MakeASCII(MemoInput.Text);
       1:
@@ -175,12 +175,12 @@ begin
   MemoOutput.WordWrap := True;
   MemoOutput.ScrollBars := ssVertical;
   //
-  GoTransform(RadioGroupMethod.ItemIndex);
+  TextConvert(RadioGroupMethod.ItemIndex);
   MemoOutput.SelectAll;
   MemoOutput.CopyToClipboard;
 end;
 
-procedure TFormMain.AnyButtonGoClick(Sender: TObject);
+procedure TFormMain.ButtonGoClick(Sender: TObject);
 begin
   case PageControlMain.ActivePageIndex of
     0:
@@ -188,7 +188,7 @@ begin
     2:
       ButtonASCIIartClick(Sender);
     3:
-      ButtonFixedGraphicFontClick(Sender);
+      ButtonFixedASCIIartClick(Sender);
   end;
 end;
 
@@ -204,7 +204,7 @@ begin
   MemoOutput.Font.Name := RadioGroupFont.Items[RadioGroupFont.ItemIndex];
 end;
 
-procedure TFormMain.Transform(Sender: TObject);
+procedure TFormMain.MemoAddNoise(Sender: TObject);
 begin
   MemoOutput.WordWrap := True;
   MemoOutput.ScrollBars := ssVertical;

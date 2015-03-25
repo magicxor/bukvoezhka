@@ -2,15 +2,15 @@
 
 uses
   Forms,
-  uMain in 'uMain.pas' {FormMain},
+  uFormMain in 'uFormMain.pas' {FormMain},
   uTextConvertRoutines in 'uTextConvertRoutines.pas',
-  uCharacterSets in 'uCharacterSets.pas',
+  uConstCharArrays in 'uConstCharArrays.pas',
   uTextConverter in 'uTextConverter.pas',
-  uAbout in 'uAbout.pas' {FormAbout},
-  uStringsHelper in 'uStringsHelper.pas',
-  uASCIIdecorator in 'uASCIIdecorator.pas',
-  uFixedASCIIartFonts in 'uFixedASCIIartFonts.pas',
-  uFixedASCIIdecorator in 'uFixedASCIIdecorator.pas';
+  uFormAbout in 'uFormAbout.pas' {FormAbout},
+  uStringListTypesConverter in 'uStringListTypesConverter.pas',
+  uASCIIartMaker in 'uASCIIartMaker.pas',
+  uConstASCIIartFonts in 'uConstASCIIartFonts.pas',
+  uFixedASCIIartMaker in 'uFixedASCIIartMaker.pas';
 
 {$R *.res}
 

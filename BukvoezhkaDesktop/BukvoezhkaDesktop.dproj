@@ -114,27 +114,27 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Build>33</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.2.0.33;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.2;Comments=;LastCompiledTime=2015.03.22 02:46:35</VerInfo_Keys>
+        <VerInfo_Build>38</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.2.0.38;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.2;Comments=;LastCompiledTime=2015.03.25 11:43:35</VerInfo_Keys>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="uMain.pas">
+        <DCCReference Include="uFormMain.pas">
             <Form>FormMain</Form>
         </DCCReference>
         <DCCReference Include="uTextConvertRoutines.pas"/>
-        <DCCReference Include="uCharacterSets.pas"/>
+        <DCCReference Include="uConstCharArrays.pas"/>
         <DCCReference Include="uTextConverter.pas"/>
-        <DCCReference Include="uAbout.pas">
+        <DCCReference Include="uFormAbout.pas">
             <Form>FormAbout</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="uStringsHelper.pas"/>
-        <DCCReference Include="uASCIIdecorator.pas"/>
-        <DCCReference Include="uFixedASCIIartFonts.pas"/>
-        <DCCReference Include="uFixedASCIIdecorator.pas"/>
+        <DCCReference Include="uStringListTypesConverter.pas"/>
+        <DCCReference Include="uASCIIartMaker.pas"/>
+        <DCCReference Include="uConstASCIIartFonts.pas"/>
+        <DCCReference Include="uFixedASCIIartMaker.pas"/>
         <None Include="BukvoezhkaDesktop.todo"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -233,6 +233,18 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="ProjectBukvoezhkaDesktop.todo" Configuration="Debug" Class="ProjectFile"/>
+                <DeployFile LocalName="BukvoezhkaDesktop.todo" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Release\Win64\BukvoezhkaDesktop.exe" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>BukvoezhkaDesktop.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Required="true" Name="DependencyPackage">
                     <Platform Name="iOSDevice">
                         <Operation>1</Operation>

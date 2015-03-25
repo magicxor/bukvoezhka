@@ -55,9 +55,9 @@ begin
 end;
 
 procedure TFormMain.ButtonGoClick(Sender: TObject);
-  procedure Transform(TransformMethod: Integer);
+  procedure TextConvert(ConvertMethod: Integer);
   begin
-    case TransformMethod of
+    case ConvertMethod of
       0:
         MemoOutput.Text := TTextConverter.MakeASCII(EditInput.Text);
       1:
@@ -92,7 +92,7 @@ procedure TFormMain.ButtonGoClick(Sender: TObject);
   end;
 
 begin
-  Transform(ComboBoxMethod.ItemIndex);
+  TextConvert(ComboBoxMethod.ItemIndex);
   MemoOutput.SelectAll;
   MemoOutput.CopyToClipboard;
 end;

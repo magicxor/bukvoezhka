@@ -5,7 +5,7 @@ uses
   FMX.Forms,
   uMain in 'uMain.pas' {FormMain},
   uTextConvertRoutines in '..\BukvoezhkaDesktop\uTextConvertRoutines.pas',
-  uCharacterSets in '..\BukvoezhkaDesktop\uCharacterSets.pas',
+  uConstCharArrays in '..\BukvoezhkaDesktop\uConstCharArrays.pas',
   uTextConverter in '..\BukvoezhkaDesktop\uTextConverter.pas';
 
 {$R *.res}

@@ -1,4 +1,4 @@
-﻿unit uASCIIdecorator;
+﻿unit uASCIIartMaker;
 
 // Автор оригинального алгоритма преобразования картинки в текст - fabiin
 // (2003, http://codes-sources.commentcamarche.net/source/12384-ascii-t-petit-soft-d-ascii-art)
@@ -8,16 +8,16 @@ interface
 uses Windows, Graphics, Classes;
 
 type
-  TDen = record // тип символа по цветовому тону
-    Car: Char; // символ
-    D: integer; // тон
+  TCharDensity = record // тип символа по цветовому тону
+    FChar: Char; // символ
+    FDensity: integer; // тон
   end;
 
 type
-  TASCIIdecorator = class(TComponent)
+  TASCIIartMaker = class(TComponent)
   private
   var
-    Densite: array of TDen; // Массив символов со значениями их яркости
+    Densite: array of TCharDensity; // Массив символов со значениями их яркости
     procedure QuickSort(iLo, iHi: integer);
     function MakeASCIIfromBitmap(SrcBitmap: TBitmap; DonorFont: string = 'Lucida Console';
       contrast: integer = 255; zoom: integer = 0; IsNegative: boolean = false;
@@ -33,21 +33,21 @@ implementation
 
 uses SysUtils;
 
-procedure TASCIIdecorator.QuickSort(iLo, iHi: integer);
+procedure TASCIIartMaker.QuickSort(iLo, iHi: integer);
 var
   Lo, Hi: integer;
   Mid: single;
-  T: TDen;
+  T: TCharDensity;
 begin
   Lo := iLo;
   Hi := iHi;
   if (Hi + Lo) <= 0 then
     exit;
-  Mid := Densite[(Hi + Lo) div 2].D;
+  Mid := Densite[(Hi + Lo) div 2].FDensity;
   repeat
-    while Densite[Lo].D < Mid do
+    while Densite[Lo].FDensity < Mid do
       Inc(Lo);
-    while Densite[Hi].D > Mid do
+    while Densite[Hi].FDensity > Mid do
       Dec(Hi);
     if Lo <= Hi then
     begin
@@ -66,7 +66,7 @@ begin
   // if Terminated then Exit;
 end;
 
-function TASCIIdecorator.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
+function TASCIIartMaker.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
   DonorFont: string = 'Lucida Console'; contrast: integer = 255; zoom: integer = 0;
   IsNegative: boolean = false; CharacterSet: Byte = 0): string;
 
@@ -144,8 +144,8 @@ function TASCIIdecorator.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
     // Составляем массив символов
     for c := low(Densite) to high(Densite) do
     begin
-      Densite[c - low(Densite)].Car := charactersArr[c]; // записываем символ в массив "шрифта"
-      Densite[c - low(Densite)].D := 0;
+      Densite[c - low(Densite)].FChar := charactersArr[c]; // записываем символ в массив "шрифта"
+      Densite[c - low(Densite)].FDensity := 0;
       // рисуем символ
       TmpB.Canvas.Rectangle(0, 0, TmpB.Width, TmpB.Height);
       TmpB.Canvas.TextOut(0, 0, charactersArr[c]);
@@ -155,7 +155,7 @@ function TASCIIdecorator.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
         for b := 1 to 20 do
         begin
           if TmpB.Canvas.Pixels[a, b] = clwhite then
-            Densite[c - low(Densite)].D := Densite[c - low(Densite)].D + 1;
+            Densite[c - low(Densite)].FDensity := Densite[c - low(Densite)].FDensity + 1;
         end;
       end;
     end;
@@ -250,7 +250,7 @@ begin
       // Вычислить конечную плотность (отношение 255 к 95)
       MoyCol := round(MoyCol * ((Length(Densite) - 1) / 255));
 
-      TmpStr := TmpStr + Densite[MoyCol].Car; // добавить следующий символ (?)
+      TmpStr := TmpStr + Densite[MoyCol].FChar; // добавить следующий символ (?)
 
       Inc(a, 8);
     end;
@@ -262,7 +262,7 @@ begin
   Result := TmpStr;
 end;
 
-function TASCIIdecorator.MakeASCIIfromText(SrcText: string; DonorFont: string = 'Lucida Console';
+function TASCIIartMaker.MakeASCIIfromText(SrcText: string; DonorFont: string = 'Lucida Console';
   contrast: integer = 255; zoom: integer = 0; IsNegative: boolean = false; CharacterSet: Byte = 0;
   RenderFontSize: integer = 100): string;
 var

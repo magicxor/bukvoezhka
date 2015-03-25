@@ -1,8 +1,8 @@
-﻿unit uFixedASCIIartFonts;
+﻿unit uConstASCIIartFonts;
 
 interface
 
-uses uCharacterSets;
+uses uConstCharArrays;
 
 var
   C_First_Font_RU: ArrArrStr =

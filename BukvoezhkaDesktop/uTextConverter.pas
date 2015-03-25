@@ -33,7 +33,7 @@ type
 
 implementation
 
-uses uTextConvertRoutines, uCharacterSets;
+uses uTextConvertRoutines, uConstCharArrays;
 
 class function TTextConverter.Decode(Src: string): string;
 begin

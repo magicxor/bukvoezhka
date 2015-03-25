@@ -82,7 +82,6 @@ object FormMain: TFormMain
         ParentFont = False
         ScrollBars = ssVertical
         TabOrder = 0
-        ExplicitTop = 2
       end
     end
   end
@@ -145,6 +144,10 @@ object FormMain: TFormMain
       object TabSheetTextDecorate: TTabSheet
         Caption = #1054#1092#1086#1088#1084#1083#1077#1085#1080#1077' '#1090#1077#1082#1089#1090#1072
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBoxUnderline: TGroupBox
           AlignWithMargins = True
           Left = 3
@@ -175,7 +178,7 @@ object FormMain: TFormMain
             ParentFont = False
             TabOrder = 0
             WordWrap = True
-            OnClick = Transform
+            OnClick = MemoAddNoise
           end
           object ButtonUnderline3: TButton
             Tag = 5
@@ -198,7 +201,7 @@ object FormMain: TFormMain
             ParentFont = False
             TabOrder = 1
             WordWrap = True
-            OnClick = Transform
+            OnClick = MemoAddNoise
           end
           object ButtonUnderline1: TButton
             Tag = 3
@@ -221,7 +224,7 @@ object FormMain: TFormMain
             ParentFont = False
             TabOrder = 2
             WordWrap = True
-            OnClick = Transform
+            OnClick = MemoAddNoise
           end
         end
         object GroupBoxStrikethrough: TGroupBox
@@ -254,7 +257,7 @@ object FormMain: TFormMain
             ParentFont = False
             TabOrder = 0
             WordWrap = True
-            OnClick = Transform
+            OnClick = MemoAddNoise
           end
           object ButtonStrikethrough2: TButton
             Tag = 2
@@ -277,7 +280,7 @@ object FormMain: TFormMain
             ParentFont = False
             TabOrder = 1
             WordWrap = True
-            OnClick = Transform
+            OnClick = MemoAddNoise
           end
         end
         object GroupBoxDoubleU: TGroupBox
@@ -310,7 +313,7 @@ object FormMain: TFormMain
             ParentFont = False
             TabOrder = 0
             WordWrap = True
-            OnClick = Transform
+            OnClick = MemoAddNoise
           end
           object ButtonDoubleU2: TButton
             Tag = 7
@@ -333,7 +336,7 @@ object FormMain: TFormMain
             ParentFont = False
             TabOrder = 1
             WordWrap = True
-            OnClick = Transform
+            OnClick = MemoAddNoise
           end
         end
         object GroupBoxOverline: TGroupBox
@@ -366,7 +369,7 @@ object FormMain: TFormMain
             ParentFont = False
             TabOrder = 0
             WordWrap = True
-            OnClick = Transform
+            OnClick = MemoAddNoise
           end
           object ButtonOverline2: TButton
             Tag = 9
@@ -389,13 +392,17 @@ object FormMain: TFormMain
             ParentFont = False
             TabOrder = 1
             WordWrap = True
-            OnClick = Transform
+            OnClick = MemoAddNoise
           end
         end
       end
       object TabSheetGenericASCIIart: TTabSheet
         Caption = #1043#1077#1085#1077#1088#1072#1094#1080#1103' ASCII art-'#1096#1088#1080#1092#1090#1072
         ImageIndex = 2
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBoxSourceFont: TGroupBox
           AlignWithMargins = True
           Left = 3
@@ -545,6 +552,10 @@ object FormMain: TFormMain
       object TabSheetFixedASCIIart: TTabSheet
         Caption = #1060#1080#1082#1089#1080#1088#1086#1074#1072#1085#1085#1099#1081' ASCII art-'#1096#1088#1080#1092#1090
         ImageIndex = 3
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBoxFixedFontSettings: TGroupBox
           AlignWithMargins = True
           Left = 3
@@ -573,7 +584,7 @@ object FormMain: TFormMain
             ItemIndex = 0
             TabOrder = 0
             Text = '1st font'
-            OnChange = ButtonFixedGraphicFontClick
+            OnChange = ButtonFixedASCIIartClick
             Items.Strings = (
               '1st font'
               '2ch tools font')
@@ -585,7 +596,7 @@ object FormMain: TFormMain
             Height = 17
             Caption = #1048#1085#1074#1077#1088#1090#1080#1088#1086#1074#1072#1090#1100' '#1094#1074#1077#1090#1072
             TabOrder = 1
-            OnClick = ButtonFixedGraphicFontClick
+            OnClick = ButtonFixedASCIIartClick
           end
         end
       end
@@ -734,7 +745,7 @@ object FormMain: TFormMain
           Layout = blGlyphTop
           ParentFont = False
           TabOrder = 0
-          OnClick = AnyButtonGoClick
+          OnClick = ButtonGoClick
         end
         object BitBtnClear: TBitBtn
           AlignWithMargins = True
