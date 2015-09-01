@@ -1,7 +1,7 @@
 ﻿unit uASCIIartMaker;
 
-// Автор оригинального алгоритма преобразования картинки в текст - fabiin
-// (2003, http://codes-sources.commentcamarche.net/source/12384-ascii-t-petit-soft-d-ascii-art)
+// thanks to fabiin
+// (http://codes-sources.commentcamarche.net/source/12384-ascii-t-petit-soft-d-ascii-art)
 
 interface
 
@@ -34,6 +34,7 @@ implementation
 uses SysUtils;
 
 procedure TASCIIartMaker.QuickSort(iLo, iHi: integer);
+// TODO: Get rid of it in favor of the sort TArray<T> with standard comparer.
 var
   Lo, Hi: integer;
   Mid: single;
@@ -70,7 +71,7 @@ function TASCIIartMaker.MakeASCIIfromBitmap(SrcBitmap: TBitmap;
   DonorFont: string = 'Lucida Console'; contrast: integer = 255; zoom: integer = 0;
   IsNegative: boolean = false; CharacterSet: Byte = 0): string;
 
-  procedure FaireTblDensite; // Создаем таблицу Плотности
+  procedure FaireTblDensite; // Создаем таблицу плотности
   var
     a, b, c: integer;
     TmpB: TBitmap;
@@ -275,8 +276,8 @@ begin
   Result := '';
   if SrcText.Length > 0 then
   begin
-    TmpBitmap := TBitmap.Create;
-    Strs := TStringList.Create;
+    TmpBitmap := TBitmap.Create;// TODO: try/finally
+    Strs := TStringList.Create; // TODO: try/finally
     // Задаём параметры шрифта
     TmpBitmap.Canvas.Font.Style := [fsBold];
     TmpBitmap.Canvas.Font.Size := RenderFontSize;

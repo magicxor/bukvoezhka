@@ -4,6 +4,8 @@ interface
 
 uses uConstCharArrays;
 
+// TODO: add +_-/\= symbols
+
 var
   C_First_Font_RU: ArrArrStr =
 [['░░░░░░░░',

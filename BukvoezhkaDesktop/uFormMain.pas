@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls,
-  ExtCtrls, Vcl.ComCtrls, Vcl.ImgList, Vcl.Buttons;
+  ExtCtrls, Vcl.ComCtrls, Vcl.ImgList, Vcl.Buttons, System.ImageList;
 
 type
   TFormMain = class(TForm)
@@ -55,9 +55,10 @@ type
     GroupBoxFixedFontSettings: TGroupBox;
     LabelFixedFontName: TLabel;
     CheckBoxFFInvertColors: TCheckBox;
-    BitBtnGo: TBitBtn;
-    BitBtnClear: TBitBtn;
-    BitBtnAbout: TBitBtn;
+    ButtonAbout: TButton;
+    ButtonClear: TButton;
+    ButtonGo: TButton;
+    ImageList: TImageList;
     procedure ButtonClearClick(Sender: TObject);
     procedure ButtonSymbolsReplaceClick(Sender: TObject);
     procedure ButtonGoClick(Sender: TObject);

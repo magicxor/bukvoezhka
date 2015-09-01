@@ -9,7 +9,6 @@ uses
 type
   TFormAbout = class(TForm)
     LinkLabelAbout: TLinkLabel;
-    LabelAbout: TLabel;
     MemoAbout: TMemo;
   private
     { Private declarations }

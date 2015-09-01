@@ -15,24 +15,16 @@ object FormAbout: TFormAbout
   Position = poMainFormCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object LabelAbout: TLabel
-    Left = 77
-    Top = 8
-    Width = 223
-    Height = 18
-    Caption = #1057#1074#1103#1079#1072#1090#1100#1089#1103' '#1089' '#1088#1072#1079#1088#1072#1073#1086#1090#1095#1080#1082#1086#1084': '
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object LinkLabelAbout: TLinkLabel
-    Left = 306
-    Top = 8
-    Width = 127
+    AlignWithMargins = True
+    Left = 3
+    Top = 209
+    Width = 531
     Height = 22
+    Align = alBottom
+    Alignment = taRightJustify
+    BevelInner = bvNone
+    BevelOuter = bvNone
     Caption = '<a href="mailparser@mail.ru">mailparser@mail.ru</a>'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -41,17 +33,22 @@ object FormAbout: TFormAbout
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    ExplicitLeft = 0
+    ExplicitTop = 212
+    ExplicitWidth = 127
   end
   object MemoAbout: TMemo
     AlignWithMargins = True
     Left = 6
-    Top = 34
+    Top = 3
     Width = 525
-    Height = 194
+    Height = 197
     Margins.Left = 6
     Margins.Right = 6
     Margins.Bottom = 6
-    Align = alBottom
+    Align = alClient
+    BevelInner = bvNone
+    BevelOuter = bvNone
     BorderStyle = bsNone
     Color = clBtnFace
     Font.Charset = DEFAULT_CHARSET
@@ -77,5 +74,7 @@ object FormAbout: TFormAbout
     ParentFont = False
     ReadOnly = True
     TabOrder = 1
+    ExplicitTop = 34
+    ExplicitHeight = 194
   end
 end
