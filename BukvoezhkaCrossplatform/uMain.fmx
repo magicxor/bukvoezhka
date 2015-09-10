@@ -31,8 +31,11 @@ object FormMain: TFormMain
         Size.Width = 126.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = ''
         TabOrder = 0
         Text = #1047#1072#1084#1077#1085#1072' '#1089#1080#1084#1074#1086#1083#1086#1074
+        ExplicitSize.cx = 126.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
         object GroupBoxReplaceMethod: TGroupBox
           Align = Client
           Margins.Left = 5.000000000000000000
@@ -348,8 +351,11 @@ object FormMain: TFormMain
         Size.Width = 139.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = ''
         TabOrder = 0
         Text = #1054#1092#1086#1088#1084#1083#1077#1085#1080#1077' '#1090#1077#1082#1089#1090#1072
+        ExplicitSize.cx = 139.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
         object GroupBoxUnderline: TGroupBox
           Align = Left
           Margins.Left = 5.000000000000000000
@@ -359,7 +365,7 @@ object FormMain: TFormMain
           Position.X = 5.000000000000000000
           Position.Y = 5.000000000000000000
           Size.Width = 166.000000000000000000
-          Size.Height = 213.000000000000000000
+          Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           Text = #1055#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077
           TabOrder = 3
@@ -421,7 +427,7 @@ object FormMain: TFormMain
           Position.X = 547.000000000000000000
           Position.Y = 5.000000000000000000
           Size.Width = 150.000000000000000000
-          Size.Height = 213.000000000000000000
+          Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           Text = #1053#1072#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077
           TabOrder = 2
@@ -467,7 +473,7 @@ object FormMain: TFormMain
           Position.X = 323.000000000000000000
           Position.Y = 5.000000000000000000
           Size.Width = 214.000000000000000000
-          Size.Height = 213.000000000000000000
+          Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           Text = #1044#1074#1086#1081#1085#1086#1077' '#1087#1086#1076#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077
           TabOrder = 1
@@ -513,7 +519,7 @@ object FormMain: TFormMain
           Position.X = 181.000000000000000000
           Position.Y = 5.000000000000000000
           Size.Width = 132.000000000000000000
-          Size.Height = 213.000000000000000000
+          Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           Text = #1047#1072#1095#1105#1088#1082#1080#1074#1072#1085#1080#1077
           TabOrder = 0
@@ -559,8 +565,11 @@ object FormMain: TFormMain
         Size.Width = 216.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = ''
         TabOrder = 0
         Text = #1060#1080#1082#1089#1080#1088#1086#1074#1072#1085#1085#1099#1081' ASCII art-'#1096#1088#1080#1092#1090
+        ExplicitSize.cx = 216.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
         object GroupBoxFixedFontSettings: TGroupBox
           Align = Left
           Margins.Left = 5.000000000000000000
@@ -570,7 +579,7 @@ object FormMain: TFormMain
           Position.X = 5.000000000000000000
           Position.Y = 5.000000000000000000
           Size.Width = 268.000000000000000000
-          Size.Height = 213.000000000000000000
+          Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           Text = #1053#1072#1089#1090#1088#1086#1081#1082#1080' '#1096#1088#1080#1092#1090#1072
           TabOrder = 0
@@ -898,44 +907,63 @@ object FormMain: TFormMain
       end
     end
   end
-  object PanelInOut: TPanel
+  object GridPanelLayout: TGridPanelLayout
     Align = Client
     Size.Width = 941.000000000000000000
     Size.Height = 302.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 1
+    TabOrder = 2
+    ColumnCollection = <
+      item
+        Value = 100.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = MemoInput
+        Row = 0
+      end
+      item
+        Column = 0
+        Control = MemoOutput
+        Row = 1
+      end>
+    RowCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
     object MemoInput: TMemo
       Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
-      Align = Top
-      Size.Width = 941.000000000000000000
-      Size.Height = 146.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 1
+      DataDetectorTypes = []
+      StyledSettings = [Style, FontColor]
       TextSettings.Font.Family = 'Lucida Console'
       TextSettings.Font.Size = 16.000000000000000000
       TextSettings.WordWrap = True
-      StyledSettings = [Style, FontColor]
+      Align = Client
+      Size.Width = 941.000000000000000000
+      Size.Height = 151.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Viewport.Width = 933.000000000000000000
+      Viewport.Height = 143.000000000000000000
     end
     object MemoOutput: TMemo
       Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
-      Align = Client
-      Size.Width = 941.000000000000000000
-      Size.Height = 146.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 2
+      DataDetectorTypes = []
+      StyledSettings = [Style, FontColor]
       TextSettings.Font.Family = 'Lucida Console'
       TextSettings.Font.Size = 16.000000000000000000
       TextSettings.WordWrap = True
-      StyledSettings = [Style, FontColor]
-    end
-    object SplitterInOut: TSplitter
-      Align = Top
-      Cursor = crVSplit
-      MinSize = 20.000000000000000000
-      Position.Y = 146.000000000000000000
+      Align = Client
       Size.Width = 941.000000000000000000
-      Size.Height = 10.000000000000000000
+      Size.Height = 151.000000000000000000
       Size.PlatformDefault = False
+      TabOrder = 1
+      Viewport.Width = 933.000000000000000000
+      Viewport.Height = 143.000000000000000000
     end
   end
 end

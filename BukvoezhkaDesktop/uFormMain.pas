@@ -9,11 +9,7 @@ uses
 type
   TFormMain = class(TForm)
     MemoInput: TMemo;
-    PanelOutput: TPanel;
     MemoOutput: TMemo;
-    PanelInput: TPanel;
-    PanelInOut: TPanel;
-    SplitterInOut: TSplitter;
     RadioGroupFont: TRadioGroup;
     PanelViewFontSettings: TPanel;
     ComboBoxFontSize: TComboBox;
@@ -59,6 +55,7 @@ type
     ButtonClear: TButton;
     ButtonGo: TButton;
     ImageList: TImageList;
+    GridPanel: TGridPanel;
     procedure ButtonClearClick(Sender: TObject);
     procedure ButtonSymbolsReplaceClick(Sender: TObject);
     procedure ButtonGoClick(Sender: TObject);

@@ -17,77 +17,6 @@ object FormMain: TFormMain
   Visible = True
   PixelsPerInch = 96
   TextHeight = 13
-  object PanelInOut: TPanel
-    Left = 0
-    Top = 177
-    Width = 889
-    Height = 448
-    Align = alClient
-    BevelOuter = bvNone
-    Caption = 'PanelInOut'
-    TabOrder = 0
-    object SplitterInOut: TSplitter
-      Left = 0
-      Top = 247
-      Width = 889
-      Height = 3
-      Cursor = crVSplit
-      Align = alTop
-      ExplicitLeft = -9
-      ExplicitTop = 251
-      ExplicitWidth = 701
-    end
-    object PanelInput: TPanel
-      Left = 0
-      Top = 0
-      Width = 889
-      Height = 247
-      Align = alTop
-      BevelOuter = bvNone
-      Caption = 'PanelOutput'
-      TabOrder = 0
-      object MemoInput: TMemo
-        Left = 0
-        Top = 0
-        Width = 889
-        Height = 247
-        Align = alClient
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Lucida Console'
-        Font.Style = []
-        ParentFont = False
-        ScrollBars = ssVertical
-        TabOrder = 0
-      end
-    end
-    object PanelOutput: TPanel
-      Left = 0
-      Top = 250
-      Width = 889
-      Height = 198
-      Align = alClient
-      BevelOuter = bvNone
-      Caption = 'PanelOutput'
-      TabOrder = 1
-      object MemoOutput: TMemo
-        Left = 0
-        Top = 0
-        Width = 889
-        Height = 198
-        Align = alClient
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Lucida Console'
-        Font.Style = []
-        ParentFont = False
-        ScrollBars = ssVertical
-        TabOrder = 0
-      end
-    end
-  end
   object PanelHeadControls: TPanel
     Left = 0
     Top = 0
@@ -98,7 +27,7 @@ object FormMain: TFormMain
     Color = clWindow
     ParentBackground = False
     ShowCaption = False
-    TabOrder = 1
+    TabOrder = 0
     object PageControlMain: TPageControl
       Left = 0
       Top = 0
@@ -632,7 +561,6 @@ object FormMain: TFormMain
           Images = ImageList
           TabOrder = 0
           OnClick = ButtonAboutClick
-          ExplicitTop = 119
         end
         object ButtonClear: TButton
           AlignWithMargins = True
@@ -646,7 +574,6 @@ object FormMain: TFormMain
           Images = ImageList
           TabOrder = 1
           OnClick = ButtonClearClick
-          ExplicitTop = 61
         end
         object ButtonGo: TButton
           AlignWithMargins = True
@@ -673,7 +600,6 @@ object FormMain: TFormMain
         ParentBackground = False
         ShowCaption = False
         TabOrder = 1
-        ExplicitWidth = 111
         object RadioGroupFont: TRadioGroup
           AlignWithMargins = True
           Left = 3
@@ -693,9 +619,6 @@ object FormMain: TFormMain
           ParentColor = False
           TabOrder = 0
           OnClick = RadioGroupFontClick
-          ExplicitLeft = 4
-          ExplicitTop = 2
-          ExplicitHeight = 131
         end
         object GroupBoxViewFontSize: TGroupBox
           AlignWithMargins = True
@@ -710,8 +633,6 @@ object FormMain: TFormMain
           ParentBackground = False
           ParentColor = False
           TabOrder = 1
-          ExplicitLeft = 4
-          ExplicitTop = 135
           object ComboBoxFontSize: TComboBox
             AlignWithMargins = True
             Left = 5
@@ -747,6 +668,85 @@ object FormMain: TFormMain
       end
     end
   end
+  object GridPanel: TGridPanel
+    AlignWithMargins = True
+    Left = 3
+    Top = 180
+    Width = 883
+    Height = 442
+    Align = alClient
+    BevelOuter = bvNone
+    ColumnCollection = <
+      item
+        Value = 100.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = MemoInput
+        Row = 0
+      end
+      item
+        Column = 0
+        Control = MemoOutput
+        Row = 1
+      end>
+    RowCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    ShowCaption = False
+    TabOrder = 1
+    ExplicitLeft = 368
+    ExplicitTop = -168
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object MemoInput: TMemo
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 875
+      Height = 214
+      Align = alClient
+      Anchors = []
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Lucida Console'
+      Font.Style = []
+      ParentFont = False
+      ScrollBars = ssVertical
+      TabOrder = 0
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 889
+      ExplicitHeight = 247
+    end
+    object MemoOutput: TMemo
+      AlignWithMargins = True
+      Left = 3
+      Top = 223
+      Width = 875
+      Height = 214
+      Align = alClient
+      Anchors = []
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Lucida Console'
+      Font.Style = []
+      ParentFont = False
+      ScrollBars = ssVertical
+      TabOrder = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 889
+      ExplicitHeight = 198
+    end
+  end
   object ImageList: TImageList
     ColorDepth = cd32Bit
     DrawingStyle = dsTransparent
@@ -755,7 +755,7 @@ object FormMain: TFormMain
     Left = 648
     Top = 65528
     Bitmap = {
-      494C010103000800140020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010103000800180020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000002000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000500000

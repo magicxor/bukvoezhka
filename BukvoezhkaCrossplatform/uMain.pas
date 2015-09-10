@@ -5,7 +5,8 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.TabControl, FMX.Objects,
-  FMX.StdCtrls, FMX.Layouts, FMX.Memo, FMX.ListBox;
+  FMX.StdCtrls, FMX.Layouts, FMX.Memo, FMX.ListBox, FMX.ScrollBox,
+  FMX.Controls.Presentation;
 
 type
   TFormMain = class(TForm)
@@ -23,7 +24,6 @@ type
     ImageClearGlyph: TImage;
     ButtonGo: TButton;
     ImageGoGlyph: TImage;
-    PanelInOut: TPanel;
     GroupBoxViewFontName: TGroupBox;
     RadioButtonVFTahoma: TRadioButton;
     GroupBoxViewFontSize: TGroupBox;
@@ -65,9 +65,9 @@ type
     GroupBoxFixedFontSettings: TGroupBox;
     ComboBoxFFName: TComboBox;
     CheckBoxFFInvertColors: TCheckBox;
+    GridPanelLayout: TGridPanelLayout;
     MemoInput: TMemo;
     MemoOutput: TMemo;
-    SplitterInOut: TSplitter;
     procedure ButtonGoClick(Sender: TObject);
     procedure ButtonSymbolsReplaceClick(Sender: TObject);
     procedure ButtonClearClick(Sender: TObject);

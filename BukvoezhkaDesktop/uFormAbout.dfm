@@ -3,7 +3,7 @@ object FormAbout: TFormAbout
   Top = 0
   BorderStyle = bsDialog
   Caption = #1054' '#1087#1088#1086#1075#1088#1072#1084#1084#1077
-  ClientHeight = 234
+  ClientHeight = 247
   ClientWidth = 537
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,14 +18,14 @@ object FormAbout: TFormAbout
   object LinkLabelAbout: TLinkLabel
     AlignWithMargins = True
     Left = 3
-    Top = 209
+    Top = 222
     Width = 531
     Height = 22
     Align = alBottom
     Alignment = taRightJustify
     BevelInner = bvNone
     BevelOuter = bvNone
-    Caption = '<a href="mailparser@mail.ru">mailparser@mail.ru</a>'
+    Caption = '<a href="mailto:mailparser@mail.ru">mailparser@mail.ru</a>'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -33,8 +33,6 @@ object FormAbout: TFormAbout
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    ExplicitLeft = 0
-    ExplicitTop = 212
     ExplicitWidth = 127
   end
   object MemoAbout: TMemo
@@ -42,7 +40,7 @@ object FormAbout: TFormAbout
     Left = 6
     Top = 3
     Width = 525
-    Height = 197
+    Height = 210
     Margins.Left = 6
     Margins.Right = 6
     Margins.Bottom = 6
@@ -74,7 +72,6 @@ object FormAbout: TFormAbout
     ParentFont = False
     ReadOnly = True
     TabOrder = 1
-    ExplicitTop = 34
-    ExplicitHeight = 194
+    ExplicitHeight = 197
   end
 end
