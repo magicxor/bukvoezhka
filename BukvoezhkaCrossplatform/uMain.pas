@@ -68,6 +68,9 @@ type
     GridPanelLayout: TGridPanelLayout;
     MemoInput: TMemo;
     MemoOutput: TMemo;
+    LabelGo: TLabel;
+    LabelClear: TLabel;
+    LabelAbout: TLabel;
     procedure ButtonGoClick(Sender: TObject);
     procedure ButtonSymbolsReplaceClick(Sender: TObject);
     procedure ButtonClearClick(Sender: TObject);
