@@ -552,15 +552,18 @@ object FormMain: TFormMain
         object ButtonAbout: TButton
           AlignWithMargins = True
           Left = 3
-          Top = 121
+          Top = 3
           Width = 99
           Height = 53
           Align = alTop
           Caption = #1054#1087#1080#1089#1072#1085#1080#1077
           ImageIndex = 1
+          ImageMargins.Left = 4
+          ImageMargins.Right = 4
           Images = ImageList
           TabOrder = 0
           OnClick = ButtonAboutClick
+          ExplicitLeft = -5
         end
         object ButtonClear: TButton
           AlignWithMargins = True
@@ -571,6 +574,8 @@ object FormMain: TFormMain
           Align = alTop
           Caption = #1054#1095#1080#1089#1090#1080#1090#1100
           ImageIndex = 2
+          ImageMargins.Left = 4
+          ImageMargins.Right = 4
           Images = ImageList
           TabOrder = 1
           OnClick = ButtonClearClick
@@ -578,15 +583,19 @@ object FormMain: TFormMain
         object ButtonGo: TButton
           AlignWithMargins = True
           Left = 3
-          Top = 3
+          Top = 121
           Width = 99
           Height = 53
           Align = alTop
           Caption = #1047#1072#1084#1077#1085#1080#1090#1100
           ImageIndex = 0
+          ImageMargins.Left = 4
+          ImageMargins.Right = 4
           Images = ImageList
           TabOrder = 2
           OnClick = ButtonGoClick
+          ExplicitLeft = 5
+          ExplicitTop = 135
         end
       end
       object PanelViewFontSettings: TPanel
@@ -700,16 +709,12 @@ object FormMain: TFormMain
       end>
     ShowCaption = False
     TabOrder = 1
-    ExplicitLeft = 368
-    ExplicitTop = -168
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object MemoInput: TMemo
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 875
-      Height = 214
+      Width = 877
+      Height = 215
       Align = alClient
       Anchors = []
       Font.Charset = DEFAULT_CHARSET
@@ -720,17 +725,13 @@ object FormMain: TFormMain
       ParentFont = False
       ScrollBars = ssVertical
       TabOrder = 0
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 889
-      ExplicitHeight = 247
     end
     object MemoOutput: TMemo
       AlignWithMargins = True
       Left = 3
-      Top = 223
-      Width = 875
-      Height = 214
+      Top = 224
+      Width = 877
+      Height = 215
       Align = alClient
       Anchors = []
       Font.Charset = DEFAULT_CHARSET
@@ -741,10 +742,6 @@ object FormMain: TFormMain
       ParentFont = False
       ScrollBars = ssVertical
       TabOrder = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 889
-      ExplicitHeight = 198
     end
   end
   object ImageList: TImageList
@@ -755,7 +752,7 @@ object FormMain: TFormMain
     Left = 648
     Top = 65528
     Bitmap = {
-      494C010103000800180020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C0101030008001C0020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000002000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000500000
