@@ -19,11 +19,8 @@ type
     PanelViewFontSettings: TPanel;
     PanelControlButtons: TPanel;
     ButtonAbout: TButton;
-    ImageAboutGlyph: TImage;
     ButtonClear: TButton;
-    ImageClearGlyph: TImage;
     ButtonGo: TButton;
-    ImageGoGlyph: TImage;
     GroupBoxViewFontName: TGroupBox;
     RadioButtonVFTahoma: TRadioButton;
     GroupBoxViewFontSize: TGroupBox;
@@ -71,6 +68,9 @@ type
     LabelGo: TLabel;
     LabelClear: TLabel;
     LabelAbout: TLabel;
+    PathGo: TPath;
+    PathAbout: TPath;
+    PathClear: TPath;
     procedure ButtonGoClick(Sender: TObject);
     procedure ButtonSymbolsReplaceClick(Sender: TObject);
     procedure ButtonClearClick(Sender: TObject);

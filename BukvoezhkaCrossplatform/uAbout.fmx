@@ -6,21 +6,14 @@ object FormAbout: TFormAbout
   Caption = #1054' '#1087#1088#1086#1075#1088#1072#1084#1084#1077
   ClientHeight = 183
   ClientWidth = 640
+  Position = MainFormCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 1
   object MemoAbout: TMemo
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
-    Align = Client
-    Margins.Left = 5.000000000000000000
-    Margins.Top = 5.000000000000000000
-    Margins.Right = 5.000000000000000000
-    Margins.Bottom = 5.000000000000000000
-    Size.Width = 630.000000000000000000
-    Size.Height = 173.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 1
+    DataDetectorTypes = []
     Lines.Strings = (
       
         #1041#1091#1082#1074#1086#1077#1078#1082#1072' - '#1087#1088#1080#1083#1086#1078#1077#1085#1080#1077' '#1076#1083#1103' '#1080#1089#1082#1072#1078#1077#1085#1080#1103' '#1090#1077#1082#1089#1090#1072' '#1087#1086#1089#1088#1077#1076#1089#1090#1074#1086#1084' '#1079#1072#1084#1077#1085#1099' '#1089 +
@@ -36,8 +29,19 @@ object FormAbout: TFormAbout
         ' '#1089' '#1086#1073#1103#1079#1072#1090#1077#1083#1100#1085#1099#1084' '#1091#1082#1072#1079#1072#1085#1080#1077#1084' '#1072#1074#1090#1086#1088#1089#1090#1074#1072' (mailparser@mail.ru) '#1080' '#1089#1089#1099#1083#1082 +
         #1080' '#1085#1072' github (https://github.com/magicxor/bukvoezhka).')
     ReadOnly = True
+    StyledSettings = [Family, Style, FontColor]
     TextSettings.Font.Size = 14.000000000000000000
     TextSettings.WordWrap = True
-    StyledSettings = [Family, Style, FontColor]
+    Align = Client
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Size.Width = 630.000000000000000000
+    Size.Height = 173.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 614.000000000000000000
+    Viewport.Height = 165.000000000000000000
   end
 end

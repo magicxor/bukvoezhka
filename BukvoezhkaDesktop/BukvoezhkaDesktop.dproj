@@ -108,8 +108,8 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <DCC_OutputDRCFile>false</DCC_OutputDRCFile>
         <DCC_IOChecking>false</DCC_IOChecking>
-        <VerInfo_Keys>CompanyName=magicxor;FileDescription=Буквоежка;FileVersion=1.2.0.91;InternalName=bukvoezhka;LegalCopyright=Ilya Burakov;LegalTrademarks=https://github.com/magicxor;OriginalFilename=;ProductName=Буквоежка;ProductVersion=1.2;Comments=;LastCompiledTime=2015.03.22 02:51:08</VerInfo_Keys>
-        <VerInfo_Build>91</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=magicxor;FileDescription=Буквоежка;FileVersion=1.2.0.92;InternalName=bukvoezhka;LegalCopyright=Ilya Burakov;LegalTrademarks=https://github.com/magicxor;OriginalFilename=;ProductName=Буквоежка;ProductVersion=1.2;Comments=;LastCompiledTime=2015.03.22 02:51:08</VerInfo_Keys>
+        <VerInfo_Build>92</VerInfo_Build>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <VerInfo_MinorVer>2</VerInfo_MinorVer>
@@ -247,27 +247,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployClass Name="DependencyModule">
-                    <Platform Name="Win32">
-                        <Operation>0</Operation>
-                        <Extensions>.dll;.bpl</Extensions>
-                    </Platform>
+                <DeployClass Name="ProjectiOSDeviceResourceRules">
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="OSX32">
-                        <RemoteDir>Contents\MacOS</RemoteDir>
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="iOSSimulator">
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectOSXResource">
@@ -621,12 +606,27 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectiOSDeviceResourceRules">
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
